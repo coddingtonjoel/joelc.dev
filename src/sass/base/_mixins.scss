@@ -1,0 +1,40 @@
+/*MEDIA QUERY MANAGER
+0 - 600px: phone
+600px-900px - tablet-portrait
+900px-1200px - tablet-landscape
+1200px-1800px - desktop
+1800px+ - large desktop
+
+$breakpoint argument choices:
+-phone
+-tablet-l
+-tablet-p
+-xl
+*/
+
+@mixin media($size) {
+    @if $size == phone {
+        @media (max-width: 600px) {
+            @content;
+        }
+    } @else if $size == tablet-p {
+        @media (max-width: 900px) {
+            @content;
+        }
+    } @else if $size == tablet-l {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    } @else if $size == xl {
+        @media (min-width: 1800px) {
+            @content;
+        }
+    }
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
