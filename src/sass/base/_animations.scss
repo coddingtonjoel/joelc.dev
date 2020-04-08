@@ -1,11 +1,11 @@
 @keyframes dash {
     0% {
-        opacity: 0.8;
+        opacity: 0.3;
         stroke-dashoffset: 1200;
     }
 
     40% {
-        opacity: 0.4;
+        opacity: 0.3;
     }
 
     100% {
@@ -17,7 +17,7 @@
 @keyframes headerFade {
     from {
         opacity: 0;
-        transform: translateY(2rem);
+        transform: translateY(0.5rem);
     }
     to {
         opacity: 1;
