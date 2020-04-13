@@ -16,7 +16,7 @@
     &-head {
         text-align: center;
         position: absolute;
-        width: 60%;
+        width: 55%;
         top: 22%;
         padding: 2%;
         z-index: 1;
@@ -26,7 +26,7 @@
         animation: headerFade 1s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: backwards;
-        animation-delay: 4s;
+        animation-delay: 0s;
 
         &::after {
             content: "";
@@ -37,9 +37,52 @@
             top: 0;
             left: 0;
             z-index: -1;
-            background-color: #ff677d;
+            background: rgb(255, 103, 125);
+            background: linear-gradient(
+                167deg,
+                rgba(255, 103, 125, 1) 0%,
+                rgba(254, 175, 175, 1) 100%
+            );
             opacity: 0.9;
             border-radius: 16px;
+            box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2),
+                0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+
+    &-btn {
+        position: absolute;
+        top: 62%;
+        width: 25rem;
+        height: 4rem;
+        font-family: "Titillium Web", sans-serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        background-color: #303030;
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.2),
+            0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);
+
+        animation: headerFade 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
+        animation-delay: 0s;
+        transition: 0.3s;
+        border: none;
+
+        &:hover {
+            box-shadow: none;
+        }
+
+        &:active {
+            transform: scale(0.93);
+        }
+
+        &:focus {
+            background-color: #303030;
+            color: white;
         }
     }
 }
@@ -54,14 +97,15 @@ svg {
     stroke-dashoffset: 1000;
     animation: dash 10s linear alternate;
     animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease;
+    width: 95vw;
 }
 
 .cls-1,
 .cls-2,
 .cls-3 {
     fill: none;
-    stroke-width: 0.75px;
+    stroke-width: 0.4px;
 }
 
 .cls-1,
@@ -70,12 +114,4 @@ svg {
 .cls-4 {
     stroke: #000;
     stroke-miterlimit: 10;
-}
-
-.cls-2 {
-    stroke-width: 1px;
-}
-
-.cls-3 {
-    stroke-width: 3px;
 }

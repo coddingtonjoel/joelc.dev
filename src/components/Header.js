@@ -11,6 +11,9 @@ const Header = () => {
                     <br />
                     I'm a student web developer.
                 </h1>
+                <button className="header-btn">
+                    <span className="header-btn-span">Learn More</span>
+                </button>
             </main>
         </div>
     );
