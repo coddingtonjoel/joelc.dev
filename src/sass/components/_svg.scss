@@ -1,0 +1,34 @@
+.landing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    overflow: hidden;
+}
+
+.text {
+    animation: text 3s backwards;
+    animation-delay: 1s;
+    transform: translateY(-60px);
+}
+
+.top {
+    animation: land 3s ease backwards;
+    animation-delay: 1s;
+}
+
+.center {
+    animation: land 3s ease forwards;
+}
+
+.bubble {
+    animation: bubble 20s ease-in backwards;
+    animation-delay: 3s;
+    transform-origin: 30% 50%;
+}
+
+.bubble-two {
+    animation: bubble-two 20s ease-in backwards;
+    animation-delay: 5s;
+}

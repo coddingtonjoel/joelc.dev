@@ -1,22 +1,48 @@
-@keyframes dash {
+@keyframes land {
     from {
-        opacity: 0.6;
-        stroke-dashoffset: 1300;
+        transform: scaleY(0);
     }
-
     to {
-        opacity: 0.5;
-        stroke-dashoffset: 0;
+        transform: scaleY(1);
     }
 }
 
-@keyframes headerFade {
+@keyframes text {
     from {
-        opacity: 0;
-        transform: translateY(0.5rem);
+        transform: translateY(-800px);
     }
     to {
+        transform: translateY(-60px);
+    }
+}
+
+@keyframes bubble {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    10% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(1000px);
+        opacity: 0.5;
+        transform: scale(0.6);
+    }
+}
+
+@keyframes bubble-two {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    20% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-200px);
+        transform: translateX(0);
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(0.9);
     }
 }
