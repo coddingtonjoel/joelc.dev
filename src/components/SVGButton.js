@@ -7,6 +7,7 @@ const SVGButton = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 450 450">
             <path
+                className="chev-righthalf"
                 d="M450 167v166c0 64-53 117-117 117h-83V50h83c64 0 117 53 117 117z"
                 transform="translate(-29 -29)"
                 fill="#ffae8f"
@@ -19,6 +20,7 @@ const SVGButton = () => {
             />
             <g>
                 <path
+                    className="chev-lefthalf"
                     d="M50 167v166c0 64 53 117 117 117h83V50h-83c-64 0-117 53-117 117z"
                     transform="translate(-29 -29)"
                     fill="#ffbda3"

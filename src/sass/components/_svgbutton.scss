@@ -1,13 +1,18 @@
 .chev {
-    width: 8%;
+    width: 10%;
+    min-width: 125px;
     pointer-events: all;
     position: absolute;
     top: 215%;
     left: 50%;
     transform: translate(-50%, -50%);
 
+    @media (max-width: 450px) {
+        top: 200%;
+    }
+
     &-container {
-        fill: #c94167;
+        fill: none;
     }
 
     &-top,
@@ -33,10 +38,18 @@
     }
 
     &-body {
-        fill: #9e3a56;
+        fill: #4e1717;
     }
 
     &-shadow {
         fill: white;
+    }
+
+    &-lefthalf {
+        fill: none;
+    }
+
+    &-righthalf {
+        fill: none;
     }
 }

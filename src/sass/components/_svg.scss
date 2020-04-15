@@ -3,19 +3,18 @@
     top: -5rem;
     left: 0;
     width: 100%;
-    height: inherit;
+    height: 100vh;
     overflow: hidden;
-    max-width: 100%;
 }
 
 .text {
     animation: text 3s backwards;
-    animation-delay: 2.5s;
+    animation-delay: 1.5s;
     transform: translateY(-60px);
 }
 
 .top {
-    animation: land 3s ease backwards;
+    animation: land 2s ease backwards;
     animation-delay: 1s;
 }
 
@@ -38,4 +37,38 @@
     opacity: 0.4;
     animation: bubble-three 20s ease-in backwards infinite;
     animation-delay: 3s;
+}
+
+.text {
+    & text {
+        @media (max-width: 850px) {
+            font-size: 7rem;
+        }
+
+        @media (max-width: 600px) {
+            font-size: 5.5rem;
+        }
+
+        @media (max-width: 450px) {
+            font-size: 4.8rem;
+        }
+        @media (max-width: 370px) {
+            font-size: 4.2rem;
+        }
+    }
+
+    @media (max-width: 850px) {
+        transform: translate(78px, -50px);
+    }
+
+    @media (max-width: 600px) {
+        transform: translate(160px, -50px);
+    }
+
+    @media (max-width: 450px) {
+        transform: translate(200px, -100px);
+    }
+    @media (max-width: 370px) {
+        transform: translate(235px, -100px);
+    }
 }
