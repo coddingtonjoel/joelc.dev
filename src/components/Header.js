@@ -1,5 +1,6 @@
 import React from "react";
 import SVG from "./SVG";
+import SVGButton from "./SVGButton";
 
 const Header = () => {
     return (
@@ -7,6 +8,9 @@ const Header = () => {
             <div className="header-svg">
                 <SVG />
             </div>
+            <a className="header-btn" href="#!">
+                <SVGButton />
+            </a>
         </div>
     );
 };

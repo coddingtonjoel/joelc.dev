@@ -1,15 +1,16 @@
 .landing {
     position: absolute;
-    top: 0;
+    top: -5rem;
     left: 0;
     width: 100%;
     height: inherit;
     overflow: hidden;
+    max-width: 100%;
 }
 
 .text {
     animation: text 3s backwards;
-    animation-delay: 1s;
+    animation-delay: 2.5s;
     transform: translateY(-60px);
 }
 
@@ -23,12 +24,18 @@
 }
 
 .bubble {
-    animation: bubble 20s ease-in backwards;
+    animation: bubble 20s ease-in backwards infinite;
     animation-delay: 3s;
     transform-origin: 30% 50%;
 }
 
 .bubble-two {
-    animation: bubble-two 20s ease-in backwards;
+    animation: bubble-two 20s ease-in backwards infinite;
     animation-delay: 5s;
+}
+
+.bubble-three {
+    opacity: 0.4;
+    animation: bubble-three 20s ease-in backwards infinite;
+    animation-delay: 3s;
 }

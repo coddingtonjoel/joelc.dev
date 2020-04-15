@@ -1,0 +1,42 @@
+.chev {
+    width: 8%;
+    pointer-events: all;
+    position: absolute;
+    top: 215%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-container {
+        fill: #c94167;
+    }
+
+    &-top,
+    &-center,
+    &-bottom {
+        transition: 0.5s;
+    }
+
+    &:hover {
+        & .chev-top {
+            transform: translateY(15px);
+        }
+
+        & .chev-center {
+            transform: translateY(25px);
+            transition-delay: 0.08s;
+        }
+
+        & .chev-bottom {
+            transform: translateY(40px);
+            transition-delay: 0.16s;
+        }
+    }
+
+    &-body {
+        fill: #9e3a56;
+    }
+
+    &-shadow {
+        fill: white;
+    }
+}
