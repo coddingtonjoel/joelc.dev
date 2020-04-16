@@ -8,7 +8,7 @@ const SVG = () => {
             width="100%"
             height="100%"
             viewBox="0 0 1920 1080"
-            preserveAspectRatio="xMidYMid slice">
+            preserveAspectRatio="xMidYMax slice">
             <defs>
                 <clipPath id="a">
                     <path d="M0 0h1920v1080H0z" />
@@ -39,7 +39,7 @@ const SVG = () => {
                 <path
                     className="center"
                     data-name="Path 3"
-                    d="M0 1080.657S833.672 822 1175.535 902.629c261.814 61.75 388.021 10.081 539.491-106.911 516.309-516.309 213.633-913.262 213.633-913.262L0 1.229z"
+                    d="M0 1030.657S833.672 822 1175.535 902.629c261.814 61.75 388.021 10.081 539.491-106.911 516.309-516.309 213.633-913.262 213.633-913.262L0 1.229z"
                     fill="#FF6565"
                 />
                 <g className="bubble" id="Group_1" data-name="Group 1">
@@ -54,22 +54,6 @@ const SVG = () => {
                     />
                 </g>
                 />
-                <g className="text" filter="url(#b)">
-                    <text
-                        data-name="My name is Joel Coddington. I'm a student web developer."
-                        transform="translate(988 502)"
-                        fill="#fff"
-                        fontSize="67"
-                        fontFamily="TitilliumWeb-Bold, Titillium Web"
-                        fontWeight="700">
-                        <tspan x="-489" y="0">
-                            MY NAME IS JOEL CODDINGTON.
-                        </tspan>
-                        <tspan x="-508" y="125">
-                            I&apos;M A STUDENT WEB DEVELOPER.
-                        </tspan>
-                    </text>
-                </g>
                 <path
                     className="top"
                     data-name="Path 4"

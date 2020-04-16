@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 807.71 324.88">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 57.92px;
+        font-family: Ubuntu;
+        letter-spacing: 0.06em;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(76.89 185.51)"><tspan xml:space="preserve">P  A  R  T  B  O  X</tspan></text>
+  <path class="cls-2" d="M721.81,114.4H631.72a9,9,0,0,0-9,9v60.06a9,9,0,0,0,9,9h36l-3,9H651.24a4.51,4.51,0,0,0,0,9h51a4.51,4.51,0,1,0,0-9H688.78l-3-9h36a9,9,0,0,0,9-9V123.4A9,9,0,0,0,721.81,114.4Zm-3,66.06H634.73V126.41h84.08Z"/>
+</svg>

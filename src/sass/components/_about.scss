@@ -1,0 +1,10 @@
+.about {
+    height: 100rem;
+    background-color: #303841;
+    transform: translateY(-0.5rem); //fix error with svg border-radius
+    position: relative;
+
+    &-head {
+        margin-top: 0rem;
+    }
+}

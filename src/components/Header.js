@@ -4,14 +4,21 @@ import SVGButton from "./SVGButton";
 
 const Header = () => {
     return (
-        <div className="header">
+        <main className="header" id="home">
             <div className="header-svg">
                 <SVG />
             </div>
-            <a className="header-btn" href="#!">
+            <div className="header-text-wrapper">
+                <h1 className="header-text heading">
+                    My name is Joel Coddington.
+                    <br />
+                    I'm a student web developer.
+                </h1>
+            </div>
+            <a className="header-btn" href="#about">
                 <SVGButton />
             </a>
-        </div>
+        </main>
     );
 };
 

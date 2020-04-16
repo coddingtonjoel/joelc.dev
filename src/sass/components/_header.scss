@@ -2,9 +2,56 @@
 
 .header {
     background-color: #f3f3f3;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     position: relative;
+
+    &-text {
+        position: relative;
+        width: 95%;
+        left: 50%;
+        margin: 5rem 0;
+        transform: translate(-50%, 0%);
+        animation: header-text 2s ease backwards;
+        animation-delay: 2s;
+
+        @media (max-width: 630px) {
+            font-size: 4.5rem;
+        }
+
+        @media (max-width: 560px) {
+            font-size: 4rem;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 3.5rem;
+        }
+
+        @media (max-width: 430px) {
+            font-size: 3.3rem;
+        }
+
+        @media (max-width: 390px) {
+            font-size: 3rem;
+        }
+
+        @media (max-width: 353px) {
+            font-size: 2.8rem;
+        }
+
+        @media (max-width: 330px) {
+            font-size: 2.7rem;
+        }
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            left: 50%;
+            transform: translate(-52%, 0%);
+        }
+    }
 
     &-svg {
         position: relative;
@@ -13,8 +60,12 @@
 
     &-btn {
         animation: header-btn 1.5s backwards ease;
-        animation-delay: 4s;
+        animation-delay: 3s;
         pointer-events: none;
         height: 100%;
+
+        @media (max-height: 600px) {
+            visibility: hidden;
+        }
     }
 }

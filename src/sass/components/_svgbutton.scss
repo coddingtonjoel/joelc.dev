@@ -1,14 +1,18 @@
 .chev {
-    width: 10%;
-    min-width: 125px;
+    width: 6%;
+    min-width: 100px;
     pointer-events: all;
-    position: absolute;
-    top: 215%;
+    position: relative;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 20%);
 
-    @media (max-width: 450px) {
-        top: 200%;
+    @media (max-height: 600px) {
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    @media (max-width: 560px) {
+        transform: translate(-50%, 20%);
     }
 
     &-container {
