@@ -1,6 +1,12 @@
 .landing {
     position: absolute;
-    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.landing-mobile {
+    position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -19,11 +25,23 @@
     animation: bubble 20s ease-in backwards infinite;
     animation-delay: 3s;
     transform-origin: 30% 50%;
+
+    &-m {
+        animation: bubble-m 20s ease-in infinite backwards;
+        animation-delay: 2s;
+        transform-origin: 5% 45%;
+    }
 }
 
 .bubble-two {
     animation: bubble-two 20s ease-in backwards infinite;
     animation-delay: 5s;
+
+    &-m {
+        animation: bubble-two-m 20s ease-in backwards infinite;
+        animation-delay: 1.3s;
+        transform-origin: 50% 50%;
+    }
 }
 
 .bubble-three {
