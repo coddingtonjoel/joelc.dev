@@ -1,0 +1,14 @@
+.progress {
+    width: 70%;
+    margin-top: -4rem;
+
+    &-body {
+        fill: #fff;
+        stroke: #231f20;
+        stroke-width: 0.3;
+    }
+
+    &-filled {
+        fill: #f16566;
+    }
+}

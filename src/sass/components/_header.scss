@@ -16,7 +16,7 @@
             position: absolute !important;
             z-index: 10;
             left: 50%;
-            top: 35%;
+            top: 30%;
             transform: translate(-50%, -50%);
 
             @media (max-width: 700px) {
@@ -37,7 +37,7 @@
         width: 95%;
         left: 50%;
         margin: 5rem 0;
-        transform: translate(-50%, 0%);
+        transform: translate(-50%, -15%);
         animation: header-text 2s ease backwards;
         animation-delay: 2s;
 
