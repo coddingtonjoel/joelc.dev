@@ -72,7 +72,18 @@
 
     //scrollspy class
     &-active {
-        border-bottom: white solid 1.2px;
         line-height: 0;
+
+        &::after {
+            border-bottom: white solid 1.2px;
+            content: "";
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 50%;
+            margin: -21px auto;
+            animation: nav-active 0.35s forwards;
+        }
     }
 }

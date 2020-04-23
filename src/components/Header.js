@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import SVG from "./SVG";
 import SVGMobile from "./SVGMobile";
 import SVGButton from "./SVGButton";
@@ -6,9 +6,9 @@ import MediaQuery from "react-responsive";
 
 const Header = () => {
     return (
-        <Fragment>
+        <div id="home">
             <MediaQuery minDeviceWidth={701}>
-                <div className="header" id="home">
+                <div className="header">
                     <div className="header-svg">
                         <SVG />
                     </div>
@@ -25,7 +25,7 @@ const Header = () => {
                 </div>
             </MediaQuery>
             <MediaQuery maxDeviceWidth={700}>
-                <div className="header-mobile" id="home-m">
+                <div className="header-mobile">
                     <div className="header-mobile-svg">
                         <SVGMobile />
                         <h1 className="header-text header-mobile-text heading">
@@ -39,7 +39,7 @@ const Header = () => {
                     </a>
                 </div>
             </MediaQuery>
-        </Fragment>
+        </div>
     );
 };
 

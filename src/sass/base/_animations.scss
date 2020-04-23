@@ -150,3 +150,12 @@
         transform: translate(-3rem, 0);
     }
 }
+
+@keyframes nav-active {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}

@@ -1,10 +1,19 @@
 @import "../abstracts/variables";
 
 .about {
-    height: 100rem;
-    background-color: #303841;
-    transform: translateY(-0.5rem); //fix error with svg border-radius
+    height: 80rem;
+
+    transform: translateY(-1rem); //fix error with svg border-radius
     position: relative;
+    z-index: 0;
+
+    @media (max-width: 1000px) {
+        height: 100%;
+    }
+
+    @media (max-width: 550px) {
+        text-align: center;
+    }
 
     &-head {
         border-bottom: solid 1px white;
@@ -22,7 +31,11 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin: 3rem 0;
+        margin: 5rem 0;
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
+        }
     }
 
     &-bio {
@@ -49,6 +62,12 @@
     &-skills {
         flex: 0 0 45%;
 
+        @media (max-width: 1000px) {
+            width: 90vw;
+            height: 100%;
+            margin-bottom: 5rem;
+        }
+
         &-head {
             font-size: 4rem;
         }
@@ -59,6 +78,10 @@
             justify-content: center;
             align-items: center;
             width: 100%;
+
+            @media (max-width: 430px) {
+                transform: translateX(5vw);
+            }
         }
     }
 
@@ -71,15 +94,26 @@
             align-items: center;
             justify-content: center;
             margin: 0.4rem 0;
+
+            @media (max-width: 430px) {
+                margin: 1rem 0;
+            }
         }
 
         &-bar-container {
             height: 100%;
             width: 70%;
-            transform: scale(1.4);
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        &-bar {
+            width: 80%;
+            position: relative;
+            margin: 0 !important;
+            filter: hue-rotate(125deg);
+            box-shadow: $box-shadow;
         }
 
         &-name {
@@ -103,6 +137,28 @@
         width: 1px;
         height: 40rem;
         background-color: white;
+        transform: rotate(0) scaleY(1);
+
+        @media (max-width: 1000px) {
+            transform: rotate(90deg) scaleY(7.5);
+            flex: 0 0 80px;
+        }
+
+        @media (max-width: 700px) {
+            transform: rotate(90deg) scaleY(5.5);
+        }
+
+        @media (max-width: 520px) {
+            transform: rotate(90deg) scaleY(4.5);
+        }
+
+        @media (max-width: 430px) {
+            transform: rotate(90deg) scaleY(3.5);
+        }
+
+        @media (max-width: 350px) {
+            transform: rotate(90deg) scaleY(3);
+        }
     }
 }
 
