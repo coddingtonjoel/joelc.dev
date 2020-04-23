@@ -3,6 +3,7 @@ import SVG from "./SVG";
 import SVGMobile from "./SVGMobile";
 import SVGButton from "./SVGButton";
 import MediaQuery from "react-responsive";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Header = () => {
     return (
@@ -19,9 +20,12 @@ const Header = () => {
                             I'm a student web developer.
                         </h1>
                     </div>
-                    <a className="header-btn" href="#about">
+                    <AnchorLink
+                        offset="100"
+                        className="header-btn"
+                        href="#about">
                         <SVGButton />
-                    </a>
+                    </AnchorLink>
                 </div>
             </MediaQuery>
             <MediaQuery maxDeviceWidth={700}>
@@ -34,9 +38,12 @@ const Header = () => {
                             I'm a student web developer.
                         </h1>
                     </div>
-                    <a className="header-btn header-mobile-btn" href="#about">
+                    <AnchorLink
+                        offset="100"
+                        className="header-btn header-mobile-btn"
+                        href="#about">
                         <SVGButton />
-                    </a>
+                    </AnchorLink>
                 </div>
             </MediaQuery>
         </div>

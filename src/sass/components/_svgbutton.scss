@@ -1,5 +1,5 @@
 .chev {
-    width: 6%;
+    width: 7%;
     min-width: 100px;
     pointer-events: all;
     position: relative;
@@ -27,26 +27,26 @@
 
     &:hover {
         & .chev-top {
-            transform: translateY(15px);
+            transform: translateY(35px);
         }
 
         & .chev-center {
-            transform: translateY(25px);
+            transform: translateY(50px);
             transition-delay: 0.08s;
         }
 
         & .chev-bottom {
-            transform: translateY(40px);
+            transform: translateY(70px);
             transition-delay: 0.16s;
         }
     }
 
     &-body {
-        fill: #4e1717;
+        fill: white;
     }
 
     &-shadow {
-        fill: white;
+        fill: rgb(66, 0, 0);
     }
 
     &-lefthalf {

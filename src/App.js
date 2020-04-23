@@ -3,6 +3,8 @@ import "./sass/main.scss";
 import Header from "./components/Header";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function App() {
     return (
@@ -10,6 +12,8 @@ function App() {
             <Navbar />
             <Header />
             <About />
+            <Projects />
+            <Contact />
         </div>
     );
 }

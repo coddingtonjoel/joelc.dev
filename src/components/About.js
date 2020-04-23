@@ -22,7 +22,8 @@ const About = () => {
                         (La Mirada, CA) pursuing a B.S. in Computer Science.
                         While being extremely self-motivated and creative, I am
                         passionate about learning and practicing the skills
-                        necessary to become a Front-End Developer.
+                        necessary to become a Front-End Developer. YOU NEED TO
+                        ADD MORE HERE DUMMY
                     </p>
                 </div>
                 <div className="about-splitter"></div>

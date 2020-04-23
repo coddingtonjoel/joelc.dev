@@ -1,12 +1,5 @@
 @import "../abstracts/mixins";
 
-:target::before {
-    content: "";
-    display: block;
-    height: 87px; /* fixed header height*/
-    margin: -87px 0 0; /* negative fixed header height */
-}
-
 * {
     margin: 0;
     padding: 0;
