@@ -2,4 +2,81 @@
     height: 100rem;
     background-color: #3a4750;
     padding-top: 8rem;
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5rem;
+        height: 70rem;
+
+        &-buttons {
+            flex: 0 0 32%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-splitter {
+            width: 1px;
+            height: 60rem;
+            background-color: white;
+            transform: rotate(0) scaleY(1);
+        }
+
+        &-info {
+            flex: 1 0 65%;
+        }
+    }
+}
+
+.project {
+    &-button {
+        background-color: #121212;
+        display: relative;
+        width: 25rem;
+        padding: 7%;
+        border-radius: 25px;
+        margin: 1.5rem 0;
+        border: none;
+        transition: 0.35s;
+        opacity: 0.3;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+            opacity: 1;
+        }
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 60%;
+            border-radius: 20px;
+            margin: 2rem;
+        }
+
+        & p {
+            color: white;
+            width: 70%;
+            font-size: 1.5rem;
+        }
+
+        & a:link,
+        & a:visited {
+            color: white;
+            background-color: #121212;
+            padding: 1% 8%;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            text-decoration: none;
+        }
+    }
 }
