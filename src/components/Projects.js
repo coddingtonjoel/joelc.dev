@@ -21,9 +21,7 @@ const Projects = () => {
                                 onClick={() => {
                                     setSelected(proj[0]);
                                 }}
-                                className="project-button"
-                                key={proj[0].title}
-                                autoFocus>
+                                className="project-button">
                                 <img src={proj[0].logo} alt="" />
                             </button>
                             <button
@@ -31,8 +29,7 @@ const Projects = () => {
                                 onClick={() => {
                                     setSelected(proj[1]);
                                 }}
-                                className="project-button"
-                                key={proj[1].title}>
+                                className="project-button">
                                 <img src={proj[1].logo} alt="" />
                             </button>
                             <button
@@ -40,8 +37,7 @@ const Projects = () => {
                                 onClick={() => {
                                     setSelected(proj[2]);
                                 }}
-                                className="project-button"
-                                key={proj[2].title}>
+                                className="project-button">
                                 <img src={proj[2].logo} alt="" />
                             </button>
                         </div>
