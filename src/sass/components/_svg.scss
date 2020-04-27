@@ -23,19 +23,19 @@
 
 .bubble {
     animation: bubble 20s ease-in backwards infinite;
-    animation-delay: 3s;
+    animation-delay: 1.8s;
     transform-origin: 30% 50%;
 
     &-m {
         animation: bubble-m 20s ease-in infinite backwards;
-        animation-delay: 2s;
+        animation-delay: 2.5s;
         transform-origin: 5% 45%;
     }
 }
 
 .bubble-two {
     animation: bubble-two 20s ease-in backwards infinite;
-    animation-delay: 5s;
+    animation-delay: 3s;
 
     &-m {
         animation: bubble-two-m 20s ease-in backwards infinite;
@@ -47,7 +47,7 @@
 .bubble-three {
     opacity: 0.4;
     animation: bubble-three 20s ease-in backwards infinite;
-    animation-delay: 3s;
+    animation-delay: 1.5s;
 }
 
 .text {

@@ -2,6 +2,7 @@ import React from "react";
 import linkedin from "../images/linkedin-brands.svg";
 import github from "../images/github-brands.svg";
 import codepen from "../images/codepen-brands.svg";
+import resume from "../static/joelc-resume.pdf";
 
 const Contact = () => {
     return (
@@ -14,7 +15,7 @@ const Contact = () => {
                     Feel free to email me at{" "}
                     <span className="bold">coddingtonjoel@gmail.com</span>.
                 </p>
-                <a href={process.env.PUBLIC_URL + "/resume"}>
+                <a href={resume} download>
                     Click here to view my resume!
                 </a>
             </div>

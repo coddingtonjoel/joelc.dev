@@ -20,10 +20,11 @@ const About = () => {
                     <p>
                         I'm a current undergraduate student at Biola University
                         (La Mirada, CA) pursuing a B.S. in Computer Science.
-                        While being extremely self-motivated and creative, I am
+                        While being highly self-motivated and creative, I am
                         passionate about learning and practicing the skills
-                        necessary to become a Front-End Developer. YOU NEED TO
-                        ADD MORE HERE DUMMY
+                        necessary to become either a UX/UI Engineer or Frontend
+                        Developer. I love design, animation, and web aesthetics,
+                        so I always aim to make beautiful work.
                     </p>
                 </div>
                 <div className="about-splitter"></div>
