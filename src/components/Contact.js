@@ -14,7 +14,9 @@ const Contact = () => {
                     Feel free to email me at{" "}
                     <span className="bold">coddingtonjoel@gmail.com</span>.
                 </p>
-                <a href="#!">Click here to view my resume!</a>
+                <a href={process.env.PUBLIC_URL + "/resume"}>
+                    Click here to view my resume!
+                </a>
             </div>
             <div className="contact-buttons">
                 <a

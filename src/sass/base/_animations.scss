@@ -170,3 +170,15 @@
         transform: translateY(0);
     }
 }
+
+@keyframes load {
+    0% {
+        stroke-dashoffset: -857;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 857;
+    }
+}
