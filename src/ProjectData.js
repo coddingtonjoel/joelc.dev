@@ -27,7 +27,7 @@ const projects = [
         logo: partboxLogo,
         sc: partboxSc,
         desc:
-            "PARTBOX is a mock website for a PC part delivery service. This website's concept is based off the idea of Lootcrate, but geared towards PC builders. I think this would be a genuinely interesting business plan for a company that tailors to a unique audience; I wish something of this sort existed! I've had some PC hardware experience, so this came to mind when generating an idea for a mock website as a frontend project to practice my skills.",
+            "PARTBOX is a mock website for a PC part delivery service. This website's concept is based off the idea of Lootcrate, but geared towards PC builders. I think this would be a genuinely interesting business plan for a company that tailors to a unique audience; I wish something of this sort existed! I've had some PC hardware experience, so this came to mind when generating an idea for a mock website as a frontend project to practice my skills. Not built with responsive design.",
         link: "https://coddingtonjoel.github.io/PARTBOX/",
     },
 ];
