@@ -54,7 +54,7 @@ const Projects = () => {
                 </MediaQuery>
                 <MediaQuery maxDeviceWidth={1000}>
                     <div className="project-accordion-container">
-                        <ul uk-accordion="collapsible: true; animation: false; multiple: true;">
+                        <ul uk-accordion="collapsible: true; animation: true; multiple: true;">
                             {proj.map((p) => {
                                 return (
                                     <ProjectAccordion
