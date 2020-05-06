@@ -23,7 +23,7 @@ const About = () => {
                         While being highly self-motivated and creative, I am
                         passionate about learning and practicing the skills
                         necessary to become either a UX/UI Engineer or Frontend
-                        Developer. I love design, animation, and web aesthetics,
+                        Developer. I love design, aesthetics, and web animation,
                         so I always aim to make beautiful work.
                     </p>
                 </div>
