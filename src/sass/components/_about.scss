@@ -164,3 +164,10 @@
 .ai {
     font-size: 1.5rem;
 }
+
+.fadeInLeft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
