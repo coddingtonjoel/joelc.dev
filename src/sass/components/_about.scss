@@ -69,18 +69,31 @@
 
         &-head {
             font-size: 4rem;
+            transform: translateY(-5rem);
+
+            @media (max-width: 1000px) {
+                margin-top: 10rem;
+            }
+        }
+
+        &-sub {
+            font-size: 1.8rem;
+            color: rgb(233, 126, 126);
+            transform: translateY(-5rem);
+
+            @media (min-width: 501px) {
+                visibility: hidden;
+                position: absolute;
+            }
         }
 
         &-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             width: 100%;
-
-            @media (max-width: 430px) {
-                transform: translateX(5vw);
-            }
         }
     }
 
@@ -90,29 +103,19 @@
         &-item {
             width: 100%;
             display: flex;
+            flex: 0 0 40%;
             align-items: center;
             justify-content: center;
             margin: 0.4rem 0;
+            padding: 1rem 0;
+
+            @media (max-width: 500px) {
+                flex: 0 0 30%;
+            }
 
             @media (max-width: 430px) {
                 margin: 1rem 0;
             }
-        }
-
-        &-bar-container {
-            height: 100%;
-            width: 70%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &-bar {
-            width: 80%;
-            position: relative;
-            margin: 0 !important;
-            filter: hue-rotate(125deg);
-            box-shadow: $box-shadow;
         }
 
         &-name {
@@ -120,15 +123,27 @@
             text-transform: uppercase;
             font-weight: 700;
             font-size: 2rem;
-            width: 10rem;
-            text-align: right;
+            width: 15rem;
+            text-align: left;
             transform: translateX(2rem);
+
+            @media (max-width: 500px) {
+                position: absolute;
+                visibility: hidden;
+            }
         }
 
         &-icon {
             height: 4rem;
             width: 4rem;
             transform: translateX(-2rem);
+
+            @media (max-width: 500px) {
+                transform: translateX(0);
+                margin: 1rem 0;
+                height: 6rem;
+                width: 6rem;
+            }
         }
     }
 

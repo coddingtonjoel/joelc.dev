@@ -77,6 +77,9 @@ const About = () => {
                     <div className="about-splitter"></div>
                     <div className="about-skills">
                         <h3 className="about-skills-head heading">Skills</h3>
+                        <p className="about-skills-sub">
+                            <p>(Tap icon to display name)</p>
+                        </p>
                         <div className="about-skills-container">
                             {skills.map((skill) => {
                                 return <Skill skill={skill} key={skill.name} />;

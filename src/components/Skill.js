@@ -9,37 +9,28 @@ const Skill = (props) => {
 
     return (
         <Fragment>
-            <MediaQuery minDeviceWidth={431}>
+            <MediaQuery minDeviceWidth={501}>
                 <div className="about-skill-item">
+                    <img
+                        className="about-skill-icon"
+                        src={props.skill.icon}
+                        alt=""
+                    />
                     <span className={`${ai} about-skill-name`}>
                         {props.skill.name}
                     </span>
-                    <div className="about-skill-bar-container">
-                        <progress
-                            className="uk-progress about-skill-bar"
-                            value={`${props.skill.percent}`}
-                            max="100"></progress>
-                    </div>
-                    <img
-                        className="about-skill-icon"
-                        src={props.skill.icon}
-                        alt=""
-                    />
                 </div>
             </MediaQuery>
-            <MediaQuery maxDeviceWidth={430}>
-                <div className="about-skill-item">
+            <MediaQuery maxDeviceWidth={500}>
+                <div className="about-skill-item" uk-tooltip={props.skill.name}>
                     <img
                         className="about-skill-icon"
                         src={props.skill.icon}
                         alt=""
                     />
-                    <div className="about-skill-bar-container">
-                        <progress
-                            className="uk-progress about-skill-bar"
-                            value={`${props.skill.percent}`}
-                            max="100"></progress>
-                    </div>
+                    <span className={`${ai} about-skill-name`}>
+                        {props.skill.name}
+                    </span>
                 </div>
             </MediaQuery>
         </Fragment>
