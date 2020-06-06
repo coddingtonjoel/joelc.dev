@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import MediaQuery from "react-responsive";
 
 const ProjectSelector = (props) => {
     const [open, setOpen] = useState(false);
@@ -30,32 +31,74 @@ const ProjectSelector = (props) => {
                 closeIconId={"close"}>
                 <div className="project-selector-modal">
                     <div uk-slider="center: true">
-                        <ul className="uk-slider-items uk-child-width-1-1@s uk-child-width-1-1@">
-                            <li>
-                                <LazyLoadImage
-                                    src={props.sc1}
-                                    alt=""
-                                    width={"100%"}
-                                    height={"26rem"}
-                                />
-                            </li>
-                            <li>
-                                <LazyLoadImage
-                                    src={props.sc2}
-                                    alt=""
-                                    width={"100%"}
-                                    height={"26rem"}
-                                />
-                            </li>
-                            <li>
-                                <LazyLoadImage
-                                    src={props.sc3}
-                                    alt=""
-                                    width={"100%"}
-                                    height={"26rem"}
-                                />
-                            </li>
-                        </ul>
+                        <MediaQuery minDeviceWidth={401}>
+                            <ul className="uk-slider-items uk-child-width-1-1@s uk-child-width-1-1@">
+                                <li>
+                                    <LazyLoadImage
+                                        src={props.sc1}
+                                        alt=""
+                                        width={"60rem"}
+                                        height={"100%"}
+                                        visibleByDefault={true}
+                                        effect={"blur"}
+                                    />
+                                </li>
+                                <li>
+                                    <LazyLoadImage
+                                        src={props.sc2}
+                                        alt=""
+                                        width={"60rem"}
+                                        height={"100%"}
+                                        visibleByDefault={true}
+                                        effect={"blur"}
+                                    />
+                                </li>
+                                <li>
+                                    <LazyLoadImage
+                                        src={props.sc3}
+                                        alt=""
+                                        width={"60rem"}
+                                        height={"100%"}
+                                        visibleByDefault={true}
+                                        effect={"blur"}
+                                    />
+                                </li>
+                            </ul>
+                        </MediaQuery>
+                        <MediaQuery maxDeviceWidth={400}>
+                            <ul className="uk-slider-items uk-child-width-1-1@s uk-child-width-1-1@">
+                                <li>
+                                    <LazyLoadImage
+                                        src={props.sc1}
+                                        alt=""
+                                        width={"100vw"}
+                                        height={"100%"}
+                                        visibleByDefault={true}
+                                        effect={"blur"}
+                                    />
+                                </li>
+                                <li>
+                                    <LazyLoadImage
+                                        src={props.sc2}
+                                        alt=""
+                                        width={"100vw"}
+                                        height={"100%"}
+                                        visibleByDefault={true}
+                                        effect={"blur"}
+                                    />
+                                </li>
+                                <li>
+                                    <LazyLoadImage
+                                        src={props.sc3}
+                                        alt=""
+                                        width={"100vw"}
+                                        height={"100%"}
+                                        visibleByDefault={true}
+                                        effect={"blur"}
+                                    />
+                                </li>
+                            </ul>
+                        </MediaQuery>
                         <a
                             className="uk-position-top-left uk-position-small uk-hidden-hover project-selector-nav project-selector-nav-left"
                             href="!#"
