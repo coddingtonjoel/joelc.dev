@@ -36,7 +36,7 @@ const ProjectSelector = (props) => {
                                     src={props.sc1}
                                     alt=""
                                     width={"100%"}
-                                    height={"25rem"}
+                                    height={"26rem"}
                                 />
                             </li>
                             <li>
@@ -44,7 +44,7 @@ const ProjectSelector = (props) => {
                                     src={props.sc2}
                                     alt=""
                                     width={"100%"}
-                                    height={"25rem"}
+                                    height={"26rem"}
                                 />
                             </li>
                             <li>
@@ -52,7 +52,7 @@ const ProjectSelector = (props) => {
                                     src={props.sc3}
                                     alt=""
                                     width={"100%"}
-                                    height={"25rem"}
+                                    height={"26rem"}
                                 />
                             </li>
                         </ul>
