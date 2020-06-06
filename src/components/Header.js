@@ -14,6 +14,7 @@ const Header = () => {
                         <SVG />
                     </div>
                     <div className="header-text-wrapper">
+                        {/* TODO add GSAP animation like sketch website */}
                         <h1 className="header-text heading">
                             My name is Joel Coddington.
                             <br />

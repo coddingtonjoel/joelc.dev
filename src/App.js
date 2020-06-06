@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Loading from "./components/Loading";
+import ProjectSelector from "./components/ProjectSelector";
 
 function App() {
     const [loading, setLoading] = useState(false);
@@ -27,6 +28,7 @@ function App() {
             <About />
             <Projects />
             <Contact />
+            <ProjectSelector />
         </div>
     );
 }

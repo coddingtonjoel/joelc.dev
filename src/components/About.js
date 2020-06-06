@@ -7,6 +7,7 @@ import react from "../images/react.svg";
 import js from "../images/js.svg";
 import xd from "../images/xd.svg";
 import ai from "../images/ai.svg";
+import electron from "../images/electron.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import MediaQuery from "react-responsive";
 
@@ -21,8 +22,8 @@ const About = () => {
                     <div className="about-bio">
                         <ScrollAnimation
                             animateIn="fadeInLeft"
-                            animateOnce="true"
-                            duration="1.5">
+                            animateOnce={true}
+                            duration={1.5}>
                             <img src={me} alt="" />
                             <p>
                                 I'm a current undergraduate student at Biola
@@ -42,17 +43,22 @@ const About = () => {
                     <div className="about-skills">
                         <ScrollAnimation
                             animateIn="fadeInRight"
-                            animateOnce="true"
-                            duration="1.5">
+                            animateOnce={true}
+                            duration={1.5}>
                             <h3 className="about-skills-head heading">
                                 Skills
                             </h3>
-                            <div className="about-skills-container">
-                                {skills.map((skill) => {
-                                    return (
-                                        <Skill skill={skill} key={skill.name} />
-                                    );
-                                })}
+                            <div className="about-skills-center-container">
+                                <div className="about-skills-container">
+                                    {skills.map((skill) => {
+                                        return (
+                                            <Skill
+                                                skill={skill}
+                                                key={skill.name}
+                                            />
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </ScrollAnimation>
                     </div>
@@ -78,7 +84,7 @@ const About = () => {
                     <div className="about-skills">
                         <h3 className="about-skills-head heading">Skills</h3>
                         <p className="about-skills-sub">
-                            <p>(Tap icon to display name)</p>
+                            <span>(Tap icon to display name)</span>
                         </p>
                         <div className="about-skills-container">
                             {skills.map((skill) => {
@@ -95,33 +101,31 @@ const About = () => {
 const skills = [
     {
         name: "CSS",
-        percent: 90,
         icon: css,
     },
     {
         name: "HTML",
-        percent: 80,
         icon: html,
     },
     {
         name: "React",
-        percent: 70,
         icon: react,
     },
     {
         name: "JavaScript",
-        percent: 70,
         icon: js,
     },
     {
         name: "Adobe XD",
-        percent: 50,
         icon: xd,
     },
     {
         name: "Adobe Illustrator",
-        percent: 50,
         icon: ai,
+    },
+    {
+        name: "Electron",
+        icon: electron,
     },
 ];
 

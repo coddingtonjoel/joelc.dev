@@ -60,6 +60,7 @@
 
     &-skills {
         flex: 0 0 45%;
+        position: relative;
 
         @media (max-width: 1000px) {
             width: 90vw;
@@ -87,13 +88,24 @@
             }
         }
 
+        &-center-container {
+            position: relative;
+        }
+
         &-container {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
+            position: relative;
+            left: 60%;
+            transform: translateX(-50%);
+
+            @media (max-width: 500px) {
+                left: 55%;
+            }
         }
     }
 
@@ -177,7 +189,7 @@
 }
 
 .ai {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .fadeInLeft {
