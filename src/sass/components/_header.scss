@@ -38,8 +38,6 @@
         left: 50%;
         margin: 5rem 0;
         transform: translate(-50%, -15%);
-        animation: header-text 2s ease backwards;
-        animation-delay: 2s;
 
         @media (max-width: 630px) {
             font-size: 4.5rem;
