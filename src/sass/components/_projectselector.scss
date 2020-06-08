@@ -145,7 +145,8 @@
     & hr {
         border: 0.2px solid black;
         opacity: 0.1;
-        margin: 4rem 5rem;
+        margin: 3rem 5rem;
+        margin-bottom: 2rem;
 
         @media (max-width: 400px) {
             margin: 2rem 5rem;
@@ -154,8 +155,9 @@
 
     &-desc {
         color: black;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin: 2rem 5rem;
+        margin-top: 0;
 
         @media (max-width: 400px) {
             font-size: 1.8vh;
@@ -176,7 +178,7 @@
 
 // overwriting react-responsive-modal css rules to make different modal size
 .react-responsive-modal-modal {
-    height: 80rem;
+    height: 75rem;
     width: 60rem;
     background-color: rgb(231, 231, 231) !important;
     min-width: 40vw !important;
