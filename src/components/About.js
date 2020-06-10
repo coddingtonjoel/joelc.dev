@@ -108,13 +108,14 @@ const skills = [
         icon: html,
     },
     {
-        name: "React",
-        icon: react,
-    },
-    {
         name: "JavaScript",
         icon: js,
     },
+    {
+        name: "React",
+        icon: react,
+    },
+
     {
         name: "Adobe XD",
         icon: xd,
