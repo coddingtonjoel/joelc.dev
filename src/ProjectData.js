@@ -1,6 +1,10 @@
+import compactLogo from "./images/compact.png";
 import fleetLogo from "./images/fleetpc.svg";
 import octagonsLogo from "./images/Octagons.svg";
 import literasureLogo from "./images/literasure-full.svg";
+import compact1 from "./images/screenshots/compact1.jpg";
+import compact2 from "./images/screenshots/compact2.jpg";
+import compact3 from "./images/screenshots/compact3.jpg";
 import fleet1 from "./images/screenshots/fleet1.jpg";
 import fleet2 from "./images/screenshots/fleet2.jpg";
 import fleet3 from "./images/screenshots/fleet3.jpg";
@@ -12,6 +16,18 @@ import literasure2 from "./images/screenshots/literasure2.jpg";
 import literasure3 from "./images/screenshots/literasure3.jpg";
 
 const projects = [
+    {
+        title: "COMPACT",
+        sub: "All-in-one Code Minifier for Desktop",
+        tech: "Electron, React.js, Node.js, Sass",
+        logo: compactLogo,
+        sc1: compact1,
+        sc2: compact2,
+        sc3: compact3,
+        desc:
+            "Compact is an all-in-one code minifier for desktop. Using Electron and React.js, Compact aims to allow users to create batch exports of minified files at a very fast speed. The app is currently in a pre-alpha stage, so everything may be subject to change. Once beta hits, Compact will be making its way to the Mac App Store and Windows Store respectively, while staying open source on GitHub.",
+        link: "https://github.com/coddingtonjoel/Compact",
+    },
     {
         title: "FLEET PC",
         sub: "Custom PC Builds",
