@@ -1,6 +1,6 @@
 import React from "react";
 import Skill from "./Skill";
-import me from "../images/picture.jpg";
+import me from "../images/portrait.jpg";
 import css from "../images/css.svg";
 import html from "../images/html.svg";
 import react from "../images/react.svg";
@@ -8,6 +8,7 @@ import js from "../images/js.svg";
 import xd from "../images/xd.svg";
 import ai from "../images/ai.svg";
 import electron from "../images/electron.svg";
+import sketch from "../images/sketch.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import MediaQuery from "react-responsive";
 
@@ -34,7 +35,16 @@ const About = () => {
                                 necessary to become either a UX/UI Engineer or
                                 Frontend Developer. I love design, aesthetics,
                                 and web animation, so I always aim to make
-                                beautiful work.
+                                beautiful work. I am currently interning as a{" "}
+                                <strong>
+                                    Frontend Web Developer at Cartana Inc.
+                                </strong>
+                                , and as a{" "}
+                                <strong>
+                                    Coding Instructor at Coding Minds Academy
+                                </strong>
+                                , teaching courses on JavaScript, React, CSS,
+                                and Python.
                             </p>
                         </ScrollAnimation>
                     </div>
@@ -115,7 +125,14 @@ const skills = [
         name: "React",
         icon: react,
     },
-
+    {
+        name: "Electron",
+        icon: electron,
+    },
+    {
+        name: "Sketch",
+        icon: sketch,
+    },
     {
         name: "Adobe XD",
         icon: xd,
@@ -123,10 +140,6 @@ const skills = [
     {
         name: "Adobe Illustrator",
         icon: ai,
-    },
-    {
-        name: "Electron",
-        icon: electron,
     },
 ];
 

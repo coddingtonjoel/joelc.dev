@@ -25,7 +25,7 @@ const projects = [
         sc2: compact2,
         sc3: compact3,
         desc:
-            "Compact is an all-in-one code minifier for desktop. Using Electron and React.js, Compact aims to allow users to create batch exports of minified files at a very fast speed. The app is currently in a pre-alpha stage, so everything may be subject to change. Once beta hits, Compact will be making its way to the Mac App Store and Windows Store respectively, while staying open source on GitHub.",
+            "Compact is an all-in-one code minifier for desktop. Using Electron and React.js, Compact aims to allow users to create batch exports of minified files at a very fast speed. The app is currently in a pre-alpha stage, so everything may be subject to change. Once beta hits, Compact will be making its way to the macOS App Store and Windows Store while staying open source on GitHub.",
         link: "https://github.com/coddingtonjoel/Compact",
     },
     {
