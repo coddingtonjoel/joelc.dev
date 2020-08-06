@@ -35,11 +35,9 @@ const About = () => {
                                 necessary to become either a UX/UI Engineer or
                                 Frontend Developer. I love design, aesthetics,
                                 and web animation, so I always aim to make
-                                beautiful work. I am currently interning as a{" "}
-                                <strong>
-                                    Frontend Web Developer at Cartana Inc.
-                                </strong>
-                                , and as a{" "}
+                                beautiful work. I am currently the{" "}
+                                <strong>CTO at Cartana Inc.</strong>, and an
+                                intern as a{" "}
                                 <strong>
                                     Coding Instructor at Coding Minds Academy
                                 </strong>
