@@ -1,0 +1,17 @@
+@keyframes nav {
+    from {
+        transform: translate(0, -10rem);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes nav-active {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
