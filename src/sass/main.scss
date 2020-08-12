@@ -1,16 +1,10 @@
-// import uikit
-@import "./vendors/uikit/css/uikit";
+// abstracts
 
-@import "./base/animations";
-@import "./base/reset";
-@import "./base/typography";
+// base
+@import "./base/reset.scss";
 
-@import "./components/header";
-@import "./components/svg";
-@import "./components/svgbutton";
-@import "./components/about";
-@import "./components/navbar";
-@import "./components/projects";
-@import "./components/contact";
-@import "./components/loading";
-@import "./components/projectselector";
+// components
+
+// pages
+
+// vendors
