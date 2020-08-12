@@ -1,0 +1,91 @@
+@import "../abstracts/variables";
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 68px;
+    background-color: $lm-grey;
+    box-shadow: $box-shadow;
+
+    @media (min-width: 701px) {
+        animation: nav 1s ease backwards;
+    }
+
+    &-logo {
+        height: 65px;
+        width: 65px;
+        position: fixed;
+        top: 0;
+        left: 20px;
+        z-index: 101;
+
+        @media (min-width: 701px) {
+            animation: nav 1s ease backwards;
+        }
+    }
+
+    &-item:link,
+    &-item:visited {
+        color: $lm-dark;
+        text-decoration: none;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Raleway";
+        font-weight: 300;
+        font-size: 16px;
+        flex: 0 0 8%;
+        margin: 0 5rem;
+
+        @media (max-width: 470px) {
+            margin: 0 3rem;
+        }
+    }
+
+    &-icon {
+        width: 20px;
+        height: 20px;
+        z-index: 20;
+        position: relative;
+        margin-right: 1.5rem;
+        // get to dark grey
+        filter: $lm-icon-brightness;
+
+        @media (max-width: 550px) {
+            margin-right: 0;
+        }
+    }
+
+    &-text {
+        font-size: 16px;
+        line-height: 0;
+
+        @media (max-width: 550px) {
+            font-size: 0;
+        }
+    }
+
+    //scrollspy class
+    &-active {
+        position: absolute;
+
+        &::after {
+            border-bottom: $lm-dark solid 1.2px;
+            content: "";
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 50%;
+            margin: 0px auto;
+            animation: nav-active 0.35s forwards;
+        }
+    }
+}

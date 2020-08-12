@@ -1,15 +1,16 @@
 module.exports = {
     siteMetadata: {
-        title: `Template`,
-        description: `Template Description`,
+        title: `Joel Coddington || Web Developer`,
+        description: `Portfolio website for Joel Coddington, a Computer Science student at Biola University.`,
         author: `Joel Coddington`,
-        // siteUrl: `https://template.com`,
+        siteUrl: `https://joelc.dev`,
     },
     plugins: [
         `gatsby-plugin-sitemap`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-netlify`,
+        `gatsby-plugin-material-ui`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -28,16 +29,7 @@ module.exports = {
                 background_color: `#663399`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
-                icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
         },
-        // {
-        //     resolve: "gatsby-plugin-web-font-loader",
-        //     options: {
-        //         google: {
-        //             families: ["Work Sans", "Lato"],
-        //         },
-        //     },
-        // },
     ],
 };

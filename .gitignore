@@ -6,6 +6,10 @@ scripts/flow/*/.flowconfig
 
 *~
 
+.cache/*
+
+public/*
+
 *.pyc
 
 .grunt

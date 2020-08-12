@@ -2,8 +2,11 @@
 
 // base
 @import "./base/reset.scss";
+@import "./base/animations.scss";
+@import "../../static/fonts.css";
 
 // components
+@import "./components/navbar.scss";
 
 // pages
 
