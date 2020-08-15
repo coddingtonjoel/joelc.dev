@@ -1,17 +1,35 @@
-@keyframes nav {
-    from {
-        transform: translate(0, -10rem);
-    }
-    to {
-        transform: translate(0, 0);
-    }
-}
-
 @keyframes nav-active {
     from {
         width: 0;
     }
     to {
         width: 100%;
+    }
+}
+
+// strand animations
+
+@keyframes allStrandDescend {
+    from {
+        transform: translateY(-30rem);
+    }
+    to {
+        // THIS IS THE MAGIC VALUE TO MAKE IT LOOK INFINITE
+        transform: translateY(-4.8rem);
+    }
+}
+
+@keyframes allStrandSpin {
+    0% {
+        transform: scaleX(1);
+    }
+    2% {
+        transform: scaleX(0);
+    }
+    10% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(1);
     }
 }

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import home from "../images/icons/home.svg";
 import about from "../images/icons/about.svg";
 import projects from "../images/icons/projects.svg";
@@ -8,14 +8,24 @@ import Scrollspy from "react-scrollspy";
 import { Link } from "gatsby";
 
 const Navbar = () => {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    const setDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+        console.log("mode changed");
+    };
+
     return (
         <Fragment>
-            <img
-                className="nav-logo"
-                src={logoBlack}
-                alt=""
-                draggable="false"
-            />
+            <Link to="/">
+                <img
+                    className="nav-logo"
+                    src={logoBlack}
+                    alt=""
+                    draggable="false"
+                />
+            </Link>
+
             <Scrollspy
                 className="nav"
                 items={["home", "about", "projects", "contact"]}
@@ -58,6 +68,18 @@ const Navbar = () => {
                     <p className="nav-text">Contact</p>
                 </Link>
             </Scrollspy>
+            <div className="nav-switch switch">
+                <label>
+                    Light
+                    <input
+                        checked={isDarkMode}
+                        onChange={setDarkMode}
+                        type="checkbox"
+                    />
+                    <span className="lever"></span>
+                    Dark
+                </label>
+            </div>
         </Fragment>
     );
 };
