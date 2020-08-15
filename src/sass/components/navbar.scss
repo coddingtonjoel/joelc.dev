@@ -9,13 +9,9 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 68px;
-    background-color: $lm-grey;
+    height: $navbar-height;
+    background-color: $lm-gray;
     box-shadow: $box-shadow;
-
-    @media (min-width: 701px) {
-        animation: nav 1s ease backwards;
-    }
 
     &-logo {
         height: 65px;
@@ -24,10 +20,6 @@
         top: 0;
         left: 20px;
         z-index: 101;
-
-        @media (min-width: 701px) {
-            animation: nav 1s ease backwards;
-        }
     }
 
     &-item:link,
@@ -41,7 +33,6 @@
         font-family: "Raleway";
         font-weight: 300;
         font-size: 16px;
-        flex: 0 0 8%;
         margin: 0 5rem;
 
         @media (max-width: 470px) {
@@ -55,7 +46,8 @@
         z-index: 20;
         position: relative;
         margin-right: 1.5rem;
-        // get to dark grey
+
+        // set to dark grey color
         filter: $lm-icon-brightness;
 
         @media (max-width: 550px) {
@@ -88,4 +80,28 @@
             animation: nav-active 0.35s forwards;
         }
     }
+
+    &-switch {
+        position: fixed;
+        top: (($navbar-height / 2) / 2 + 4);
+        right: 60px;
+        z-index: 101;
+    }
+}
+
+.switch label {
+    color: $lm-dark;
+}
+
+.switch label .lever {
+    background-color: #d8d8d8 !important;
+}
+.switch label .lever::after {
+    background-color: #adadad !important;
+}
+.switch label input[type="checkbox"]:checked + .lever {
+    background-color: #d8d8d8 !important;
+}
+.switch label input[type="checkbox"]:checked + .lever::after {
+    background-color: #adadad !important;
 }

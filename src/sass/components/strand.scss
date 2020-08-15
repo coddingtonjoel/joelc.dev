@@ -1,0 +1,62 @@
+.strand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 250px;
+    opacity: 0.8;
+
+    &-blob {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &-svg-wrapper {
+        margin: 0;
+        padding: 0;
+        animation: allStrandDescend 7s linear infinite;
+
+        // another magic value
+        height: 126px;
+    }
+
+    &-unit {
+        z-index: 20;
+        //animation: allStrandDescend 7s linear infinite;
+    }
+
+    &-one {
+        animation: allStrandSpin 7s ease infinite;
+        animation-delay: 0s;
+    }
+    &-two {
+        animation: allStrandSpin 7s ease infinite 0.2s;
+    }
+    &-three {
+        animation: allStrandSpin 7s ease infinite 0.4s;
+    }
+    &-four {
+        animation: allStrandSpin 7s ease infinite 0.6s;
+    }
+    &-five {
+        animation: allStrandSpin 7s ease infinite 0.8s;
+    }
+    &-six {
+        animation: allStrandSpin 7s ease infinite 1s;
+    }
+    &-seven {
+        animation: allStrandSpin 7s ease infinite 1.2s;
+    }
+    &-eight {
+        animation: allStrandSpin 7s ease infinite 1.4s;
+    }
+    &-nine {
+        animation: allStrandSpin 7s ease infinite 1.6s;
+    }
+    &-ten {
+        animation: allStrandSpin 7s ease infinite 1.8s;
+    }
+}

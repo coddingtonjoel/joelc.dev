@@ -10,7 +10,6 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-netlify`,
-        `gatsby-plugin-material-ui`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
