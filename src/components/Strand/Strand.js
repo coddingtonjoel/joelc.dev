@@ -1,6 +1,5 @@
 import React from "react";
 import Unit from "./Unit";
-import Blob from "./Blob";
 
 const Strand = () => {
     return (
@@ -15,7 +14,6 @@ const Strand = () => {
             <Unit num="eight" />
             <Unit num="nine" />
             <Unit num="ten" />
-            <Blob />
         </div>
     );
 };

@@ -11,7 +11,7 @@ const Header = () => {
     } = useStaticQuery(query);
 
     return (
-        <div className="header">
+        <div id="home" className="header">
             <Img className="header-img" fluid={fluid} draggable={false} />
             <div className="header-text">
                 <h1>HI, I'M JOEL CODDINGTON.</h1>
