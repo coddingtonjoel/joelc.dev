@@ -1,14 +1,16 @@
 import React from "react";
+import styled from "styled-components";
+import { allStrandDescend, allStrandSpin } from "../../global/Animations";
 
 const Unit = ({ num }) => {
     return (
-        <div className="strand-svg-wrapper">
-            <svg
+        <Wrapper>
+            <SVGWrapper
                 width="128px"
                 height="128px"
                 viewBox="0 0 128 128"
                 version="1.1"
-                className={`strand-unit strand-${num}`}>
+                num={num}>
                 <g
                     id="Artboard"
                     stroke="none"
@@ -25,9 +27,24 @@ const Unit = ({ num }) => {
                         width="88.5"
                         height="88.5"></rect>
                 </g>
-            </svg>
-        </div>
+            </SVGWrapper>
+        </Wrapper>
     );
 };
+
+const Wrapper = styled.div`
+    margin: 0;
+    padding: 0;
+    animation: ${allStrandDescend} 7s linear infinite;
+
+    /* another magic value */
+    height: 126px;
+`;
+
+const SVGWrapper = styled.svg`
+    z-index: 20;
+    animation: ${allStrandSpin} 7s ease infinite;
+    animation-delay: ${(props) => (props.num - 1) * 0.2}s;
+`;
 
 export default Unit;

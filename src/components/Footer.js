@@ -2,11 +2,12 @@ import React from "react";
 import linkedin from "../images/icons/linkedin.svg";
 import github from "../images/icons/github.svg";
 import codepen from "../images/icons/codepen.svg";
+import styled from "styled-components";
 
 const Footer = () => {
     return (
-        <div className="footer">
-            <div className="footer-icons">
+        <Wrapper className="footer">
+            <div className="icons">
                 <a
                     href="https://www.linkedin.com/in/joel-coddington/"
                     rel="noopener noreferrer"
@@ -26,9 +27,41 @@ const Footer = () => {
                     <img src={codepen} alt="Codepen" draggable="false" />
                 </a>
             </div>
-            <div className="footer-copyright">JOEL CODDINGTON ©2020</div>
-        </div>
+            <div className="copyright">JOEL CODDINGTON ©2020</div>
+        </Wrapper>
     );
 };
+
+const Wrapper = styled.div`
+    background-color: ${(props) => props.theme.background};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 130px;
+    padding: 10px 0;
+
+    .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            height: 100%;
+            width: 30px;
+            margin: 0 20px;
+        }
+    }
+
+    .copyright {
+        font-family: "Raleway";
+        font-weight: 700;
+        text-align: center;
+        font-size: 0.9rem;
+
+        /* // color for both modes */
+        color: #b7b7b7;
+    }
+`;
 
 export default Footer;

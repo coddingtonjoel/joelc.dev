@@ -1,0 +1,24 @@
+.active-light {
+    position: absolute;
+
+    &::after {
+        border-bottom: #494949 solid 1.2px;
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        margin: 0px auto;
+        animation: nav-active 0.35s forwards;
+    }
+}
+
+@keyframes nav-active {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}

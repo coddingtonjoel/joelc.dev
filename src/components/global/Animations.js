@@ -1,25 +1,18 @@
-@keyframes nav-active {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
+import { keyframes } from "styled-components";
 
 // strand animations
 
-@keyframes allStrandDescend {
+export const allStrandDescend = keyframes`
     from {
         transform: translateY(-30rem);
     }
     to {
-        // THIS IS THE MAGIC VALUE TO MAKE IT LOOK INFINITE
-        transform: translateY(-4.8rem);
+        ${"" /* THIS IS THE MAGIC VALUE TO MAKE IT LOOK INFINITE */}
+        transform: translateY(-2.2rem);
     }
-}
+`;
 
-@keyframes allStrandSpin {
+export const allStrandSpin = keyframes`
     0% {
         transform: scaleX(1);
     }
@@ -32,4 +25,4 @@
     100% {
         transform: scaleX(1);
     }
-}
+`;
