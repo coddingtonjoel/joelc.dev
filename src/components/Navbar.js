@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import home from "../images/icons/home.svg";
 import about from "../images/icons/about.svg";
 import projects from "../images/icons/projects.svg";
@@ -8,14 +8,7 @@ import Scrollspy from "react-scrollspy";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
-const Navbar = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    const setDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-        console.log("mode changed");
-    };
-
+const Navbar = props => {
     return (
         <Wrapper>
             <Link to="/">
@@ -69,8 +62,8 @@ const Navbar = () => {
                 <label>
                     Light
                     <input
-                        checked={isDarkMode}
-                        onChange={setDarkMode}
+                        checked={props.mode}
+                        onChange={props.toggleMode}
                         type="checkbox"
                     />
                     <span className="lever"></span>
