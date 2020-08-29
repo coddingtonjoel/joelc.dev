@@ -159,7 +159,7 @@ const Wrapper = styled.div`
     }
 
     .togglegroup {
-        position: absolute;
+        position: fixed;
         top: 10px;
         right: 50px;
         z-index: 100;
