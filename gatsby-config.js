@@ -11,6 +11,7 @@ module.exports = {
         `gatsby-plugin-sass`,
         `gatsby-plugin-netlify`,
         `gatsby-plugin-styled-components`,
+        `gatsby-plugin-material-ui`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
