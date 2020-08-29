@@ -24,7 +24,7 @@ module.exports = {
             options: {
                 custom: {
                     families: ["Lato, Raleway"],
-                    urls: [`${__dirname}/static/fonts.css`],
+                    urls: [`fonts.css`],
                 },
             },
         },
