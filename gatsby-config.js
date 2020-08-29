@@ -13,6 +13,13 @@ module.exports = {
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-material-ui`,
         {
+            resolve: `gatsby-source-strapi`,
+            options: {
+                apiURL: `http://localhost:1337`,
+                contentTypes: [`about-content`, `project`, `skill`],
+            },
+        },
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,

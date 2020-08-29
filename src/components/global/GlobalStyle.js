@@ -2,10 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     * {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    transition: 0.3s;
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+        transition: 0.3s;
     }
 
     body {
@@ -16,22 +16,5 @@ export const GlobalStyle = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
-    }
-
-    .switch label {
-    color: $lm-dark;
-    }
-
-    .switch label .lever {
-        background-color: #d8d8d8 !important;
-    }
-    .switch label .lever::after {
-        background-color: #adadad !important;
-    }
-    .switch label input[type="checkbox"]:checked + .lever {
-        background-color: #d8d8d8 !important;
-    }
-    .switch label input[type="checkbox"]:checked + .lever::after {
-        background-color: #adadad !important;
     }
 `;
