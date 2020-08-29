@@ -8,6 +8,7 @@ import { StylesProvider } from "@material-ui/core/styles";
 
 const Layout = ({ children }) => {
     // access this in other places using withTheme()
+    // TODO save this in local storage
     const [mode, setMode] = useState(lightTheme);
 
     const toggleMode = newMode => {
