@@ -1,12 +1,11 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import Img from "gatsby-image";
 import Strand from "./Strand/Strand";
 import Button from "../global/Button";
-import more from "../../images/icons/learn-more.svg";
 
-const Header = () => {
+const Header = props => {
     const {
         file: {
             childImageSharp: { fluid },
@@ -21,18 +20,28 @@ const Header = () => {
                 <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
                 <Button href="#about">
                     <div className="flex">
-                        Learn More <img src={more} />
+                        Learn More
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                fill={props.theme.primary}
+                                d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                            />
+                        </svg>
                     </div>
                 </Button>
             </div>
-
             <Strand />
         </Wrapper>
     );
 };
 
 const Wrapper = styled.div`
-    background-color: $lm-white;
+    background-color: ${props => props.theme.background};
     position: relative;
     height: 780px;
     overflow: hidden;
@@ -44,21 +53,23 @@ const Wrapper = styled.div`
     }
 
     .text {
-        font-family: "Raleway";
-        font-weight: 300;
         color: ${props => props.theme.primary};
         position: absolute;
-        top: 28%;
+        top: 33%;
         left: 10%;
 
         h1 {
-            font-size: 3.3rem;
+            font-size: 3.2rem;
             margin-bottom: 40px;
+            font-family: "Raleway";
+            font-weight: 300;
         }
 
         h3 {
-            font-size: 2rem;
+            font-size: 1.9rem;
             margin-bottom: 40px;
+            font-family: "Raleway";
+            font-weight: 300;
         }
 
         .flex {
@@ -66,7 +77,7 @@ const Wrapper = styled.div`
             align-items: center;
             justify-content: center;
 
-            img {
+            svg {
                 margin-left: 10px;
                 margin-right: -10px;
             }
@@ -86,4 +97,4 @@ const query = graphql`
     }
 `;
 
-export default Header;
+export default withTheme(Header);

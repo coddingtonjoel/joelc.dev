@@ -18,6 +18,15 @@ module.exports = {
                 path: `${__dirname}/src/images`,
             },
         },
+        {
+            resolve: "gatsby-plugin-web-font-loader",
+            options: {
+                custom: {
+                    families: ["Lato, Raleway"],
+                    urls: [`${__dirname}/static/fonts.css`],
+                },
+            },
+        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
