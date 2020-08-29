@@ -23,6 +23,16 @@ const Navbar = props => {
         }
     };
 
+    React.useEffect(() => {
+        if (
+            typeof window !== "undefined" &&
+            localStorage.getItem("mode") !== null
+        ) {
+            const mode = localStorage.getItem("mode");
+            setMode(mode);
+        }
+    }, []);
+
     return (
         <Wrapper>
             <Link to="/">
