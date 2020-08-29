@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import home from "../images/icons/home.svg";
 import about from "../images/icons/about.svg";
 import projects from "../images/icons/projects.svg";
@@ -17,13 +17,15 @@ const Navbar = props => {
     const [mode, setMode] = useState("Light");
 
     const handleMode = (event, newMode) => {
+        // check to make sure at least one mode is selected
         if (newMode !== null) {
             setMode(newMode);
             props.toggleMode(newMode);
         }
     };
 
-    React.useEffect(() => {
+    //check if there's an existing mode in local storage to set the ToggleButton to
+    useEffect(() => {
         if (
             typeof window !== "undefined" &&
             localStorage.getItem("mode") !== null

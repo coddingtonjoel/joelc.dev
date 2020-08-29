@@ -1,7 +1,7 @@
 {
-    "name": "template",
+    "name": "joelc.dev",
     "private": true,
-    "description": "template description",
+    "description": "Portfolio Site",
     "version": "0.1.0",
     "author": "Joel Coddington",
     "dependencies": {
@@ -24,6 +24,7 @@
         "gatsby-plugin-styled-components": "^3.3.10",
         "gatsby-plugin-web-font-loader": "^1.0.4",
         "gatsby-source-filesystem": "^2.3.23",
+        "gatsby-source-strapi": "^0.0.12",
         "gatsby-transformer-sharp": "^2.5.12",
         "node-sass": "^4.14.1",
         "prop-types": "^15.7.2",
@@ -38,7 +39,7 @@
     "keywords": [
         "gatsby"
     ],
-    "license": "0BSD",
+    "license": "MIT",
     "scripts": {
         "build": "gatsby build",
         "develop": "gatsby clean && gatsby develop",
@@ -48,6 +49,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/coddingtonjoel/cartana"
+        "url": "https://github.com/coddingtonjoel/joelc.dev"
     }
 }

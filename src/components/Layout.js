@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
     // access this in other places using withTheme()
     const [mode, setMode] = useState(lightTheme);
 
+    // prop func sent down to navbar to set new mode in both state and local storage
     const toggleMode = newMode => {
         if (newMode === "Light") {
             setMode(lightTheme);
@@ -24,13 +25,6 @@ const Layout = ({ children }) => {
 
     // get previous mode (if any) from local storage
     useEffect(() => {
-        // TODO get rid of this, just for testing
-        if (typeof window !== "undefined") {
-            console.log("client side");
-        } else {
-            console.log("server side");
-        }
-
         if (
             typeof window !== "undefined" &&
             localStorage.getItem("mode") !== null
