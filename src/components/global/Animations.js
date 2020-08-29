@@ -8,7 +8,7 @@ export const allStrandDescend = keyframes`
     }
     to {
         ${"" /* THIS IS THE MAGIC VALUE TO MAKE IT LOOK INFINITE */}
-        transform: translateY(-2.2rem);
+        transform: translateY(-6.3rem);
     }
 `;
 

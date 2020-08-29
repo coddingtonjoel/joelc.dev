@@ -16,6 +16,22 @@
     }
 }
 
+.active-dark {
+    position: absolute;
+
+    &::after {
+        border-bottom: #e4e4e4 solid 1.2px;
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        margin: 0px auto;
+        animation: nav-active 0.35s forwards;
+    }
+}
+
 @keyframes nav-active {
     from {
         width: 0;

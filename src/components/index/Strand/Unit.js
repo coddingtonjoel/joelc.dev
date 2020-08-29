@@ -44,7 +44,7 @@ const Wrapper = styled.div`
 const SVGWrapper = styled.svg`
     z-index: 20;
     animation: ${allStrandSpin} 7s ease infinite;
-    animation-delay: ${(props) => (props.num - 1) * 0.2}s;
+    animation-delay: ${props => (props.num - 1) * 0.2}s;
 `;
 
 export default Unit;

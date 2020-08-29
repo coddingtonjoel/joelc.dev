@@ -5,10 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    }
-
-    html {
-        font-size: 85%;
+    transition: 0.3s;
     }
 
     body {
@@ -20,8 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     html {
         scroll-behavior: smooth;
     }
-
-    ${"" /* material-ui */}
 
     .switch label {
     color: $lm-dark;

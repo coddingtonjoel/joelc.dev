@@ -1,20 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import home from "../images/icons/home.svg";
 import about from "../images/icons/about.svg";
 import projects from "../images/icons/projects.svg";
 import contact from "../images/icons/contact.svg";
 import logoBlack from "../images/logo-black.svg";
+import logoWhite from "../images/logo-white.svg";
 import Scrollspy from "react-scrollspy";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
+import Sun from "@material-ui/icons/WbSunny";
+import Moon from "@material-ui/icons/Brightness3";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
+import ToggleButton from "@material-ui/lab/ToggleButton";
 
 const Navbar = props => {
+    const [mode, setMode] = useState("Light");
+
+    const handleMode = (event, newMode) => {
+        if (newMode !== null) {
+            setMode(newMode);
+            props.toggleMode(newMode);
+        }
+    };
+
     return (
         <Wrapper>
             <Link to="/">
                 <img
                     className="logo"
-                    src={logoBlack}
+                    src={props.theme.style === "light" ? logoBlack : logoWhite}
                     alt=""
                     draggable="false"
                 />
@@ -23,8 +37,11 @@ const Navbar = props => {
             <Scrollspy
                 className="nav"
                 items={["home", "about", "projects", "contact"]}
-                // TODO check for light mode / dark mode here
-                currentClassName="active-light"
+                currentClassName={`${
+                    props.theme.style === "light"
+                        ? "active-light"
+                        : "active-dark"
+                }`}
                 offset={-150}>
                 <Link className="item" to="#home">
                     <img className="icon" src={home} alt="" draggable="false" />
@@ -58,18 +75,18 @@ const Navbar = props => {
                     <p className="text">Contact</p>
                 </Link>
             </Scrollspy>
-            <div className="switch">
-                <label>
-                    Light
-                    <input
-                        checked={props.mode}
-                        onChange={props.toggleMode}
-                        type="checkbox"
-                    />
-                    <span className="lever"></span>
-                    Dark
-                </label>
-            </div>
+            <ToggleButtonGroup
+                className="togglegroup"
+                value={mode}
+                exclusive
+                onChange={handleMode}>
+                <ToggleButton value="Light">
+                    <Sun />
+                </ToggleButton>
+                <ToggleButton value="Dark">
+                    <Moon />
+                </ToggleButton>
+            </ToggleButtonGroup>
         </Wrapper>
     );
 };
@@ -107,7 +124,7 @@ const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
         font-family: "Raleway";
-        font-weight: 300;
+        font-weight: 400;
         font-size: 16px;
         margin: 0 5rem;
         width: 9rem;
@@ -141,12 +158,28 @@ const Wrapper = styled.div`
         }
     }
 
-    .switch {
-        position: fixed;
-        top: 23px;
-        right: 60px;
-        z-index: 101;
+    .togglegroup {
+        position: absolute;
+        top: 10px;
+        right: 50px;
+        z-index: 100;
+    }
+
+    .MuiSvgIcon-root {
+        fill: ${props => props.theme.primary};
+    }
+
+    .MuiToggleButton-root {
+        background-color: ${props => props.theme.background};
+    }
+
+    .MuiToggleButton-root:hover {
+        background-color: ${props => props.theme.modeHover};
+    }
+
+    .Mui-selected {
+        background-color: ${props => props.theme.modeSelected};
     }
 `;
 
-export default Navbar;
+export default withTheme(Navbar);
