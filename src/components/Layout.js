@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { ThemeProvider } from "styled-components";
@@ -8,13 +8,6 @@ import { StylesProvider } from "@material-ui/core/styles";
 
 const Layout = ({ children }) => {
     // access this in other places using withTheme()
-    // TODO save this in local storage
-
-    if (typeof window !== "undefined") {
-        console.log("we are running on the client");
-    } else {
-        console.log("we are running on the server");
-    }
     const [mode, setMode] = useState(lightTheme);
 
     const toggleMode = newMode => {
@@ -24,7 +17,32 @@ const Layout = ({ children }) => {
         if (newMode === "Dark") {
             setMode(darkTheme);
         }
+        if (typeof window !== "undefined") {
+            localStorage.setItem("mode", newMode);
+        }
     };
+
+    // get previous mode (if any) from local storage
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            console.log("we are running on the client");
+        } else {
+            console.log("we are running on the server");
+        }
+
+        if (
+            typeof window !== "undefined" &&
+            localStorage.getItem("mode") !== null
+        ) {
+            const mode = localStorage.getItem("mode");
+            if (mode === "Light") {
+                setMode(lightTheme);
+            }
+            if (mode === "Dark") {
+                setMode(darkTheme);
+            }
+        }
+    }, []);
 
     return (
         <StylesProvider injectFirst>
