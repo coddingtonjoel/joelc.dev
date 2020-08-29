@@ -24,10 +24,11 @@ const Layout = ({ children }) => {
 
     // get previous mode (if any) from local storage
     useEffect(() => {
+        // TODO get rid of this, just for testing
         if (typeof window !== "undefined") {
-            console.log("we are running on the client");
+            console.log("client side");
         } else {
-            console.log("we are running on the server");
+            console.log("server side");
         }
 
         if (
