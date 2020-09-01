@@ -10,11 +10,12 @@ const boxShadow = `0 0 1px 0 rgba(0, 0, 0, 0.144),
 
 export const lightTheme = {
     style: "light",
+    main: "#fff",
     primary: "#494949",
     secondary: secondary,
     background: "#f6f6f6",
     strand: "#b5b5b5",
-    modal: "#e4e4e4",
+    modal: "#f2f2f2",
     modalTag: modalTag,
     buttonBackground: "#fff",
     contactButtonBackground: "#fff",
@@ -31,6 +32,7 @@ export const lightTheme = {
 
 export const darkTheme = {
     style: "dark",
+    main: "000",
     primary: "#e4e4e4",
     secondary: secondary,
     background: "#292929",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled, { withTheme } from "styled-components";
 import Img from "gatsby-image";
@@ -14,8 +14,10 @@ const Header = props => {
     } = useStaticQuery(query);
 
     return (
-        <Wrapper id="home" className="header">
-            <Img className="img" fluid={fluid} draggable={false} />
+        <Wrapper id="home">
+            <div id="scene">
+                <Img className="img" fluid={fluid} draggable={false} />
+            </div>
             <div className="text">
                 <h1>HI, I'M JOEL CODDINGTON.</h1>
                 <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
@@ -74,11 +76,11 @@ const Wrapper = styled.div`
             margin-bottom: 40px;
             font-family: "Raleway";
             font-weight: 300;
-            animation: ${fadeIn} 1s ease backwards 0.6s;
+            animation: ${fadeIn} 1s ease backwards 0.55s;
         }
 
         .btn {
-            animation: ${fadeIn} 1s ease backwards 1s;
+            animation: ${fadeIn} 1s ease backwards 0.8s;
             transition: 0s;
         }
 

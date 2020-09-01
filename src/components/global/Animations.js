@@ -34,6 +34,6 @@ export const fadeIn = keyframes`
     }
     100% {
         opacity: 1;
-        transform: none;
+        transform: translateY(0);
     }
 `;
