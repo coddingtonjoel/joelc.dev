@@ -1,3 +1,7 @@
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
     siteMetadata: {
         title: `Joel Coddington || Web Developer`,
@@ -13,10 +17,10 @@ module.exports = {
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-material-ui`,
         {
-            resolve: `gatsby-source-strapi`,
+            resolve: `gatsby-source-contentful`,
             options: {
-                apiURL: `http://localhost:1337`,
-                contentTypes: [`about-content`, `project`, `skill`],
+                spaceId: `dvhyftb64zvu`,
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
         },
         {

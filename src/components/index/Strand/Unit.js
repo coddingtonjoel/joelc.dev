@@ -19,7 +19,7 @@ const Unit = ({ num }) => {
                     fillRule="evenodd">
                     <rect
                         id="Rectangle-Copy"
-                        stroke="#b5b5b5"
+                        stroke="#999"
                         strokeWidth="1.75"
                         transform="translate(64.000000, 64.000000) rotate(-45.000000) translate(-64.000000, -64.000000) "
                         x="19.75"

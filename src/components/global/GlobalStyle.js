@@ -9,7 +9,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        ${"" /* keep 0s transition to stop padding from being animated */}
         padding-top: 68px;
+        transition: 0s;
         font-family: "Lato";
         font-weight: 300;
     }
