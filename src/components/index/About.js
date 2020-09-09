@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+import Modal from "@material-ui/core/Modal";
+import Fade from "@material-ui/core/Fade";
 
 const About = () => {
+    const [isOpen, setIsOpen] = useState(false);
     const { allContentfulAbout, allContentfulSkill } = useStaticQuery(query);
-
     const { portrait, description } = allContentfulAbout.nodes[0];
     const { nodes: skills } = allContentfulSkill;
 
@@ -15,8 +17,6 @@ const About = () => {
 
     // get skills in correct order
     featuredSkills.reverse();
-
-    console.log(featuredSkills);
 
     return (
         <Wrapper id="about">
@@ -30,8 +30,11 @@ const About = () => {
             <hr />
             <div className="skills-container">
                 <h4>Skills and Technologies</h4>
-
-                <div className="skills-box">
+                <div
+                    className="skills-box"
+                    onClick={() => {
+                        setIsOpen(true);
+                    }}>
                     {featuredSkills.map(skill => {
                         return (
                             <Img
@@ -44,9 +47,44 @@ const About = () => {
                 </div>
                 <span>Click to Expand</span>
             </div>
+            <Modal
+                open={isOpen}
+                onClose={() => {
+                    setIsOpen(false);
+                }}>
+                <Fade in={isOpen}>
+                    <ModalWindow
+                        className="skills-modal mui-fixed"
+                        onClick={() => {
+                            setIsOpen(true);
+                        }}>
+                        {featuredSkills.map(skill => {
+                            return (
+                                <Img
+                                    className="icon"
+                                    key={skill.name}
+                                    fixed={skill.icon.fixed}
+                                />
+                            );
+                        })}
+                        hello
+                    </ModalWindow>
+                </Fade>
+            </Modal>
         </Wrapper>
     );
 };
+
+const ModalWindow = styled.div`
+    outline: 0;
+    width: 400px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: ${props => props.theme.modal};
+`;
 
 const Wrapper = styled.div`
     background-color: ${props => props.theme.background};
