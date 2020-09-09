@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled, { withTheme } from "styled-components";
 import Img from "gatsby-image";
@@ -25,6 +25,7 @@ const Header = props => {
                     <Button href="#about">
                         <div className="flex">
                             Learn More
+                            {/* down arrow svg */}
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 height="24"
@@ -44,6 +45,8 @@ const Header = props => {
         </Wrapper>
     );
 };
+
+const headerAnimationDelay = 0.5;
 
 const Wrapper = styled.div`
     background-color: ${props => props.theme.background};
@@ -68,7 +71,8 @@ const Wrapper = styled.div`
             margin-bottom: 40px;
             font-family: "Raleway";
             font-weight: 300;
-            animation: ${fadeIn} 1s ease backwards 0.3s;
+            animation: ${fadeIn} 1s ease backwards
+                ${headerAnimationDelay + 0.3}s;
         }
 
         h3 {
@@ -76,11 +80,13 @@ const Wrapper = styled.div`
             margin-bottom: 40px;
             font-family: "Raleway";
             font-weight: 300;
-            animation: ${fadeIn} 1s ease backwards 0.55s;
+            animation: ${fadeIn} 1s ease backwards
+                ${headerAnimationDelay + 0.55}s;
         }
 
         .btn {
-            animation: ${fadeIn} 1s ease backwards 0.8s;
+            animation: ${fadeIn} 1s ease backwards
+                ${headerAnimationDelay + 0.8}s;
             transition: 0s;
         }
 
