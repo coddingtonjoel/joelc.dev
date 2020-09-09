@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled, { withTheme } from "styled-components";
-import Img from "gatsby-image";
 import Strand from "./Strand/Strand";
 import Button from "../global/Button";
 import { fadeIn } from "../global/Animations";
+import BackgroundImage from "gatsby-background-image";
 
 const Header = props => {
     const {
@@ -14,10 +14,7 @@ const Header = props => {
     } = useStaticQuery(query);
 
     return (
-        <Wrapper id="home">
-            <div id="scene">
-                <Img className="img" fluid={fluid} draggable={false} />
-            </div>
+        <Wrapper id="home" Tag="div" fluid={fluid}>
             <div className="text">
                 <h1>HI, I'M JOEL CODDINGTON.</h1>
                 <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
@@ -48,16 +45,15 @@ const Header = props => {
 
 const headerAnimationDelay = 0.5;
 
-const Wrapper = styled.div`
+const Wrapper = styled(BackgroundImage)`
     background-color: ${props => props.theme.background};
     position: relative;
     height: 780px;
     overflow: hidden;
 
-    .img {
-        opacity: 0.1;
-        position: relative;
-        bottom: 26%;
+    &::before,
+    &::after {
+        opacity: 0.08 !important;
     }
 
     .text {
