@@ -7,16 +7,18 @@ import Fade from "@material-ui/core/Fade";
 
 const About = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { allContentfulAbout, allContentfulSkill } = useStaticQuery(query);
+    const {
+        allContentfulAbout,
+        allContentfulSkill,
+        allContentfulLanguage,
+    } = useStaticQuery(query);
     const { portrait, description } = allContentfulAbout.nodes[0];
     const { nodes: skills } = allContentfulSkill;
+    const { nodes: languages } = allContentfulLanguage;
 
     const featuredSkills = skills.filter(node => {
         return node.featured === true;
     });
-
-    // get skills in correct order
-    featuredSkills.reverse();
 
     return (
         <Wrapper id="about">
@@ -58,16 +60,28 @@ const About = () => {
                         onClick={() => {
                             setIsOpen(true);
                         }}>
-                        {featuredSkills.map(skill => {
-                            return (
-                                <Img
-                                    className="icon"
-                                    key={skill.name}
-                                    fixed={skill.icon.fixed}
-                                />
-                            );
-                        })}
-                        hello
+                        <div className="technologies">
+                            {skills.map(skill => {
+                                return (
+                                    <Img
+                                        className="icon"
+                                        key={skill.name}
+                                        fixed={skill.icon.fixed}
+                                    />
+                                );
+                            })}
+                        </div>
+                        <div className="languages">
+                            {languages.map(lang => {
+                                return (
+                                    <Img
+                                        className="icon"
+                                        key={lang.name}
+                                        fixed={lang.icon.fixed}
+                                    />
+                                );
+                            })}
+                        </div>
                     </ModalWindow>
                 </Fade>
             </Modal>
@@ -77,7 +91,8 @@ const About = () => {
 
 const ModalWindow = styled.div`
     outline: 0;
-    width: 400px;
+    width: 65vw;
+    height: 450px;
     background-color: white;
     position: absolute;
     top: 50%;
@@ -201,9 +216,19 @@ const query = graphql`
                 }
             }
         }
-        allContentfulSkill {
+        allContentfulSkill(sort: { fields: contentfulid }) {
             nodes {
                 featured
+                icon {
+                    fixed(width: 65) {
+                        ...GatsbyContentfulFixed
+                    }
+                }
+                name
+            }
+        }
+        allContentfulLanguage(sort: { fields: contentfulid }) {
+            nodes {
                 icon {
                     fixed(width: 65) {
                         ...GatsbyContentfulFixed
