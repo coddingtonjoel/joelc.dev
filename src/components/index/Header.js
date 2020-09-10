@@ -14,46 +14,55 @@ const Header = props => {
     } = useStaticQuery(query);
 
     return (
-        <Wrapper id="home" Tag="div" fluid={fluid}>
-            <div className="text">
-                <h1>HI, I'M JOEL CODDINGTON.</h1>
-                <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
-                <div className="btn">
-                    <Button href="#about">
-                        <div className="flex">
-                            Learn More
-                            {/* down arrow svg */}
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                width="24">
-                                <path d="M0 0h24v24H0z" fill="none" />
-                                <path
-                                    fill={props.theme.primary}
-                                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                                />
-                            </svg>
-                        </div>
-                    </Button>
+        <Wrapper>
+            <BackgroundImage
+                className="bg-img"
+                id="home"
+                Tag="div"
+                fluid={fluid}>
+                <div className="text">
+                    <h1>HI, I'M JOEL CODDINGTON.</h1>
+                    <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
+                    <div className="btn">
+                        <Button href="#about">
+                            <div className="flex">
+                                Learn More
+                                {/* down arrow svg */}
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    width="24">
+                                    <path d="M0 0h24v24H0z" fill="none" />
+                                    <path
+                                        fill={props.theme.primary}
+                                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                                    />
+                                </svg>
+                            </div>
+                        </Button>
+                    </div>
                 </div>
-            </div>
-            <Strand />
+                <Strand />
+            </BackgroundImage>
         </Wrapper>
     );
 };
 
 const headerAnimationDelay = 0.5;
 
-const Wrapper = styled(BackgroundImage)`
-    background-color: ${props => props.theme.background};
-    position: relative;
-    height: 780px;
-    overflow: hidden;
+const Wrapper = styled.div`
+    background-color: ${props => props.theme.background} !important;
 
-    &::before,
-    &::after {
-        opacity: 0.08 !important;
+    .bg-img {
+        position: relative;
+        height: 780px;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+            opacity: 0.08 !important;
+        }
     }
 
     .text {
