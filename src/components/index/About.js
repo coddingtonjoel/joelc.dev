@@ -2,23 +2,17 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import Modal from "@material-ui/core/Modal";
-import Fade from "@material-ui/core/Fade";
+import Modal from "./Modal";
+import SkillsButton from "./SkillsButton";
 
 const About = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {
-        allContentfulAbout,
-        allContentfulSkill,
-        allContentfulLanguage,
-    } = useStaticQuery(query);
+    const { allContentfulAbout } = useStaticQuery(query);
     const { portrait, description } = allContentfulAbout.nodes[0];
-    const { nodes: skills } = allContentfulSkill;
-    const { nodes: languages } = allContentfulLanguage;
 
-    const featuredSkills = skills.filter(node => {
-        return node.featured === true;
-    });
+    const handleSetIsOpen = open => {
+        setIsOpen(open);
+    };
 
     return (
         <Wrapper id="about">
@@ -32,74 +26,16 @@ const About = () => {
             <hr />
             <div className="skills-container">
                 <h4>Skills and Technologies</h4>
-                <div
-                    className="skills-box"
-                    onClick={() => {
-                        setIsOpen(true);
-                    }}>
-                    {featuredSkills.map(skill => {
-                        return (
-                            <Img
-                                className="icon"
-                                key={skill.name}
-                                fixed={skill.icon.fixed}
-                            />
-                        );
-                    })}
-                </div>
-                <span>Click to Expand</span>
             </div>
-            <Modal
-                open={isOpen}
-                onClose={() => {
-                    setIsOpen(false);
-                }}>
-                <Fade in={isOpen}>
-                    <ModalWindow
-                        className="skills-modal mui-fixed"
-                        onClick={() => {
-                            setIsOpen(true);
-                        }}>
-                        <div className="technologies">
-                            {skills.map(skill => {
-                                return (
-                                    <Img
-                                        className="icon"
-                                        key={skill.name}
-                                        fixed={skill.icon.fixed}
-                                    />
-                                );
-                            })}
-                        </div>
-                        <div className="languages">
-                            {languages.map(lang => {
-                                return (
-                                    <Img
-                                        className="icon"
-                                        key={lang.name}
-                                        fixed={lang.icon.fixed}
-                                    />
-                                );
-                            })}
-                        </div>
-                    </ModalWindow>
-                </Fade>
-            </Modal>
+            <SkillsButton
+                onClick={() => {
+                    setIsOpen(true);
+                }}
+            />
+            <Modal isOpen={isOpen} setIsOpen={handleSetIsOpen} />
         </Wrapper>
     );
 };
-
-const ModalWindow = styled.div`
-    outline: 0;
-    width: 65vw;
-    height: 450px;
-    background-color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: ${props => props.theme.modal};
-`;
 
 const Wrapper = styled.div`
     background-color: ${props => props.theme.background};
@@ -169,36 +105,6 @@ const Wrapper = styled.div`
             line-height: 1.5;
             border-bottom: 1px solid ${props => props.theme.primary};
         }
-
-        span {
-            position: absolute;
-            left: 50%;
-            bottom: 3%;
-            transform: translateX(-50%);
-            text-transform: uppercase;
-            color: #d0d0d0;
-            font-size: 0.8rem;
-            font-family: "Raleway";
-            font-weight: 700;
-        }
-    }
-
-    .skills-box {
-        background: ${props => props.theme.modal};
-        margin: 0 15%;
-        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.37);
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 6%;
-        height: 150px;
-
-        .icon {
-            width: 65px;
-            height: 65px;
-            transform: translateY(-20px);
-        }
     }
 `;
 
@@ -214,27 +120,6 @@ const query = graphql`
                         ...GatsbyContentfulFluid
                     }
                 }
-            }
-        }
-        allContentfulSkill(sort: { fields: contentfulid }) {
-            nodes {
-                featured
-                icon {
-                    fixed(width: 65) {
-                        ...GatsbyContentfulFixed
-                    }
-                }
-                name
-            }
-        }
-        allContentfulLanguage(sort: { fields: contentfulid }) {
-            nodes {
-                icon {
-                    fixed(width: 65) {
-                        ...GatsbyContentfulFixed
-                    }
-                }
-                name
             }
         }
     }
