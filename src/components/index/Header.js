@@ -14,12 +14,8 @@ const Header = props => {
     } = useStaticQuery(query);
 
     return (
-        <Wrapper>
-            <BackgroundImage
-                className="bg-img"
-                id="home"
-                Tag="div"
-                fluid={fluid}>
+        <Wrapper id="home">
+            <BackgroundImage className="bg-img" Tag="div" fluid={fluid}>
                 <div className="text">
                     <h1>HI, I'M JOEL CODDINGTON.</h1>
                     <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
