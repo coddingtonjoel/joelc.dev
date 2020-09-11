@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import Modal from "./Modal";
+import Modal from "./SkillsModal";
 import SkillsButton from "./SkillsButton";
 
 const About = () => {
@@ -39,6 +39,7 @@ const About = () => {
 
 const Wrapper = styled.div`
     background-color: ${props => props.theme.background};
+    padding-bottom: 75px;
 
     .description-flex {
         display: flex;
