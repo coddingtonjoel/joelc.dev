@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Button from "@material-ui/core/Button";
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 import BackgroundImage from "gatsby-background-image";
-import ProjectModal from "./ProjectModal";
 import ProjectsButton from "./ProjectsButton";
 
 const Projects = () => {
-    const [selectedProject, setSelectedProject] = useState(null);
-
     const {
         file: {
             childImageSharp: { fluid },
@@ -26,10 +21,8 @@ const Projects = () => {
                         return (
                             <ProjectsButton
                                 className="button"
+                                project={project}
                                 key={project.id}
-                                onClick={() => {
-                                    setSelectedProject(project);
-                                }}
                                 fluid={project.icon.fluid}
                             />
                         );
@@ -51,7 +44,6 @@ const Wrapper = styled.div`
         &::before,
         &::after {
             opacity: 0.08 !important;
-            filter: none;
         }
     }
 
@@ -101,6 +93,11 @@ const query = graphql`
                 url
                 tagline
                 stack
+                screenshots {
+                    fluid {
+                        ...GatsbyContentfulFluid
+                    }
+                }
             }
         }
     }
