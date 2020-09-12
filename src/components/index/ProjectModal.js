@@ -3,9 +3,8 @@ import Modal from "@material-ui/core/Modal";
 import styled, { withTheme } from "styled-components";
 import Fade from "@material-ui/core/Fade";
 import Img from "gatsby-image";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import close from "../../images/icons/close.svg";
 import Button from "../global/Button";
 
 const ProjectModal = props => {

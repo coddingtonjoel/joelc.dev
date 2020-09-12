@@ -36,6 +36,13 @@ const Projects = () => {
 const Wrapper = styled.div`
     background-color: ${props => props.theme.background};
 
+    &:before {
+        content: "";
+        display: block;
+        padding-top: 150px; /* header height + empty space */
+        margin-top: -40px; /* header height to degrees padding’s space */
+    }
+
     .bg-img {
         position: relative;
         overflow: hidden;

@@ -9,6 +9,7 @@
         "@material-ui/icons": "^4.9.1",
         "@material-ui/lab": "^4.0.0-alpha.56",
         "autoprefixer": "^9.8.6",
+        "axios": "^0.20.0",
         "babel-plugin-styled-components": "^1.11.1",
         "gatsby": "^2.24.26",
         "gatsby-background-image": "^1.1.2",

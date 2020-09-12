@@ -45,7 +45,6 @@ const Navbar = props => {
                     draggable="false"
                 />
             </Link>
-
             <Scrollspy
                 className="nav"
                 items={["home", "about", "projects", "contact"]}
@@ -191,6 +190,13 @@ const Wrapper = styled.div`
 
     .Mui-selected {
         background-color: ${props => props.theme.modeSelected};
+    }
+
+    a:target {
+        display: block;
+        position: relative;
+        top: -990px;
+        visibility: hidden;
     }
 `;
 
