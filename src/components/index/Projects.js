@@ -39,7 +39,7 @@ const Wrapper = styled.div`
     .bg-img {
         position: relative;
         overflow: hidden;
-        height: 580px;
+        height: 500px;
 
         &::before,
         &::after {
@@ -94,8 +94,8 @@ const query = graphql`
                 tagline
                 stack
                 screenshots {
-                    fluid {
-                        ...GatsbyContentfulFluid
+                    fluid(quality: 45) {
+                        ...GatsbyContentfulFluid_withWebp
                     }
                 }
             }

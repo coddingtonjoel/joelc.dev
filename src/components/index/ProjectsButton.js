@@ -26,8 +26,8 @@ const ProjectsButton = props => {
 };
 
 const StyledButton = styled(Button)`
-    height: 240px;
-    width: 240px;
+    height: 220px;
+    width: 220px;
     border-radius: 100%;
     background-color: #e4e4e4;
     margin: 0 30px;

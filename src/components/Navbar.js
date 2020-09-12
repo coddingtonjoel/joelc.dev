@@ -54,7 +54,7 @@ const Navbar = props => {
                         ? "active-light"
                         : "active-dark"
                 }`}
-                offset={-150}>
+                offset={-300}>
                 <Link className="item" to="#home">
                     <img className="icon" src={home} alt="" draggable="false" />
                     <p className="text">Home</p>
