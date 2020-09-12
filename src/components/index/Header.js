@@ -50,6 +50,14 @@ const headerAnimationDelay = 0.5;
 const Wrapper = styled.div`
     background-color: ${props => props.theme.background} !important;
 
+    &:before {
+        content: "";
+        display: block;
+        padding-top: ${props =>
+            props.theme.navbarHeight}; /* header height + empty space */
+        margin-top: -${props => props.theme.navbarHeight}; /* header height to degrees padding’s space */
+    }
+
     .bg-img {
         position: relative;
         height: 780px;

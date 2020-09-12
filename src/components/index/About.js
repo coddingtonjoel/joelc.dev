@@ -39,7 +39,13 @@ const About = () => {
 
 const Wrapper = styled.div`
     background-color: ${props => props.theme.background};
-    padding-bottom: 75px;
+
+    &:before {
+        content: "";
+        display: block;
+        padding-top: 100px; /* header height + empty space */
+        margin-top: -100px; /* header height to degrees padding’s space */
+    }
 
     .description-flex {
         display: flex;
