@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Img from "gatsby-image";
+import ProjectModal from "./ProjectModal";
 
 const ProjectsButton = props => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <StyledButton onClick={props.onClick} variant="contained">
-            <Img className="img" fluid={props.fluid} />
-        </StyledButton>
+        <React.Fragment>
+            <StyledButton
+                onClick={() => {
+                    setIsOpen(true);
+                }}
+                variant="contained">
+                <Img className="img" fluid={props.fluid} draggable={false} />
+            </StyledButton>
+            <ProjectModal
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                project={props.project}
+            />
+        </React.Fragment>
     );
 };
 
