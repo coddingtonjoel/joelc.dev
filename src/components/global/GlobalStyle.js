@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
 
     ::-webkit-scrollbar {
         -webkit-appearance: none;
-        width: 8px;
+        width: 6px;
         background-color: ${props => props.theme.modal};
     }
 
