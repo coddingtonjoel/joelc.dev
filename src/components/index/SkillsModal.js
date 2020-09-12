@@ -5,6 +5,7 @@ import Fade from "@material-ui/core/Fade";
 import ReactTooltip from "react-tooltip";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import Button from "../global/Button";
 
 const StyledModal = props => {
     const { allContentfulSkill, allContentfulLanguage } = useStaticQuery(query);
@@ -18,7 +19,7 @@ const StyledModal = props => {
                 props.setIsOpen(false);
             }}>
             <Fade in={props.isOpen} timeout={500}>
-                <ModalWindow className="skills-modal mui-fixed">
+                <ModalWindow className="skills-modal">
                     <div>
                         <p>Technologies</p>
                         <div className="technologies">
@@ -68,6 +69,24 @@ const StyledModal = props => {
                         </div>
                         <p className="hover-to-see">Hover to See Titles</p>
                     </div>
+                    <Button
+                        className="close"
+                        onClick={() => {
+                            props.setIsOpen(false);
+                        }}>
+                        {/* close icon */}
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            width="24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                fill={props.theme.primary}
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                            />
+                        </svg>
+                    </Button>
                 </ModalWindow>
             </Fade>
         </Modal>
@@ -142,6 +161,18 @@ const ModalWindow = styled.div`
         font-family: "Raleway";
         font-weight: 700;
         transform: translateX(0);
+    }
+
+    .close {
+        height: 40px;
+        position: absolute;
+        right: 1%;
+        top: 2%;
+        padding: 0 !important;
+
+        img {
+            opacity: 0.6;
+        }
     }
 `;
 

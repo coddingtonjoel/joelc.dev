@@ -20,17 +20,4 @@ export const GlobalStyle = createGlobalStyle`
         scroll-behavior: smooth;
         overflow-y: scroll;
     }
-
-    ::-webkit-scrollbar {
-        -webkit-appearance: none;
-        width: 6px;
-        background-color: ${props => props.theme.modal};
-    }
-
-    ::-webkit-scrollbar-thumb {
-        border-radius: 3px;
-        background-color: ${props => props.theme.primary};
-        box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-        transition: 0.5s;
-    }
 `;

@@ -90,7 +90,6 @@ const ModalWindow = styled.div`
     outline: none;
     width: 50vw;
     padding-bottom: 3vh;
-    background-color: white;
     position: fixed;
     top: 50%;
     left: 50%;
