@@ -27,7 +27,7 @@ const StyledModal = props => {
                                 return (
                                     <div data-tip={skill.name} key={skill.name}>
                                         <ReactTooltip
-                                            place="top"
+                                            place={"top"}
                                             type={
                                                 props.theme.style === "light"
                                                     ? "dark"
@@ -166,8 +166,8 @@ const ModalWindow = styled.div`
     .close {
         height: 40px;
         position: absolute;
-        right: 1%;
-        top: 2%;
+        right: 2%;
+        bottom: 5%;
         padding: 0 !important;
 
         img {

@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
         transition: 0s;
         font-family: "Lato";
         font-weight: 300;
+        overflow-x: hidden;
     }
 
     html {

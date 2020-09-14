@@ -28,6 +28,19 @@ const Wrapper = styled.div`
     top: 0;
     right: 250px;
     opacity: 0.8;
+
+    @media (max-width: 1250px) {
+        right: 100px;
+    }
+
+    @media (max-width: 1100px) {
+        right: 60px;
+    }
+
+    @media (max-width: 1000px) {
+        display: none;
+        opacity: 0;
+    }
 `;
 
 export default Strand;

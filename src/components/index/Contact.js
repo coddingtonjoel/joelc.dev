@@ -123,7 +123,7 @@ const Wrapper = styled.div`
             font-family: "Raleway";
             font-size: 0.9rem;
             background: #f6f6f6;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.45);
             border-radius: 2px;
             border: none;
             user-select: none;

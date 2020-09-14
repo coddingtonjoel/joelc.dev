@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { allStrandDescend, allStrandSpin } from "../../global/Animations";
 
-const Unit = ({ num }) => {
+const AboutUnit = ({ num }) => {
     return (
         <Wrapper>
             <SVGWrapper
@@ -40,9 +40,8 @@ const Wrapper = styled.div`
     /* another magic value */
     height: 126px;
 
-    @media (max-width: 1000px) {
+    @media (min-width: 701px) {
         animation: none;
-        height: 0;
     }
 `;
 
@@ -51,10 +50,9 @@ const SVGWrapper = styled.svg`
     animation: ${allStrandSpin} 7s ease infinite;
     animation-delay: ${props => (props.num - 1) * 0.2}s;
 
-    @media (max-width: 1000px) {
-        display: none;
-        opacity: 0;
+    @media (min-width: 701px) {
+        animation: none;
     }
 `;
 
-export default Unit;
+export default AboutUnit;
