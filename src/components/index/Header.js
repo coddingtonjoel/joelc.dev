@@ -67,6 +67,14 @@ const Wrapper = styled.div`
         &::after {
             opacity: 0.08 !important;
         }
+
+        @media (max-width: 1000px) {
+            height: 450px;
+        }
+
+        @media (max-width: 600px) {
+            height: 400px;
+        }
     }
 
     .text {
@@ -75,6 +83,14 @@ const Wrapper = styled.div`
         top: 33%;
         left: 10%;
 
+        @media (max-width: 1000px) {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            text-align: center;
+            top: 25%;
+        }
+
         h1 {
             font-size: 3.2rem;
             margin-bottom: 40px;
@@ -82,6 +98,26 @@ const Wrapper = styled.div`
             font-weight: 300;
             animation: ${fadeIn} 1s ease backwards
                 ${headerAnimationDelay + 0.3}s;
+
+            @media (max-width: 1100px) {
+                font-size: 3rem;
+            }
+
+            @media (max-width: 750px) {
+                font-size: 2.6rem;
+            }
+
+            @media (max-width: 660px) {
+                font-size: 2.2rem;
+            }
+
+            @media (max-width: 530px) {
+                font-size: 2rem;
+            }
+
+            @media (max-width: 470px) {
+                font-size: 1.8rem;
+            }
         }
 
         h3 {
@@ -91,12 +127,28 @@ const Wrapper = styled.div`
             font-weight: 300;
             animation: ${fadeIn} 1s ease backwards
                 ${headerAnimationDelay + 0.55}s;
+
+            @media (max-width: 1100px) {
+                font-size: 1.6rem;
+            }
+
+            @media (max-width: 750px) {
+                font-size: 1.2rem;
+            }
+
+            @media (max-width: 530px) {
+                font-size: 1rem;
+            }
         }
 
         .btn {
             animation: ${fadeIn} 1s ease backwards
                 ${headerAnimationDelay + 0.8}s;
             transition: 0s;
+
+            @media (max-width: 1000px) {
+                transform: scale(0.85);
+            }
         }
 
         .flex {

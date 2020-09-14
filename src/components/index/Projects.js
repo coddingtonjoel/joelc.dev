@@ -39,7 +39,7 @@ const Wrapper = styled.div`
     &:before {
         content: "";
         display: block;
-        padding-top: 150px; /* header height + empty space */
+        padding-top: 130px; /* header height + empty space */
         margin-top: -40px; /* header height to degrees padding’s space */
     }
 
