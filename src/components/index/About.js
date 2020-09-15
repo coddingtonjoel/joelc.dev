@@ -55,7 +55,7 @@ const Wrapper = styled.div`
     &:before {
         content: "";
         display: block;
-        padding-top: 100px; /* header height + empty space */
+        padding-top: 140px; /* header height + empty space */
         margin-top: -100px; /* header height to degrees padding’s space */
     }
 

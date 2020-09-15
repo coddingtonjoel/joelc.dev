@@ -20,7 +20,7 @@ const Header = props => {
                     <h1>HI, I'M JOEL CODDINGTON.</h1>
                     <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
                     <div className="btn">
-                        <Button href="#about">
+                        <Button className="btn-component" href="#about">
                             <div className="flex">
                                 Learn More
                                 {/* down arrow svg */}
@@ -148,6 +148,10 @@ const Wrapper = styled.div`
 
             @media (max-width: 1000px) {
                 transform: scale(0.85);
+            }
+
+            .btn-component {
+                padding: 7px 29px;
             }
         }
 

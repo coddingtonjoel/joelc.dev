@@ -99,6 +99,11 @@ const Wrapper = styled.div`
     padding-top: 1px;
     padding-bottom: 50px;
 
+    @media (max-width: 800px) {
+        padding-top: 80px; /* header height + empty space */
+        margin-top: -50px; /* header height to degrees padding’s space */
+    }
+
     h4 {
         color: ${props => props.theme.primary};
         font-size: 2.2rem;
