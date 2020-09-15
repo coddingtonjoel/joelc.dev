@@ -128,10 +128,10 @@ const Navbar = props => {
                     value={mode}
                     exclusive
                     onChange={handleMode}>
-                    <ToggleButton value="Light">
+                    <ToggleButton className="togglegroup-btn" value="Light">
                         <Sun />
                     </ToggleButton>
-                    <ToggleButton value="Dark">
+                    <ToggleButton className="togglegroup-btn" value="Dark">
                         <Moon />
                     </ToggleButton>
                 </ToggleButtonGroup>
@@ -332,6 +332,12 @@ const Wrapper = styled.div`
             transform: scale(0.92);
             top: 14px;
             right: 30px;
+        }
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 

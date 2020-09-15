@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { allStrandDescend, allStrandSpin } from "../../global/Animations";
+import { allStrandDescend } from "../../global/Animations";
 
 const AboutUnit = ({ num }) => {
     return (
@@ -47,12 +47,6 @@ const Wrapper = styled.div`
 
 const SVGWrapper = styled.svg`
     z-index: 20;
-    animation: ${allStrandSpin} 7s ease infinite;
-    animation-delay: ${props => (props.num - 1) * 0.2}s;
-
-    @media (min-width: 701px) {
-        animation: none;
-    }
 `;
 
 export default AboutUnit;
