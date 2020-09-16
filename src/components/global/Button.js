@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 
 const MaterialBtn = styled(Button).attrs(props => ({
     href: props.href,
-    variant: "contained",
+    variant: props.variant || "contained",
     rel: props.rel,
     target: props.target,
 }))`

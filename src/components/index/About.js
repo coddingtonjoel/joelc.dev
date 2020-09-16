@@ -4,17 +4,12 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import Modal from "./SkillsModal";
 import SkillsButton from "./SkillsButton";
-import useMediaQuery from "react-responsive";
 import AboutStrand from "./Strand/AboutStrand";
 
 const About = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { allContentfulAbout } = useStaticQuery(query);
     const { portrait, description } = allContentfulAbout.nodes[0];
-
-    const isAboutFlexCollapsed = useMediaQuery({
-        query: "(max-device-width: 700px)",
-    });
 
     const handleSetIsOpen = open => {
         setIsOpen(open);
@@ -120,7 +115,7 @@ const Wrapper = styled.div`
         }
 
         @media (max-width: 700px) {
-            padding: 6%;
+            padding: 10% 10% 0 10%;
         }
 
         h4 {
@@ -205,6 +200,21 @@ const Wrapper = styled.div`
             @media (max-width: 530px) {
                 font-size: 1.6rem;
                 width: 380px;
+            }
+
+            @media (max-width: 450px) {
+                font-size: 1.6rem;
+                width: 350px;
+            }
+
+            @media (max-width: 380px) {
+                font-size: 1.4rem;
+                width: 330px;
+            }
+
+            @media (max-width: 350px) {
+                font-size: 1.2rem;
+                width: 275px;
             }
         }
     }

@@ -27,7 +27,6 @@ const SkillsButton = props => {
                     );
                 })}
             </div>
-
             <span className="click-to-expand">Click to Expand</span>
         </Wrapper>
     );
@@ -48,21 +47,44 @@ const Wrapper = styled(Button).attrs(props => ({
     position: relative;
     width: 70vw;
 
+    @media (max-width: 1000px) {
+        height: calc(100% + 0px);
+        padding-bottom: 40px;
+    }
+
     &:hover {
         background-color: ${props => props.theme.background};
     }
 
     .items {
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 1000px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    .items-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
     .icon {
-        width: 65px;
-        height: 65px;
         transform: translateY(-20px);
+
+        @media (max-width: 1000px) {
+            margin: 20px;
+            transform: scale(0.9);
+        }
+
+        @media (max-width: 365px) {
+            margin: 12px;
+        }
     }
 
     .click-to-expand {
@@ -75,6 +97,7 @@ const Wrapper = styled(Button).attrs(props => ({
         font-size: 0.8rem;
         font-family: "Raleway";
         font-weight: 700;
+        width: 80%;
     }
 `;
 

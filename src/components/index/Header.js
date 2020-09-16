@@ -88,7 +88,7 @@ const Wrapper = styled.div`
             transform: translateX(-50%);
             width: 92%;
             text-align: center;
-            top: 25%;
+            top: 20%;
         }
 
         h1 {
@@ -146,8 +146,8 @@ const Wrapper = styled.div`
                 ${headerAnimationDelay + 0.8}s;
             transition: 0s;
 
-            @media (max-width: 1000px) {
-                transform: scale(0.85);
+            @media (max-width: 700px) {
+                font-size: 0.85rem;
             }
 
             .btn-component {
