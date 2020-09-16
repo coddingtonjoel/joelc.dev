@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    top: -468px;
+    top: -432px;
     left: 500px;
     transform: rotate(-90deg) scale(0.9);
 
@@ -40,7 +40,7 @@ const Wrapper = styled.div`
     }
 
     @media (max-width: 400px) {
-        top: -484px;
+        top: -442px;
         transform: rotate(-90deg) scale(0.5);
         left: 300px;
     }

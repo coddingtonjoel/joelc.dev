@@ -145,7 +145,11 @@ const Navbar = props => {
                 onClose={() => {
                     setIsOpen(false);
                 }}>
-                <Link to="/">
+                <Link
+                    to="/"
+                    onClick={() => {
+                        setIsOpen(false);
+                    }}>
                     <img
                         className="logo"
                         src={
@@ -204,7 +208,7 @@ const StyledDrawer = styled(Drawer)`
 
     .drawer-btn {
         border-radius: 0;
-        height: 50px;
+        height: 40px;
         color: ${props => props.theme.primary};
     }
 
@@ -218,12 +222,12 @@ const StyledDrawer = styled(Drawer)`
 
 const Wrapper = styled.div`
     .drawer-trigger {
-        height: 35px;
+        height: 43px;
         z-index: 101;
         padding: 0;
         position: fixed;
-        top: 16px;
-        left: 30px;
+        top: 12px;
+        left: 18px;
     }
 
     .nav {
@@ -328,10 +332,9 @@ const Wrapper = styled.div`
         z-index: 100;
 
         @media (max-width: 850px) {
-            height: 40px;
             transform: scale(0.92);
-            top: 14px;
-            right: 30px;
+            top: 10px;
+            right: 10px;
         }
 
         &-btn {

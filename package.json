@@ -47,7 +47,7 @@
     "license": "MIT",
     "scripts": {
         "build": "gatsby build",
-        "develop": "gatsby clean && gatsby develop",
+        "develop": "gatsby clean && gatsby develop -H 0.0.0.0",
         "start": "yarn run develop",
         "serve": "gatsby serve",
         "clean": "gatsby clean"

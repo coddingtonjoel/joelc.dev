@@ -6,11 +6,14 @@ import ReactTooltip from "react-tooltip";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Button from "../global/Button";
+import { useMediaQuery } from "react-responsive";
 
 const StyledModal = props => {
     const { allContentfulSkill, allContentfulLanguage } = useStaticQuery(query);
     const { nodes: languages } = allContentfulLanguage;
     const { nodes: skills } = allContentfulSkill;
+
+    const isMobile = useMediaQuery({ query: "(max-device-width: 600px)" });
 
     return (
         <Modal
@@ -67,10 +70,15 @@ const StyledModal = props => {
                                 );
                             })}
                         </div>
-                        <p className="hover-to-see">Hover to See Titles</p>
+                        <p className="hover-to-see">
+                            {isMobile
+                                ? "Tap to See Titles"
+                                : "Hover to See Titles"}
+                        </p>
                     </div>
                     <Button
                         className="close"
+                        variant="text"
                         onClick={() => {
                             props.setIsOpen(false);
                         }}>
@@ -109,51 +117,57 @@ const ModalWindow = styled.div`
     box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.29);
     border-radius: 8px;
 
-    /* TODO add close button */
     @media (max-width: 900px) {
         width: 100vw;
-        height: 100vh;
-        padding: 20px;
+        height: 80vh;
+        padding: 20px 0;
         border-radius: 0;
         box-shadow: none;
         overflow-y: scroll;
         overflow-x: hidden;
-        top: 0;
-        left: 0;
-        transform: none;
         display: block;
     }
 
     p {
-        transform: translateX(4%);
+        /* transform: translateX(4%); */
+        text-align: center;
         color: ${props => props.theme.primary};
     }
 
     .technologies {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: wrap;
         padding: 0 30px;
-        transform: translateX(3%);
+
+        @media (max-width: 900px) {
+        }
     }
 
     .icon {
         margin: 40px;
         user-select: none;
+
+        @media (max-width: 1200px) {
+            margin: 30px 20px;
+        }
+
+        @media (max-width: 900px) {
+            margin: 30px 20px;
+            transform: scale(0.85);
+        }
     }
 
     .languages {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: wrap;
         padding: 0 30px;
-        transform: translateX(3%);
     }
 
     .hover-to-see {
-        position: relative;
         text-align: center;
         text-transform: uppercase;
         color: #d0d0d0;
@@ -167,8 +181,18 @@ const ModalWindow = styled.div`
         height: 40px;
         position: absolute;
         right: 2%;
-        bottom: 5%;
         padding: 0 !important;
+        background-color: none;
+
+        @media (min-width: 901px) {
+            bottom: 5%;
+        }
+
+        @media (max-width: 900px) {
+            top: 1.85%;
+            right: 3%;
+            transform: scale(0.8);
+        }
 
         img {
             opacity: 0.6;
