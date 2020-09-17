@@ -208,7 +208,7 @@ const StyledDrawer = styled(Drawer)`
 
     .drawer-btn {
         border-radius: 0;
-        height: 40px;
+        height: 50px;
         color: ${props => props.theme.primary};
     }
 

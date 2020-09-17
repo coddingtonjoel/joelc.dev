@@ -30,8 +30,18 @@ const StyledButton = styled(Button)`
     width: 220px;
     border-radius: 100%;
     background-color: #e4e4e4;
-    margin: 0 30px;
+    margin: 15px 30px;
     border: 0.7px solid #dbdbdb;
+
+    @media (max-width: 1000px) {
+        height: 190px;
+        width: 190px;
+    }
+
+    @media (max-width: 500px) {
+        height: 170px;
+        width: 170px;
+    }
 
     .img {
         height: 85%;
