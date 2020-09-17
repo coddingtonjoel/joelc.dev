@@ -127,12 +127,25 @@ const Wrapper = styled.div`
             padding: 15px;
             font-family: "Raleway";
             font-size: 0.9rem;
-            background: #f6f6f6;
+            background-color: #fff;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.45);
             border-radius: 2px;
             border: none;
             user-select: none;
             outline: none;
+
+            @media (max-width: 1000px) {
+                width: 50vw;
+            }
+
+            @media (max-width: 800px) {
+                width: 60vw;
+            }
+
+            @media (max-width: 550px) {
+                width: 70vw;
+                border: 1px solid #aaa;
+            }
         }
 
         textarea {

@@ -29,6 +29,7 @@ export const lightTheme = {
     iconBrightness: "brightness(0.2)",
     navbarHeight: navbarHeight,
     boxShadow: boxShadow,
+    imageShine: blue,
 };
 
 export const darkTheme = {
@@ -52,4 +53,5 @@ export const darkTheme = {
     green: green,
     navbarHeight: navbarHeight,
     boxShadow: boxShadow,
+    imageShine: "#888",
 };

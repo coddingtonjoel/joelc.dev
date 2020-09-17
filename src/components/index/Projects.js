@@ -35,6 +35,7 @@ const Projects = () => {
 
 const Wrapper = styled.div`
     background-color: ${props => props.theme.background};
+    height: 100%;
 
     &:before {
         content: "";
@@ -46,7 +47,7 @@ const Wrapper = styled.div`
     .bg-img {
         position: relative;
         overflow: hidden;
-        height: 500px;
+        padding: 50px 0 80px;
 
         &::before,
         &::after {
@@ -64,6 +65,7 @@ const Wrapper = styled.div`
         display: block;
         width: 215px;
         margin: 50px auto;
+        transform: translateY(-30px);
         line-height: 1.5;
         border-bottom: 1px solid ${props => props.theme.primary};
     }
@@ -72,6 +74,7 @@ const Wrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
     }
 `;
 
@@ -79,7 +82,7 @@ const query = graphql`
     {
         file(relativePath: { eq: "projects-background.jpg" }) {
             childImageSharp {
-                fluid {
+                fluid(quality: 80) {
                     ...GatsbyImageSharpFluid
                 }
             }

@@ -5,6 +5,7 @@ import Img from "gatsby-image";
 import Modal from "./SkillsModal";
 import SkillsButton from "./SkillsButton";
 import AboutStrand from "./Strand/AboutStrand";
+import { shine } from "../global/Animations";
 
 const About = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,11 @@ const About = () => {
         <React.Fragment>
             <Wrapper id="about">
                 <div className="description-flex">
-                    <Img className="img" fluid={portrait.fluid} />
+                    <div className="img-container">
+                        <div className="img-border" />
+                        <Img className="img" fluid={portrait.fluid} />
+                    </div>
+
                     <div className="description-text">
                         <h4>Who am I?</h4>
                         <p>{description.description}</p>
@@ -75,12 +80,53 @@ const Wrapper = styled.div`
     }
 
     .img {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        display: block;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        align-self: center;
+        background: #fff;
+        z-index: 1;
+        transform: scale(0.97);
+    }
+
+    .img-border {
+        position: absolute;
+        display: block;
+        top: -50%;
+        left: -50%;
+        z-index: -9;
+        display: block;
+        height: 200%;
+        width: 200%;
+        transform: rotate(-135deg);
+        overflow: hidden;
+        opacity: 0.8;
+        background: linear-gradient(
+            to right,
+            ${props => props.theme.background} 20%,
+            ${props => props.theme.background} 40%,
+            ${props => props.theme.imageShine} 50%,
+            ${props => props.theme.imageShine} 35%,
+            ${props => props.theme.background} 70%,
+            ${props => props.theme.background} 100%
+        );
+        background-size: 200% auto;
+        animation: ${shine} 5s linear infinite;
+    }
+
+    .img-container {
         flex: 0 0 270px;
         height: 100%;
         width: 100%;
         box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.29);
         border-radius: 4px;
         z-index: 30;
+        overflow: hidden;
+        position: relative;
 
         @media (max-width: 900px) {
             flex: 0 0 230px;

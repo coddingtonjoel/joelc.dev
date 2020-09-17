@@ -6,7 +6,7 @@ import ReactTooltip from "react-tooltip";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Button from "../global/Button";
-import { useMediaQuery } from "react-responsive";
+import MediaQuery, { useMediaQuery } from "react-responsive";
 
 const StyledModal = props => {
     const { allContentfulSkill, allContentfulLanguage } = useStaticQuery(query);
@@ -25,25 +25,42 @@ const StyledModal = props => {
                 <ModalWindow className="skills-modal">
                     <div>
                         <p>Technologies</p>
+                        {isMobile ? (
+                            <p className="m-scroll-notice"> Scroll for More</p>
+                        ) : null}
                         <div className="technologies">
                             {skills.map(skill => {
                                 return (
-                                    <div data-tip={skill.name} key={skill.name}>
-                                        <ReactTooltip
-                                            place={"top"}
-                                            type={
-                                                props.theme.style === "light"
-                                                    ? "dark"
-                                                    : "light"
-                                            }
-                                            effect="solid"
-                                        />
-                                        <Img
-                                            className="icon"
-                                            fixed={skill.icon.fixed}
-                                            draggable={false}
-                                        />
-                                    </div>
+                                    <React.Fragment key={skill.name}>
+                                        {/* display tooltip on desktop */}
+                                        <MediaQuery minWidth={601}>
+                                            <div data-tip={skill.name}>
+                                                <ReactTooltip
+                                                    place={"top"}
+                                                    type={
+                                                        props.theme.style ===
+                                                        "light"
+                                                            ? "dark"
+                                                            : "light"
+                                                    }
+                                                    effect="solid"
+                                                />
+                                                <Img
+                                                    className="icon"
+                                                    fixed={skill.icon.fixed}
+                                                    draggable={false}
+                                                />
+                                            </div>
+                                        </MediaQuery>
+                                        {/* DON'T display tooltip on mobile -- lacks intutiveness */}
+                                        <MediaQuery maxWidth={600}>
+                                            <Img
+                                                className="icon"
+                                                fixed={skill.icon.fixed}
+                                                draggable={false}
+                                            />
+                                        </MediaQuery>
+                                    </React.Fragment>
                                 );
                             })}
                         </div>
@@ -71,9 +88,7 @@ const StyledModal = props => {
                             })}
                         </div>
                         <p className="hover-to-see">
-                            {isMobile
-                                ? "Tap to See Titles"
-                                : "Hover to See Titles"}
+                            {isMobile ? null : "Hover to See Titles"}
                         </p>
                     </div>
                     <Button
@@ -140,9 +155,6 @@ const ModalWindow = styled.div`
         justify-content: center;
         flex-wrap: wrap;
         padding: 0 30px;
-
-        @media (max-width: 900px) {
-        }
     }
 
     .icon {
@@ -175,6 +187,17 @@ const ModalWindow = styled.div`
         font-family: "Raleway";
         font-weight: 700;
         transform: translateX(0);
+    }
+
+    .m-scroll-notice {
+        text-align: center;
+        text-transform: uppercase;
+        color: #d0d0d0;
+        font-size: 0.8rem;
+        font-family: "Raleway";
+        font-weight: 700;
+        transform: translateX(0);
+        margin-top: 15px;
     }
 
     .close {

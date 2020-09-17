@@ -87,7 +87,7 @@ const ProjectModal = props => {
 
 const ModalWindow = styled.div`
     outline: none;
-    width: 50vw;
+    width: 900px;
     padding-bottom: 3vh;
     position: fixed;
     top: 50%;
@@ -104,10 +104,38 @@ const ModalWindow = styled.div`
     margin-right: 0 !important;
     overflow: none;
 
+    @media (max-width: 1600px) {
+        width: 700px;
+    }
+
+    @media (max-width: 900px) {
+        width: 100vw;
+        height: 82vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
     .carousel-container {
         height: 100%;
         width: 100%;
         display: block;
+
+        @media (max-width: 900px) {
+            width: 70%;
+        }
+
+        @media (max-width: 700px) {
+            width: 85%;
+        }
+
+        @media (max-width: 500px) {
+            width: 100%;
+            transform: translateY(5%);
+        }
+
+        @media (max-height: 400px) {
+            width: 0;
+        }
     }
 
     .main-container {
@@ -118,6 +146,10 @@ const ModalWindow = styled.div`
             width: 90%;
             margin: 20px auto;
             opacity: 0.4;
+
+            @media (max-width: 500px) {
+                margin: 10px auto;
+            }
         }
     }
 
@@ -133,11 +165,23 @@ const ModalWindow = styled.div`
             margin-bottom: 8px;
             font-size: 2.2rem;
             color: ${props => props.theme.notMain};
+
+            @media (max-width: 900px) {
+                font-size: 1.9rem;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 1.8rem;
+            }
         }
 
         p {
             margin-bottom: 18px;
             color: ${props => props.theme.primary};
+
+            @media (max-width: 900px) {
+                font-size: 0.9rem;
+            }
         }
 
         span {
@@ -148,6 +192,10 @@ const ModalWindow = styled.div`
             font-size: 80%;
             padding: 5px 10px;
             margin-right: 10px;
+
+            @media (max-width: 500px) {
+                font-size: 65%;
+            }
         }
     }
 
@@ -157,6 +205,10 @@ const ModalWindow = styled.div`
         padding: 0 5%;
         margin-bottom: 20px;
         opacity: 0.9;
+
+        @media (max-width: 900px) {
+            font-size: 0.9rem;
+        }
     }
 
     .button-level {
@@ -166,6 +218,10 @@ const ModalWindow = styled.div`
 
     .site {
         height: 40px;
+
+        @media (max-width: 500px) {
+            transform: scale(0.9);
+        }
     }
 
     .close {
@@ -173,6 +229,10 @@ const ModalWindow = styled.div`
         position: absolute;
         right: 5%;
         padding: 0 !important;
+
+        @media (max-width: 500px) {
+            transform: scale(0.9);
+        }
 
         img {
             opacity: 0.6;
