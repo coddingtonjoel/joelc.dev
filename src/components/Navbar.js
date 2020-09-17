@@ -86,7 +86,7 @@ const Navbar = props => {
                             : "active-dark"
                     }`}
                     offset={-300}>
-                    <Link className="item" to="#home">
+                    <Link className="item" to="/#home">
                         <img
                             className="icon"
                             src={home}
@@ -95,7 +95,7 @@ const Navbar = props => {
                         />
                         <p className="text">Home</p>
                     </Link>
-                    <Link className="item" to="#about">
+                    <Link className="item" to="/#about">
                         <img
                             className="icon"
                             src={about}
@@ -104,7 +104,7 @@ const Navbar = props => {
                         />
                         <p className="text">About</p>
                     </Link>
-                    <Link className="item" to="#projects">
+                    <Link className="item" to="/#projects">
                         <img
                             className="icon"
                             src={projects}
@@ -113,7 +113,7 @@ const Navbar = props => {
                         />
                         <p className="text">Projects</p>
                     </Link>
-                    <Link className="item" to="#contact">
+                    <Link className="item" to="/#contact">
                         <img
                             className="icon"
                             src={contact}
