@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
     siteMetadata: {
-        title: `Joel Coddington || Web Developer`,
+        title: `Joel Coddington`,
         description: `Portfolio website for Joel Coddington, a Computer Science student at Biola University.`,
         author: `Joel Coddington`,
         siteUrl: `https://joelc.dev`,

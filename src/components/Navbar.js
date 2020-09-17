@@ -167,7 +167,7 @@ const Navbar = props => {
                     }}
                     className="drawer-btn"
                     variant="text">
-                    <Link className="link" to="#about">
+                    <Link className="link" to="/#about">
                         About
                     </Link>
                 </Button>
@@ -177,7 +177,7 @@ const Navbar = props => {
                     }}
                     className="drawer-btn"
                     variant="text">
-                    <Link className="link" to="#projects">
+                    <Link className="link" to="/#projects">
                         Projects
                     </Link>
                 </Button>
@@ -187,7 +187,7 @@ const Navbar = props => {
                     }}
                     className="drawer-btn"
                     variant="text">
-                    <Link className="link" to="#contact">
+                    <Link className="link" to="/#contact">
                         Contact
                     </Link>
                 </Button>

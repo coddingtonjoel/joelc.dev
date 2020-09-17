@@ -131,7 +131,6 @@ const Wrapper = styled.div`
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.45);
             border-radius: 2px;
             border: none;
-            user-select: none;
             outline: none;
 
             @media (max-width: 1000px) {
