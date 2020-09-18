@@ -15,10 +15,16 @@ const Header = props => {
 
     return (
         <Wrapper id="home">
-            <BackgroundImage className="bg-img" Tag="div" fluid={fluid}>
+            <BackgroundImage
+                className="bg-img"
+                Tag="div"
+                fluid={fluid}
+                alt="Laptop with code on screen">
                 <div className="text">
                     <h1>HI, I'M JOEL CODDINGTON.</h1>
-                    <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
+                    <h3>
+                        I'M A STUDENT WEB DEVELOPER WHO LOVES UI DEVELOPMENT.
+                    </h3>
                     <div className="btn">
                         <Button
                             className="btn-component"
@@ -51,7 +57,7 @@ const Header = props => {
 
 const headerAnimationDelay = 0.5;
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
     background-color: ${props => props.theme.background} !important;
 
     &:before {

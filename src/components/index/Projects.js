@@ -14,7 +14,11 @@ const Projects = () => {
 
     return (
         <Wrapper id="projects">
-            <BackgroundImage Tag="div" fluid={fluid} className="bg-img">
+            <BackgroundImage
+                Tag="div"
+                fluid={fluid}
+                className="bg-img"
+                alt="Laptop, coffee, notebook, and iPhone on a table">
                 <h4>Projects</h4>
                 <div className="buttons">
                     {projects.map(project => {
@@ -33,7 +37,7 @@ const Projects = () => {
     );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
     background-color: ${props => props.theme.background};
     height: 100%;
 

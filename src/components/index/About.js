@@ -26,7 +26,11 @@ const About = () => {
                 <div className="description-flex">
                     <div className="img-container">
                         <div className="img-border" />
-                        <Img className="img" fluid={portrait.fluid} />
+                        <Img
+                            className="img"
+                            fluid={portrait.fluid}
+                            alt="Joel Coddington"
+                        />
                     </div>
 
                     <div className="description-text">
@@ -50,7 +54,7 @@ const About = () => {
     );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
     background-color: ${props => props.theme.background};
     overflow: hidden !important;
     position: relative;

@@ -220,7 +220,7 @@ const StyledDrawer = styled(Drawer)`
     }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
     .drawer-trigger {
         height: 43px;
         z-index: 101;

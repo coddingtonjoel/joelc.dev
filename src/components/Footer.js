@@ -32,8 +32,8 @@ const Footer = () => {
     );
 };
 
-const Wrapper = styled.div`
-    background-color: ${(props) => props.theme.background};
+const Wrapper = styled.footer`
+    background-color: ${props => props.theme.background};
     display: flex;
     flex-direction: column;
     align-items: center;

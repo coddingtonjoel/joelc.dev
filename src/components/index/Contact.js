@@ -94,7 +94,7 @@ const Contact = () => {
     );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
     background-color: ${props => props.theme.background};
     padding-top: 1px;
     padding-bottom: 50px;
