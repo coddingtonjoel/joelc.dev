@@ -103,7 +103,7 @@ const Wrapper = styled(Button).attrs(props => ({
 
 const query = graphql`
     {
-        allContentfulSkill(sort: { fields: contentfulid }) {
+        allContentfulSkill(sort: { fields: order }) {
             nodes {
                 featured
                 icon {

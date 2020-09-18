@@ -225,7 +225,7 @@ const ModalWindow = styled.div`
 
 const query = graphql`
     {
-        allContentfulSkill(sort: { fields: contentfulid }) {
+        allContentfulSkill(sort: { fields: order }) {
             nodes {
                 featured
                 icon {
@@ -236,7 +236,7 @@ const query = graphql`
                 name
             }
         }
-        allContentfulLanguage(sort: { fields: contentfulid }) {
+        allContentfulLanguage(sort: { fields: order }) {
             nodes {
                 icon {
                     fixed(width: 65) {
