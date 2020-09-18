@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
     @media (min-width: 701px) {
         opacity: 0;
-        visibility: hidden;
+        pointer-events: none;
         left: 0;
     }
 

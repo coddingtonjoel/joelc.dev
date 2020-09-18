@@ -6,11 +6,15 @@ import Modal from "./SkillsModal";
 import SkillsButton from "./SkillsButton";
 import AboutStrand from "./Strand/AboutStrand";
 import { shine } from "../global/Animations";
+import { useMediaQuery } from "react-responsive";
 
 const About = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { allContentfulAbout } = useStaticQuery(query);
     const { portrait, description } = allContentfulAbout.nodes[0];
+    const isStrandVisible = useMediaQuery({
+        query: "(max-device-width: 700px)",
+    });
 
     const handleSetIsOpen = open => {
         setIsOpen(open);
@@ -40,7 +44,7 @@ const About = () => {
                     }}
                 />
                 <Modal isOpen={isOpen} setIsOpen={handleSetIsOpen} />
-                <AboutStrand />
+                {isStrandVisible ? <AboutStrand /> : null}
             </Wrapper>
         </React.Fragment>
     );
@@ -105,17 +109,24 @@ const Wrapper = styled.div`
         transform: rotate(-135deg);
         overflow: hidden;
         opacity: 0.8;
-        background: linear-gradient(
+        /* background: linear-gradient(
             to right,
-            ${props => props.theme.background} 20%,
-            ${props => props.theme.background} 40%,
-            ${props => props.theme.imageShine} 50%,
-            ${props => props.theme.imageShine} 35%,
-            ${props => props.theme.background} 70%,
-            ${props => props.theme.background} 100%
+            ${props =>
+            props.theme.background} 20%,
+            ${props =>
+            props.theme.background} 40%,
+            ${props =>
+            props.theme.imageShine} 50%,
+            ${props =>
+            props.theme.imageShine} 35%,
+            ${props =>
+            props.theme.background} 70%,
+            ${props =>
+            props.theme
+                .background} 100%
         );
         background-size: 200% auto;
-        animation: ${shine} 5s linear infinite;
+        animation: ${shine} 5s linear infinite; */
     }
 
     .img-container {

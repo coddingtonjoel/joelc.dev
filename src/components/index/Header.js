@@ -20,7 +20,10 @@ const Header = props => {
                     <h1>HI, I'M JOEL CODDINGTON.</h1>
                     <h3>I'M A STUDENT WEB DEVELOPER WHO LOVES UIs.</h3>
                     <div className="btn">
-                        <Button className="btn-component" href="#about">
+                        <Button
+                            className="btn-component"
+                            variant="text"
+                            href="#about">
                             <div className="flex">
                                 Learn More
                                 {/* down arrow svg */}
@@ -39,7 +42,8 @@ const Header = props => {
                         </Button>
                     </div>
                 </div>
-                <Strand />
+                {/* Disabled for smoothness :( */}
+                {/* <Strand /> */}
             </BackgroundImage>
         </Wrapper>
     );
@@ -60,8 +64,9 @@ const Wrapper = styled.div`
 
     .bg-img {
         position: relative;
-        height: 780px;
+        height: 600px;
         overflow: hidden;
+        background-position: fixed;
 
         &::before,
         &::after {
@@ -83,12 +88,18 @@ const Wrapper = styled.div`
         top: 33%;
         left: 10%;
 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 92%;
+        text-align: center;
+        top: 30%;
+
         @media (max-width: 1000px) {
             left: 50%;
             transform: translateX(-50%);
             width: 92%;
             text-align: center;
-            top: 20%;
+            top: 25%;
         }
 
         h1 {
@@ -152,6 +163,7 @@ const Wrapper = styled.div`
 
             .btn-component {
                 padding: 7px 29px;
+                transition: none;
             }
         }
 

@@ -43,7 +43,7 @@ const Wrapper = styled(Button).attrs(props => ({
     border-radius: 4px;
     padding: 0 6%;
     height: 150px;
-    transition: 0.3s;
+    transition: box-shadow 0.2s;
     position: relative;
     width: 70vw;
 
