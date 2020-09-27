@@ -25,13 +25,19 @@
         "gatsby-plugin-sitemap": "^2.4.11",
         "gatsby-plugin-styled-components": "^3.3.10",
         "gatsby-plugin-web-font-loader": "^1.0.4",
+        "gatsby-remark-copy-linked-files": "^2.3.16",
+        "gatsby-remark-images": "^3.3.30",
+        "gatsby-remark-prismjs": "^3.5.13",
+        "gatsby-remark-responsive-iframe": "^2.4.14",
+        "gatsby-remark-smartypants": "^2.3.11",
         "gatsby-source-contentful": "^2.3.40",
         "gatsby-source-filesystem": "^2.3.23",
+        "gatsby-transformer-remark": "^2.8.35",
         "gatsby-transformer-sharp": "^2.5.12",
         "node-sass": "^4.14.1",
+        "prismjs": "^1.21.0",
         "prop-types": "^15.7.2",
         "react": "^16.12.0",
-        "react-animate-on-scroll": "^2.1.5",
         "react-dom": "^16.12.0",
         "react-helmet": "^6.1.0",
         "react-responsive": "^8.1.0",
@@ -52,6 +58,7 @@
         "serve": "gatsby serve",
         "clean": "gatsby clean"
     },
+    "homepage": "https://joelc.dev",
     "repository": {
         "type": "git",
         "url": "https://github.com/coddingtonjoel/joelc.dev"
