@@ -13,7 +13,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             {
                 allMarkdownRemark(
                     sort: { fields: [frontmatter___date], order: DESC }
-                    limit: 1000
                 ) {
                     nodes {
                         fields {
@@ -57,16 +56,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
 };
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
 
-    if (node.internal.type === `MarkdownRemark`) {
-        const value = createFilePath({ node, getNode });
+    if (node.internal.type === `MarkdownRemark` && node.fileAbsolutePath) {
+        const relativePath = createFilePath({
+            node,
+            getNode,
+            basePath: `posts`,
+        });
+        console.log(relativePath);
 
         createNodeField({
             name: `slug`,
             node,
-            value,
+            value: relativePath,
         });
     }
 };
