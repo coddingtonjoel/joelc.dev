@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled, { withTheme } from "styled-components";
-import Strand from "./Strand/Strand";
 import Button from "../global/Button";
 import { fadeIn } from "../global/Animations";
 import BackgroundImage from "gatsby-background-image";
