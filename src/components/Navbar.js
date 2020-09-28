@@ -293,20 +293,19 @@ const Wrapper = styled.nav`
         width: 9rem;
 
         @media (max-width: 1500px) {
-            margin: 0 3rem;
+            margin: 0 2rem;
         }
 
-        @media (max-width: 1250px) {
-            margin: 0 1.5rem;
-        }
-
-        @media (max-width: 1050px) {
-            width: 5rem;
-        }
-
-        @media (max-width: 800px) {
+        @media (max-width: 1300px) {
             margin: 0 1rem;
-            width: 3.5rem;
+        }
+
+        @media (max-width: 1150px) {
+            width: 7rem;
+        }
+
+        @media (max-width: 950px) {
+            width: 4rem;
         }
 
         @media (max-width: 700px) {

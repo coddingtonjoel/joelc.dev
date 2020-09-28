@@ -1,18 +1,50 @@
 import React from "react";
 import styled from "styled-components";
+import BlogButton from "./BlogButton";
+import { graphql, useStaticQuery } from "gatsby";
+import Link from "gatsby";
+import Button from "../global/Button";
 
 const Blog = () => {
+    const data = useStaticQuery(query);
+    const {
+        allMarkdownRemark: { nodes: posts },
+    } = data;
+
     return (
-        <Wrapper>
-            <h4>Blog</h4>
+        <Wrapper id="blog">
+            <h4>Recent Blog Posts</h4>
+            <div className="container">
+                {posts.map(post => {
+                    const current = data.allContentfulPostImage.nodes.filter(
+                        tempPost => {
+                            return tempPost.title === post.frontmatter.title;
+                        }
+                    );
+                    return (
+                        <BlogButton
+                            key={post.frontmatter.title}
+                            title={post.frontmatter.title}
+                            date={post.frontmatter.date}
+                            excerpt={post.excerpt}
+                            slug={post.fields.slug}
+                            image={current[0].image.fluid}
+                        />
+                    );
+                })}
+            </div>
+            <Button href="/blog" className="btn">
+                View all Posts
+            </Button>
         </Wrapper>
     );
 };
 
 const Wrapper = styled.section`
-    height: 400px;
+    height: 520px;
     background-color: ${props => props.theme.background};
-    padding-top: 1px;
+    padding-top: 80px; /* header height + empty space */
+    margin-top: -50px; /* header height to degrees padding’s space */
 
     h4 {
         color: ${props => props.theme.primary};
@@ -22,10 +54,59 @@ const Wrapper = styled.section`
         text-align: center;
         text-transform: uppercase;
         display: block;
-        width: 130px;
+        width: 400px;
         margin: 50px auto;
         line-height: 1.5;
         border-bottom: 1px solid ${props => props.theme.primary};
+    }
+
+    .container {
+        width: 70vw;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 200px;
+        text-align: center;
+        margin: 50px auto;
+        display: block;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        transition: box-shadow 0.2s;
+    }
+`;
+
+const query = graphql`
+    {
+        allMarkdownRemark(
+            filter: { frontmatter: { title: { ne: "" } } }
+            limit: 3
+        ) {
+            nodes {
+                excerpt(pruneLength: 210)
+                fields {
+                    slug
+                }
+                frontmatter {
+                    title
+                    date(formatString: "MMMM DD, YYYY")
+                    description
+                }
+            }
+        }
+        allContentfulPostImage {
+            nodes {
+                image {
+                    fluid {
+                        ...GatsbyContentfulFluid
+                    }
+                }
+                title
+            }
+        }
     }
 `;
 
