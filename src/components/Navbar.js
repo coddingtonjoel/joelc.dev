@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import home from "../images/icons/home.svg";
 import about from "../images/icons/about.svg";
 import projects from "../images/icons/projects.svg";
+import blog from "../images/icons/blog.svg";
 import contact from "../images/icons/contact.svg";
 import logoBlack from "../images/logo-black.svg";
 import logoWhite from "../images/logo-white.svg";
@@ -79,7 +80,7 @@ const Navbar = props => {
                 </Link>
                 <Scrollspy
                     className="nav"
-                    items={["home", "about", "projects", "contact"]}
+                    items={["home", "about", "projects", "blog", "contact"]}
                     currentClassName={`${
                         props.theme.style === "light"
                             ? "active-light"
@@ -112,6 +113,15 @@ const Navbar = props => {
                             draggable="false"
                         />
                         <p className="text">Projects</p>
+                    </Link>
+                    <Link className="item" to="/#blog">
+                        <img
+                            className="icon"
+                            src={blog}
+                            alt=""
+                            draggable="false"
+                        />
+                        <p className="text">Blog</p>
                     </Link>
                     <Link className="item" to="/#contact">
                         <img
@@ -179,6 +189,16 @@ const Navbar = props => {
                     variant="text">
                     <Link className="link" to="/#projects">
                         Projects
+                    </Link>
+                </Button>
+                <Button
+                    onClick={() => {
+                        setIsOpen(false);
+                    }}
+                    className="drawer-btn"
+                    variant="text">
+                    <Link className="link" to="/#blog">
+                        Blog
                     </Link>
                 </Button>
                 <Button
@@ -269,7 +289,7 @@ const Wrapper = styled.nav`
         font-family: "Raleway";
         font-weight: 400;
         font-size: 16px;
-        margin: 0 5rem;
+        margin: 0 3.3rem;
         width: 9rem;
 
         @media (max-width: 1500px) {

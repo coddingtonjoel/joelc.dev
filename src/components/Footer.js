@@ -27,7 +27,9 @@ const Footer = () => {
                     <img src={codepen} alt="Codepen" draggable="false" />
                 </a>
             </div>
-            <div className="copyright">JOEL CODDINGTON ©2020</div>
+            <div className="copyright">
+                JOEL CODDINGTON © {new Date().getFullYear()}
+            </div>
         </Wrapper>
     );
 };
