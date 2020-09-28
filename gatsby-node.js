@@ -45,10 +45,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         posts.forEach(post => {
             if (post.fields !== null) {
                 createPage({
-                    path: post.fields.slug,
+                    path: `blog${post.fields.slug}`,
                     component: blogPost,
                     context: {
                         slug: post.fields.slug,
+                        title: post.frontmatter.title,
                     },
                 });
             }
@@ -65,7 +66,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             getNode,
             basePath: `posts`,
         });
-        console.log(relativePath);
 
         createNodeField({
             name: `slug`,

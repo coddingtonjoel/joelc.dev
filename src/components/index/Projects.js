@@ -108,7 +108,7 @@ const query = graphql`
                 tagline
                 stack
                 screenshots {
-                    fluid(quality: 65) {
+                    fluid(quality: 80) {
                         ...GatsbyContentfulFluid_withWebp
                     }
                 }
