@@ -30,6 +30,7 @@ export const lightTheme = {
     navbarHeight: navbarHeight,
     boxShadow: boxShadow,
     imageShine: blue,
+    hyperlink: "blue",
 };
 
 export const darkTheme = {
@@ -43,7 +44,7 @@ export const darkTheme = {
     modal: "#1d1d1d",
     modalTag: "#8a8a8a",
     modalTagText: "#363636",
-    buttonBackground: "#292929",
+    buttonBackground: "#1d1d1d",
     contactButtonBackground: "#e4e4e4",
     modeSelected: "#444444",
     modeHover: "#888",
@@ -54,4 +55,5 @@ export const darkTheme = {
     navbarHeight: navbarHeight,
     boxShadow: boxShadow,
     imageShine: "#888",
+    hyperlink: "lightBlue",
 };

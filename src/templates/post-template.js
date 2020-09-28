@@ -24,7 +24,7 @@ const Post = ({ data }) => {
                     className="bg-img"
                     Tag="div"
                     fluid={fluid}
-                    alt="Laptop with code on screen">
+                    alt={post.frontmatter.title}>
                     <div className="header-content">
                         <h1 className="title">{post.frontmatter.title}</h1>
                         <p className="date">
@@ -52,6 +52,11 @@ const Wrapper = styled.article`
         padding: 30px 15% 30px 15%;
     }
 
+    a:link,
+    a:visited {
+        color: ${props => props.theme.hyperlink};
+    }
+
     .bg-img {
         position: relative;
         height: 300px;
@@ -61,14 +66,6 @@ const Wrapper = styled.article`
         &::before,
         &::after {
             opacity: 0.08 !important;
-        }
-
-        @media (max-width: 1000px) {
-            height: 450px;
-        }
-
-        @media (max-width: 600px) {
-            height: 400px;
         }
     }
 
