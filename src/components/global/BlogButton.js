@@ -23,7 +23,7 @@ const BlogButton = props => {
 };
 
 const StyledButton = styled(Button)`
-    margin: 0 30px;
+    margin: 30px;
     font-family: "Lato";
     text-transform: none;
     color: ${props => props.theme.primary};
@@ -33,8 +33,14 @@ const StyledButton = styled(Button)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 !important;
+    padding: 0;
     transition: box-shadow 0.2s;
+    text-overflow: ellipsis;
+
+    /* flex-wrap begins */
+    @media (max-width: 1270px) {
+        margin: 20px;
+    }
 
     &:hover {
         background-color: ${props => props.theme.background};
@@ -45,6 +51,23 @@ const StyledButton = styled(Button)`
         height: 250px;
         width: 400px;
         border-radius: 4px;
+
+        @media (max-width: 650px) {
+            height: 225px;
+            width: 375px;
+        }
+
+        @media (max-width: 500px) {
+            height: 120px;
+            width: 80vw;
+        }
+
+        @media (max-width: 500px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     .bg-img {
@@ -60,6 +83,13 @@ const StyledButton = styled(Button)`
 
     .content {
         padding: 5%;
+
+        @media (max-width: 500px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     .title {
@@ -76,11 +106,20 @@ const StyledButton = styled(Button)`
     hr {
         opacity: 0.3;
         margin: 10px 0;
+
+        @media (max-width: 500px) {
+            opacity: 0;
+            display: none;
+        }
     }
 
     .excerpt {
         text-overflow: ellipsis;
-        overflow: hidden;
+
+        @media (max-width: 500px) {
+            opacity: 0;
+            display: none;
+        }
     }
 `;
 

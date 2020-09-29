@@ -100,7 +100,6 @@ const Wrapper = styled.section`
     padding-bottom: 50px;
 
     @media (max-width: 800px) {
-        padding-top: 80px; /* header height + empty space */
         margin-top: -50px; /* header height to degrees padding’s space */
     }
 

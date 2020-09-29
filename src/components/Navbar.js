@@ -211,6 +211,17 @@ const Navbar = props => {
                         Contact
                     </Link>
                 </Button>
+                <hr />
+                <Button
+                    onClick={() => {
+                        setIsOpen(false);
+                    }}
+                    className="drawer-btn"
+                    variant="text">
+                    <Link className="link" to="/blog">
+                        All Blog Posts
+                    </Link>
+                </Button>
             </StyledDrawer>
         </React.Fragment>
     );
@@ -237,6 +248,11 @@ const StyledDrawer = styled(Drawer)`
         text-decoration: none;
         font-family: "Lato" !important;
         font-weight: 400 !important;
+    }
+
+    hr {
+        width: 70%;
+        margin: 10px auto;
     }
 `;
 

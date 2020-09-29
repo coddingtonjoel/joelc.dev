@@ -110,7 +110,7 @@ const ModalWindow = styled.div`
 
     @media (max-width: 900px) {
         width: 100vw;
-        height: 82vh;
+        height: 84vh;
         overflow-y: scroll;
         overflow-x: hidden;
     }
@@ -130,7 +130,7 @@ const ModalWindow = styled.div`
 
         @media (max-width: 500px) {
             width: 100%;
-            transform: translateY(5%);
+            transform: translateY(7%);
         }
 
         @media (max-height: 400px) {
