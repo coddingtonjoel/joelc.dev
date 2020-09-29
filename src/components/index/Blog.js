@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import BlogButton from "./BlogButton";
+import BlogButton from "../global/BlogButton";
 import { graphql, useStaticQuery } from "gatsby";
-import Link from "gatsby";
 import Button from "../global/Button";
 
 const Blog = () => {
@@ -41,7 +40,8 @@ const Blog = () => {
 };
 
 const Wrapper = styled.section`
-    height: 520px;
+    height: 100%;
+    padding-bottom: 1px;
     background-color: ${props => props.theme.background};
     padding-top: 80px; /* header height + empty space */
     margin-top: -50px; /* header height to degrees padding’s space */
@@ -58,14 +58,28 @@ const Wrapper = styled.section`
         margin: 50px auto;
         line-height: 1.5;
         border-bottom: 1px solid ${props => props.theme.primary};
+
+        @media (max-width: 430px) {
+            font-size: 2rem;
+            width: 360px;
+        }
+
+        @media (max-width: 380px) {
+            font-size: 1.7rem;
+            width: 300px;
+        }
     }
 
     .container {
-        width: 70vw;
+        width: 80vw;
         margin: auto;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media (max-width: 1270px) {
+            flex-wrap: wrap;
+        }
     }
 
     .btn {

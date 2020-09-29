@@ -107,6 +107,10 @@ const Wrapper = styled.header`
             top: 25%;
         }
 
+        @media (max-width: 390px) {
+            top: 18%;
+        }
+
         h1 {
             font-size: 3.2rem;
             margin-bottom: 40px;
