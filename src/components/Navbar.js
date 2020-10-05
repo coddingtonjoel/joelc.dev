@@ -264,6 +264,7 @@ const Wrapper = styled.nav`
         position: fixed;
         top: 12px;
         left: 18px;
+        transition: background 0s;
     }
 
     .nav {
