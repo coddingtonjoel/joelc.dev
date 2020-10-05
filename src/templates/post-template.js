@@ -48,8 +48,26 @@ const Wrapper = styled.article`
     background-color: ${props => props.theme.background};
     color: ${props => props.theme.primary};
 
+    .content .gatsby-resp-image-background-image {
+        padding-bottom: 0 !important;
+    }
+
+    .content img {
+        border-radius: 4px;
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.37) !important;
+        height: 80% !important;
+        width: 80% !important;
+        position: relative !important;
+        display: block;
+        margin: 30px auto !important;
+    }
+
     .content-container {
-        padding: 30px 15% 30px 15%;
+        padding: 30px 28%;
+
+        @media (max-width: 700px) {
+            padding: 30px 13%;
+        }
     }
 
     a:link,
@@ -70,6 +88,15 @@ const Wrapper = styled.article`
         &::before,
         &::after {
             opacity: 0.08 !important;
+        }
+    }
+
+    .content {
+        font-size: 1.15rem;
+        line-height: 1.75;
+
+        @media (max-width: 500px) {
+            font-size: 1rem;
         }
     }
 

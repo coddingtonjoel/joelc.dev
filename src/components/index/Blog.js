@@ -97,10 +97,11 @@ const query = graphql`
     {
         allMarkdownRemark(
             filter: { frontmatter: { title: { ne: "" } } }
+            sort: { fields: frontmatter___date, order: DESC }
             limit: 3
         ) {
             nodes {
-                excerpt(pruneLength: 210)
+                excerpt(pruneLength: 160)
                 fields {
                     slug
                 }
