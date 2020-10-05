@@ -81,9 +81,12 @@ const Wrapper = styled.main`
 
 export const query = graphql`
     {
-        allMarkdownRemark(filter: { frontmatter: { title: { ne: "" } } }) {
+        allMarkdownRemark(
+            filter: { frontmatter: { title: { ne: "" } } }
+            sort: { fields: frontmatter___date, order: DESC }
+        ) {
             nodes {
-                excerpt(pruneLength: 210)
+                excerpt(pruneLength: 160)
                 fields {
                     slug
                 }
