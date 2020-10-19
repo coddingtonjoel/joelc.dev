@@ -2,25 +2,32 @@ import React from "react";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import BackgroundImage from "gatsby-background-image";
+import { Link } from "gatsby";
 
 const BlogButton = props => {
     return (
-        <StyledButton variant="contained" href={`blog${props.slug}`}>
-            <BackgroundImage
-                className="bg-img"
-                Tag="div"
-                fluid={props.image}
-                alt="Laptop with code on screen">
-                <div className="content">
-                    <p className="title">{props.title}</p>
-                    <p className="date">Published {props.date}</p>
-                    <hr />
-                    <p className="excerpt">{props.excerpt}</p>
-                </div>
-            </BackgroundImage>
-        </StyledButton>
+        <StyledLink to={props.slug}>
+            <StyledButton variant="contained">
+                <BackgroundImage
+                    className="bg-img"
+                    Tag="div"
+                    fluid={props.image}
+                    alt="Laptop with code on screen">
+                    <div className="content">
+                        <p className="title">{props.title}</p>
+                        <p className="date">Published {props.date}</p>
+                        <hr />
+                        <p className="excerpt">{props.excerpt}</p>
+                    </div>
+                </BackgroundImage>
+            </StyledButton>
+        </StyledLink>
     );
 };
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+`;
 
 const StyledButton = styled(Button)`
     margin: 30px;
@@ -31,6 +38,7 @@ const StyledButton = styled(Button)`
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.37);
     display: flex;
     flex-direction: column;
+    text-align: left;
     align-items: center;
     justify-content: center;
     padding: 0;

@@ -30,7 +30,7 @@ const blog = ({ data }) => {
                                 title={post.frontmatter.title}
                                 date={post.frontmatter.date}
                                 excerpt={post.excerpt}
-                                slug={post.fields.slug}
+                                slug={"/blog" + post.fields.slug}
                                 image={current[0].image.fluid}
                             />
                         );
