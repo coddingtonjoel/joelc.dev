@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/seo";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 import BlogButton from "../components/global/BlogButton";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const blog = ({ data }) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const Blog = ({ data }) => {
     const {
         allMarkdownRemark: { nodes: posts },
     } = data;
+
+    const blogRef = useRef([]);
+    blogRef.current = [];
+
+    useEffect(() => {
+        blogRef.current.forEach((blog, index) => {
+            gsap.from(blog, {
+                duration: 0.6,
+                top: -40,
+                opacity: 0,
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: blog,
+                    start: "bottom bottom",
+                },
+            });
+        });
+    }, []);
+
+    const addToRefs = el => {
+        if (el && !blogRef.current.includes(el)) {
+            blogRef.current.push(el);
+        }
+    };
 
     return (
         <Layout>
@@ -32,6 +60,7 @@ const blog = ({ data }) => {
                                 excerpt={post.excerpt}
                                 slug={"/blog" + post.fields.slug}
                                 image={current[0].image.fluid}
+                                ref={addToRefs}
                             />
                         );
                     })}
@@ -72,10 +101,32 @@ const Wrapper = styled.main`
     }
 
     .container {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
         align-items: center;
-        justify-content: center;
+        grid-template-columns: 100%;
+        justify-items: center;
+        padding: 0;
+
+        @media (min-width: 880px) {
+            grid-template-columns: 50% 50%;
+            transform: scale(0.9);
+            padding: 0 2%;
+        }
+
+        @media (min-width: 1100px) {
+            transform: none;
+            padding: 0 10%;
+        }
+
+        @media (min-width: 1350px) {
+            padding: 0 2%;
+            grid-template-columns: 33% 33% 33%;
+        }
+
+        @media (min-width: 1820px) {
+            padding: 0 4%;
+            grid-template-columns: 25% 25% 25% 25%;
+        }
     }
 `;
 
@@ -109,4 +160,4 @@ export const query = graphql`
     }
 `;
 
-export default blog;
+export default Blog;

@@ -4,12 +4,13 @@ import Button from "@material-ui/core/Button";
 import Img from "gatsby-image";
 import ProjectModal from "./ProjectModal";
 
-const ProjectsButton = props => {
+const ProjectsButton = React.forwardRef((props, ref) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <React.Fragment>
             <StyledButton
+                ref={ref}
                 onClick={() => {
                     setIsOpen(true);
                 }}
@@ -23,7 +24,7 @@ const ProjectsButton = props => {
             />
         </React.Fragment>
     );
-};
+});
 
 const StyledButton = styled(Button)`
     height: 220px;

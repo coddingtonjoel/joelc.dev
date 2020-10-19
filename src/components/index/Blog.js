@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import BlogButton from "../global/BlogButton";
-import { graphql, useStaticQuery } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import Button from "../global/Button";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Blog = () => {
     const data = useStaticQuery(query);
     const {
         allMarkdownRemark: { nodes: posts },
     } = data;
+
+    const blogRef = useRef([]);
+    blogRef.current = [];
+
+    useEffect(() => {
+        blogRef.current.forEach((blog, index) => {
+            gsap.from(blog, {
+                duration: 0.6,
+                top: -40,
+                opacity: 0,
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: blog,
+                    start: "bottom bottom",
+                },
+            });
+        });
+    }, []);
+
+    const addToRefs = el => {
+        if (el && !blogRef.current.includes(el)) {
+            blogRef.current.push(el);
+        }
+    };
 
     return (
         <Wrapper id="blog">
@@ -29,13 +57,15 @@ const Blog = () => {
                             excerpt={post.excerpt}
                             slug={"blog" + post.fields.slug}
                             image={current[0].image.fluid}
+                            ref={addToRefs}
                         />
                     );
                 })}
             </div>
-            <Button href="/blog" className="btn">
-                View all Posts
-            </Button>
+
+            <Link className="btn-link" to="/blog">
+                <Button className="btn">View all Posts</Button>
+            </Link>
         </Wrapper>
     );
 };
@@ -78,7 +108,7 @@ const Wrapper = styled.section`
         align-items: center;
         justify-content: center;
 
-        @media (max-width: 1270px) {
+        @media (max-width: 1350px) {
             flex-wrap: wrap;
         }
     }
@@ -91,6 +121,17 @@ const Wrapper = styled.section`
         padding: 10px 20px;
         font-size: 0.9rem;
         transition: box-shadow 0.2s;
+        pointer-events: all;
+
+        &-link {
+            color: ${props => props.theme.primary};
+            text-decoration: none;
+            height: 0;
+            display: inline;
+            pointer-events: none;
+            width: 100%;
+            position: relative;
+        }
     }
 `;
 

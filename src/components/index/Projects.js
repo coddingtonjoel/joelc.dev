@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import ProjectsButton from "./ProjectsButton";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
     const {
@@ -11,6 +15,30 @@ const Projects = () => {
         },
         allContentfulProject: { nodes: projects },
     } = useStaticQuery(query);
+
+    const projectRef = useRef([]);
+    projectRef.current = [];
+
+    useEffect(() => {
+        projectRef.current.forEach((project, index) => {
+            gsap.from(project, {
+                duration: 1,
+                top: -40,
+                opacity: 0,
+                delay: index * 0.1,
+                scrollTrigger: {
+                    trigger: project,
+                    start: "bottom bottom",
+                },
+            });
+        });
+    }, []);
+
+    const addToRefs = el => {
+        if (el && !projectRef.current.includes(el)) {
+            projectRef.current.push(el);
+        }
+    };
 
     return (
         <Wrapper id="projects">
@@ -28,6 +56,7 @@ const Projects = () => {
                                 project={project}
                                 key={project.id}
                                 fluid={project.icon.fluid}
+                                ref={addToRefs}
                             />
                         );
                     })}

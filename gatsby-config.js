@@ -16,6 +16,7 @@ module.exports = {
         `gatsby-plugin-netlify`,
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-material-ui`,
+        `gatsby-plugin-smoothscroll`,
         {
             resolve: `gatsby-source-contentful`,
             options: {
@@ -57,6 +58,16 @@ module.exports = {
                 background_color: `#663399`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
+            },
+        },
+        {
+            resolve: "gatsby-plugin-page-progress",
+            options: {
+                includePaths: ["/blog", { regex: "^/blog" }],
+                height: 3,
+                prependToBody: false,
+                color: `#EE6F6A`,
+                footerHeight: 150,
             },
         },
         {

@@ -4,10 +4,10 @@ import Button from "@material-ui/core/Button";
 import BackgroundImage from "gatsby-background-image";
 import { Link } from "gatsby";
 
-const BlogButton = props => {
+const BlogButton = React.forwardRef((props, ref) => {
     return (
         <StyledLink to={props.slug}>
-            <StyledButton variant="contained">
+            <StyledButton variant="contained" ref={ref}>
                 <BackgroundImage
                     className="bg-img"
                     Tag="div"
@@ -23,15 +23,18 @@ const BlogButton = props => {
             </StyledButton>
         </StyledLink>
     );
-};
+});
 
 const StyledLink = styled(Link)`
     text-decoration: none;
+    color: ${props => props.theme.primary};
+    pointer-events: none;
 `;
 
 const StyledButton = styled(Button)`
+    pointer-events: all;
     margin: 30px;
-    font-family: "Lato";
+    font-family: "Raleway";
     text-transform: none;
     color: ${props => props.theme.primary};
     background-color: ${props => props.theme.modal};

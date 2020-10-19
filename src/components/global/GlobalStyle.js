@@ -16,10 +16,4 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         overflow-x: hidden;
     }
-
-    html {
-        scroll-behavior: smooth;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
 `;

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled, { withTheme } from "styled-components";
 import Button from "../global/Button";
-import { fadeIn } from "../global/Animations";
 import BackgroundImage from "gatsby-background-image";
+import { gsap } from "gsap";
+import scrollTo from "gatsby-plugin-smoothscroll";
 
 const Header = props => {
     const {
@@ -11,6 +12,26 @@ const Header = props => {
             childImageSharp: { fluid },
         },
     } = useStaticQuery(query);
+
+    const objRef = useRef([]);
+    objRef.current = [];
+
+    useEffect(() => {
+        objRef.current.forEach((obj, index) => {
+            gsap.from(obj, {
+                duration: 1,
+                translateY: 40,
+                opacity: 0,
+                delay: index * 0.3 + 0.5,
+            });
+        });
+    }, []);
+
+    const addToRefs = el => {
+        if (el && !objRef.current.includes(el)) {
+            objRef.current.push(el);
+        }
+    };
 
     return (
         <Wrapper id="home">
@@ -20,15 +41,17 @@ const Header = props => {
                 fluid={fluid}
                 alt="Laptop with code on screen">
                 <div className="text">
-                    <h1>HI, I'M JOEL CODDINGTON.</h1>
-                    <h3>
+                    <h1 ref={addToRefs}>HI, I'M JOEL CODDINGTON.</h1>
+                    <h3 ref={addToRefs}>
                         I'M A STUDENT WEB DEVELOPER WHO LOVES UI DEVELOPMENT.
                     </h3>
-                    <div className="btn">
+                    <div className="btn" ref={addToRefs}>
                         <Button
                             className="btn-component"
                             variant="text"
-                            href="#about">
+                            onClick={() => {
+                                scrollTo("#about");
+                            }}>
                             <div className="flex">
                                 Learn More
                                 {/* down arrow svg */}
@@ -53,8 +76,6 @@ const Header = props => {
         </Wrapper>
     );
 };
-
-const headerAnimationDelay = 0.5;
 
 const Wrapper = styled.header`
     background-color: ${props => props.theme.background} !important;
@@ -116,8 +137,6 @@ const Wrapper = styled.header`
             margin-bottom: 40px;
             font-family: "Raleway";
             font-weight: 300;
-            animation: ${fadeIn} 1s ease backwards
-                ${headerAnimationDelay + 0.3}s;
 
             @media (max-width: 1100px) {
                 font-size: 3rem;
@@ -145,8 +164,6 @@ const Wrapper = styled.header`
             margin-bottom: 40px;
             font-family: "Raleway";
             font-weight: 300;
-            animation: ${fadeIn} 1s ease backwards
-                ${headerAnimationDelay + 0.55}s;
 
             @media (max-width: 1100px) {
                 font-size: 1.6rem;
@@ -162,8 +179,6 @@ const Wrapper = styled.header`
         }
 
         .btn {
-            animation: ${fadeIn} 1s ease backwards
-                ${headerAnimationDelay + 0.8}s;
             transition: 0s;
 
             @media (max-width: 700px) {
