@@ -20,18 +20,21 @@ const Projects = () => {
     projectRef.current = [];
 
     useEffect(() => {
-        projectRef.current.forEach((project, index) => {
-            gsap.from(project, {
-                duration: 1,
-                top: -40,
-                opacity: 0,
-                delay: index * 0.1,
-                scrollTrigger: {
-                    trigger: project,
-                    start: "bottom bottom",
-                },
+        // if mobile, don't show this animation because it's unintuitive
+        if (typeof window === "undefined" || window.innerWidth >= 600) {
+            projectRef.current.forEach((project, index) => {
+                gsap.from(project, {
+                    duration: 1,
+                    top: -40,
+                    opacity: 0,
+                    delay: index * 0.1,
+                    scrollTrigger: {
+                        trigger: project,
+                        start: "bottom bottom",
+                    },
+                });
             });
-        });
+        }
     }, []);
 
     const addToRefs = el => {

@@ -26,12 +26,3 @@ export const allStrandSpin = keyframes`
         transform: scaleX(1);
     }
 `;
-
-export const shine = keyframes`
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: 200% 200%;
-    }
-`;

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { allStrandDescend, allStrandSpin } from "../../global/Animations";
+import { gsap } from "gsap";
 
 const Unit = ({ num }) => {
     return (
@@ -35,7 +36,7 @@ const Unit = ({ num }) => {
 const Wrapper = styled.div`
     margin: 0;
     padding: 0;
-    animation: ${allStrandDescend} 7s linear infinite;
+    /* animation: ${allStrandDescend} 7s linear infinite; */
 
     /* another magic value */
     height: 126px;
@@ -48,8 +49,9 @@ const Wrapper = styled.div`
 
 const SVGWrapper = styled.svg`
     z-index: 20;
-    animation: ${allStrandSpin} 7s ease infinite;
-    animation-delay: ${props => (props.num - 1) * 0.2}s;
+    /* animation: ${allStrandSpin} 7s ease infinite;
+    animation-delay: ${props =>
+        (props.num - 1) * 0.2}s; */
 
     @media (max-width: 1000px) {
         display: none;

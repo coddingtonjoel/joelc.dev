@@ -90,7 +90,7 @@ const Wrapper = styled.header`
 
     .bg-img {
         position: relative;
-        height: 600px;
+        height: calc(100vh - ${props => props.theme.navbarHeight});
         overflow: hidden;
         background-position: fixed;
 
@@ -99,9 +99,9 @@ const Wrapper = styled.header`
             opacity: 0.08 !important;
         }
 
-        @media (max-width: 1000px) {
+        /* @media (max-width: 1000px) {
             height: 450px;
-        }
+        } */
 
         @media (max-width: 600px) {
             height: 400px;
@@ -136,7 +136,7 @@ const Wrapper = styled.header`
             font-size: 3.2rem;
             margin-bottom: 40px;
             font-family: "Raleway";
-            font-weight: 300;
+            font-weight: 700;
 
             @media (max-width: 1100px) {
                 font-size: 3rem;

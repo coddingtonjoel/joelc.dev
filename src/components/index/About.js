@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import Modal from "./SkillsModal";
 import SkillsButton from "./SkillsButton";
 import AboutStrand from "./Strand/AboutStrand";
-import { shine } from "../global/Animations";
 import { useMediaQuery } from "react-responsive";
+import { gsap } from "gsap";
 
 const About = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,16 +16,36 @@ const About = () => {
         query: "(max-device-width: 700px)",
     });
 
+    const borderRef = useRef(null);
+
     const handleSetIsOpen = open => {
         setIsOpen(open);
     };
+
+    useEffect(() => {
+        gsap.fromTo(
+            borderRef.current,
+            {
+                backgroundPosition: "0% 0%",
+                duration: 5,
+                repeat: -1,
+                ease: "none",
+            },
+            {
+                backgroundPosition: "200% 200%",
+                duration: 5,
+                repeat: -1,
+                ease: "none",
+            }
+        );
+    }, []);
 
     return (
         <React.Fragment>
             <Wrapper id="about">
                 <div className="description-flex">
                     <div className="img-container">
-                        <div className="img-border" />
+                        <div ref={borderRef} className="img-border" />
                         <Img
                             className="img"
                             fluid={portrait.fluid}
@@ -113,24 +133,17 @@ const Wrapper = styled.section`
         transform: rotate(-135deg);
         overflow: hidden;
         opacity: 0.8;
-        /* background: linear-gradient(
+        background-position: 0% 0%;
+        background: linear-gradient(
             to right,
-            ${props =>
-            props.theme.background} 20%,
-            ${props =>
-            props.theme.background} 40%,
-            ${props =>
-            props.theme.imageShine} 50%,
-            ${props =>
-            props.theme.imageShine} 35%,
-            ${props =>
-            props.theme.background} 70%,
-            ${props =>
-            props.theme
-                .background} 100%
+            ${props => props.theme.background} 20%,
+            ${props => props.theme.background} 40%,
+            ${props => props.theme.imageShine} 50%,
+            ${props => props.theme.imageShine} 35%,
+            ${props => props.theme.background} 70%,
+            ${props => props.theme.background} 100%
         );
         background-size: 200% auto;
-        animation: ${shine} 5s linear infinite; */
     }
 
     .img-container {

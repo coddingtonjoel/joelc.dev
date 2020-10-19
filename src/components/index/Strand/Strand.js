@@ -1,20 +1,52 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Unit from "./Unit";
 import styled from "styled-components";
+import { gsap } from "gsap";
 
 const Strand = () => {
+    const allStrandRef = useRef(null);
+    const eachStrandRef = useRef([]);
+
+    eachStrandRef.current = [];
+
+    useEffect(() => {
+        gsap.fromTo(
+            allStrandRef.current,
+            { duration: 7, translateY: -760, ease: "none", repeat: -1 },
+            { duration: 7, translateY: 0, ease: "none", repeat: -1 }
+        );
+        eachStrandRef.current.forEach((unit, index) => {
+            gsap.from(unit, {
+                duration: 1,
+                translateY: 40,
+                opacity: 0,
+                delay: index * 0.3 + 0.5,
+            });
+        });
+    }, []);
+
+    const addToRefs = el => {
+        if (el && !eachStrandRef.current.includes(el)) {
+            eachStrandRef.current.push(el);
+        }
+    };
+
     return (
-        <Wrapper>
-            <Unit num={1} />
-            <Unit num={2} />
-            <Unit num={3} />
-            <Unit num={4} />
-            <Unit num={5} />
-            <Unit num={6} />
-            <Unit num={7} />
-            <Unit num={8} />
-            <Unit num={9} />
-            <Unit num={10} />
+        <Wrapper ref={allStrandRef}>
+            <Unit num={1} ref={addToRefs} />
+            <Unit num={2} ref={addToRefs} />
+            <Unit num={3} ref={addToRefs} />
+            <Unit num={4} ref={addToRefs} />
+            <Unit num={5} ref={addToRefs} />
+            <Unit num={6} ref={addToRefs} />
+            <Unit num={7} ref={addToRefs} />
+            <Unit num={8} ref={addToRefs} />
+            <Unit num={9} ref={addToRefs} />
+            <Unit num={10} ref={addToRefs} />
+            <Unit num={11} ref={addToRefs} />
+            <Unit num={12} ref={addToRefs} />
+            <Unit num={13} ref={addToRefs} />
+            <Unit num={14} ref={addToRefs} />
         </Wrapper>
     );
 };
