@@ -31,6 +31,10 @@ export const lightTheme = {
     boxShadow: boxShadow,
     imageShine: blue,
     hyperlink: "blue",
+    svgWindow: "#fff",
+    svgIcons: "#646464",
+    svgTaskbar: "#ddd",
+    svgSkillBkg: "#ddd",
 };
 
 export const darkTheme = {
@@ -56,4 +60,8 @@ export const darkTheme = {
     boxShadow: boxShadow,
     imageShine: "#888",
     hyperlink: "lightBlue",
+    svgWindow: "#191919",
+    svgIcons: "#fff",
+    svgTaskbar: "#222",
+    svgSkillBkg: "#313131",
 };

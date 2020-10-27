@@ -1,29 +1,27 @@
 import React, { useEffect, useRef } from "react";
-import { graphql, useStaticQuery } from "gatsby";
 import styled, { withTheme } from "styled-components";
 import Button from "../global/Button";
-import BackgroundImage from "gatsby-background-image";
 import { gsap } from "gsap";
 import scrollTo from "gatsby-plugin-smoothscroll";
+import HeaderSVG from "./HeaderSVG";
 
 const Header = props => {
-    const {
-        file: {
-            childImageSharp: { fluid },
-        },
-    } = useStaticQuery(query);
-
     const objRef = useRef([]);
     objRef.current = [];
 
     useEffect(() => {
         objRef.current.forEach((obj, index) => {
-            gsap.from(obj, {
-                duration: 1,
-                translateY: 40,
-                opacity: 0,
-                delay: index * 0.3 + 0.5,
-            });
+            gsap.fromTo(
+                obj,
+                { translateY: 0, visibility: "hidden", opacity: 0 },
+                {
+                    duration: 1,
+                    translateY: -40,
+                    opacity: 1,
+                    visibility: "visible",
+                    delay: index * 0.3 + 2.5,
+                }
+            );
         });
     }, []);
 
@@ -35,44 +33,39 @@ const Header = props => {
 
     return (
         <Wrapper id="home">
-            <BackgroundImage
-                className="bg-img"
-                Tag="div"
-                fluid={fluid}
-                alt="Laptop with code on screen">
-                <div className="text">
-                    <h1 ref={addToRefs}>HI, I'M JOEL CODDINGTON.</h1>
-                    <h3 ref={addToRefs}>
-                        I'M A STUDENT WEB DEVELOPER WHO LOVES UI DEVELOPMENT.
-                    </h3>
-                    <div className="btn" ref={addToRefs}>
-                        <Button
-                            className="btn-component"
-                            variant="text"
-                            onClick={() => {
-                                scrollTo("#about");
-                            }}>
-                            <div className="flex">
-                                Learn More
-                                {/* down arrow svg */}
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    width="24">
-                                    <path d="M0 0h24v24H0z" fill="none" />
-                                    <path
-                                        fill={props.theme.primary}
-                                        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-                                    />
-                                </svg>
-                            </div>
-                        </Button>
-                    </div>
+            <HeaderSVG />
+            <div className="text">
+                <h1 ref={addToRefs}>HI, I'M JOEL CODDINGTON.</h1>
+                <h3 ref={addToRefs}>
+                    I'M A STUDENT WEB DEVELOPER WHO LOVES UI DEVELOPMENT.
+                </h3>
+                <div className="btn" ref={addToRefs}>
+                    <Button
+                        className="btn-component"
+                        variant="text"
+                        onClick={() => {
+                            scrollTo("#about");
+                        }}>
+                        <div className="flex">
+                            Learn More
+                            {/* down arrow svg */}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                width="24">
+                                <path d="M0 0h24v24H0z" fill="none" />
+                                <path
+                                    fill={props.theme.primary}
+                                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                                />
+                            </svg>
+                        </div>
+                    </Button>
                 </div>
-                {/* Disabled for smoothness :( */}
-                {/* <Strand /> */}
-            </BackgroundImage>
+            </div>
+            {/* Disabled for smoothness :( */}
+            {/* <Strand /> */}
         </Wrapper>
     );
 };
@@ -88,48 +81,25 @@ const Wrapper = styled.header`
         margin-top: -${props => props.theme.navbarHeight}; /* header height to degrees padding’s space */
     }
 
-    .bg-img {
-        position: relative;
-        height: calc(100vh - ${props => props.theme.navbarHeight});
-        overflow: hidden;
-        background-position: fixed;
-
-        &::before,
-        &::after {
-            opacity: 0.08 !important;
-        }
-
-        /* @media (max-width: 1000px) {
-            height: 450px;
-        } */
-
-        @media (max-width: 600px) {
-            height: 400px;
-        }
-    }
-
     .text {
         color: ${props => props.theme.primary};
         position: absolute;
-        top: 33%;
-        left: 10%;
-
         left: 50%;
         transform: translateX(-50%);
         width: 92%;
         text-align: center;
-        top: 30%;
+        top: 35%;
+        visibility: hidden;
 
         @media (max-width: 1000px) {
             left: 50%;
             transform: translateX(-50%);
             width: 92%;
             text-align: center;
-            top: 25%;
         }
 
-        @media (max-width: 390px) {
-            top: 18%;
+        @media (max-width: 600px) {
+            top: 27%;
         }
 
         h1 {
@@ -163,7 +133,7 @@ const Wrapper = styled.header`
             font-size: 1.9rem;
             margin-bottom: 40px;
             font-family: "Raleway";
-            font-weight: 300;
+            font-weight: 400;
 
             @media (max-width: 1100px) {
                 font-size: 1.6rem;
@@ -171,6 +141,10 @@ const Wrapper = styled.header`
 
             @media (max-width: 750px) {
                 font-size: 1.2rem;
+            }
+
+            @media (max-width: 600px) {
+                font-weight: 700;
             }
 
             @media (max-width: 530px) {
@@ -199,18 +173,6 @@ const Wrapper = styled.header`
             svg {
                 margin-left: 10px;
                 margin-right: -10px;
-            }
-        }
-    }
-`;
-
-const query = graphql`
-    {
-        file(relativePath: { eq: "header-background.jpg" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
             }
         }
     }
