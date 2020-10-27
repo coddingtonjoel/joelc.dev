@@ -99,7 +99,7 @@ const Wrapper = styled.header`
         }
 
         @media (max-width: 600px) {
-            top: 28.5%;
+            top: 29.5%;
         }
 
         h1 {
