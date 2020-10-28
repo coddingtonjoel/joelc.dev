@@ -13,10 +13,10 @@ const Header = props => {
         objRef.current.forEach((obj, index) => {
             gsap.fromTo(
                 obj,
-                { translateY: 0, visibility: "hidden", opacity: 0 },
+                { y: 0, visibility: "hidden", opacity: 0 },
                 {
                     duration: 1,
-                    translateY: -40,
+                    y: -40,
                     opacity: 1,
                     visibility: "visible",
                     delay: index * 0.3 + 2.5,

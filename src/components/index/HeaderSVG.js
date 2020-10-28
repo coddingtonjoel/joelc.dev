@@ -34,8 +34,14 @@ const HeaderSVG = () => {
 
         tl.fromTo(
             svgRef.current,
-            { visibility: "hidden", opacity: 0, y: 15, delay: 0.7 },
-            { opacity: 0.8, y: 0, visibility: "visible" }
+            { visibility: "hidden", opacity: 0, y: 20, delay: 0.7 },
+            {
+                opacity: 0.8,
+                y: 0,
+                visibility: "visible",
+                ease: "power4.out",
+                duration: 1.4,
+            }
         );
 
         sidebarRef.current.forEach((type, index) => {
@@ -55,14 +61,21 @@ const HeaderSVG = () => {
             tl.from(
                 type,
                 {
-                    duration: 0.4,
+                    duration: 0.6,
                     opacity: 0,
                     delay: index * 0.05,
-                    y: 100,
+                    y: 120,
+                    ease: "power2.out",
                 },
-                "-=0.3"
+                "-=0.4"
             );
         });
+
+        tl.to(
+            svgRef.current,
+            { opacity: 0.16, delay: 1.15, duration: 1 },
+            "-=1.75"
+        );
 
         iconsRef.current.forEach((type, index) => {
             tl.from(
@@ -70,17 +83,12 @@ const HeaderSVG = () => {
                 {
                     duration: 0.7,
                     opacity: 0,
+                    y: 120,
                     delay: index * 0.15,
                 },
-                "-=1.2"
+                "-=1.1"
             );
         });
-
-        tl.to(
-            svgRef.current,
-            { opacity: 0.16, delay: 1.15, duration: 1 },
-            "-=2"
-        );
     }, []);
 
     return (
@@ -92,6 +100,7 @@ const HeaderSVG = () => {
                 viewBox="0 0 1920 1080"
                 preserveAspectRatio="xMaxYMid slice"
                 ref={svgRef}>
+                {/* removed shadows for performance */}
                 <defs>
                     <filter
                         id="Background"
@@ -101,10 +110,10 @@ const HeaderSVG = () => {
                         height="515.117"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <filter
                         id="Background-2"
@@ -114,10 +123,10 @@ const HeaderSVG = () => {
                         height="515.77"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur-2" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur-2" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur-2" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <filter
                         id="Background-3"
@@ -127,10 +136,10 @@ const HeaderSVG = () => {
                         height="515.117"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur-3" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur-3" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur-3" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <filter
                         id="Background-4"
@@ -140,10 +149,10 @@ const HeaderSVG = () => {
                         height="515.77"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur-4" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur-4" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur-4" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <filter
                         id="Background-5"
@@ -153,10 +162,10 @@ const HeaderSVG = () => {
                         height="515.77"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur-5" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur-5" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur-5" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <filter
                         id="Background-6"
@@ -166,10 +175,10 @@ const HeaderSVG = () => {
                         height="515.117"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur-6" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur-6" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur-6" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <filter
                         id="Background-7"
@@ -179,10 +188,10 @@ const HeaderSVG = () => {
                         height="515.77"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur-7" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur-7" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur-7" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <filter
                         id="Background-8"
@@ -192,10 +201,10 @@ const HeaderSVG = () => {
                         height="515.117"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur-8" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur-8" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur-8" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <filter
                         id="Background-9"
@@ -205,10 +214,10 @@ const HeaderSVG = () => {
                         height="515.77"
                         filterUnits="userSpaceOnUse">
                         <feOffset dy="3" input="SourceAlpha" />
-                        <feGaussianBlur stdDeviation="3" result="blur-9" />
-                        <feFlood floodOpacity="0.161" />
+                        {/* <feGaussianBlur stdDeviation="3" result="blur-9" /> */}
+                        {/* <feFlood floodOpacity="0.161" />
                         <feComposite operator="in" in2="blur-9" />
-                        <feComposite in="SourceGraphic" />
+                        <feComposite in="SourceGraphic" /> */}
                     </filter>
                     <clipPath id="clip-Header-L">
                         <rect width="1920" height="1080" />
@@ -696,7 +705,7 @@ const HeaderSVG = () => {
                                 <rect
                                     id="Background-11"
                                     data-name="Background"
-                                    className="cls-3"
+                                    className="windows-bkg"
                                     width="720.168"
                                     height="354.752"
                                     transform="matrix(0.98, 0.21, -0.21, 0.98, 639.44, 289.32)"
@@ -2769,7 +2778,8 @@ const Wrapper = styled.div`
         fill: ${props => props.theme.background};
     }
 
-    .cls-3 {
+    .cls-3,
+    .windows-bkg {
         fill: ${props => props.theme.svgWindow};
     }
 
