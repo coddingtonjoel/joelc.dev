@@ -35,13 +35,14 @@ const StyledButton = styled(Button)`
     border: 0.7px solid #dbdbdb;
 
     @media (max-width: 1000px) {
-        height: 190px;
-        width: 190px;
+        height: 180px;
+        width: 180px;
     }
 
     @media (max-width: 500px) {
-        height: 170px;
-        width: 170px;
+        height: 140px;
+        width: 140px;
+        margin: 15px;
     }
 
     .img {

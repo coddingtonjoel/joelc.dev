@@ -7,6 +7,8 @@ import SkillsButton from "./SkillsButton";
 import AboutStrand from "./Strand/AboutStrand";
 import { useMediaQuery } from "react-responsive";
 import { gsap } from "gsap";
+import resume from "../../../static/joelc-resume.pdf";
+import Button from "../global/Button";
 
 const About = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -56,6 +58,10 @@ const About = () => {
                     <div className="description-text">
                         <h4>Who am I?</h4>
                         <p>{description.description}</p>
+                        <br />
+                        <Button href={resume} className="resume" download>
+                            Click here to download my resume
+                        </Button>
                     </div>
                 </div>
                 <hr />
@@ -235,6 +241,17 @@ const Wrapper = styled.section`
             @media (max-width: 900px) {
                 font-size: 0.9rem;
             }
+        }
+    }
+
+    .resume {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        text-align: center;
+
+        @media (max-width: 700px) {
+            margin: 10px auto -10px;
+            font-size: 0.8rem;
         }
     }
 
