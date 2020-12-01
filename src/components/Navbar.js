@@ -248,6 +248,9 @@ const StyledDrawer = styled(Drawer)`
         text-decoration: none;
         font-family: "Lato" !important;
         font-weight: 400 !important;
+        height: 100%;
+        width: 100%;
+        position: relative;
     }
 
     hr {

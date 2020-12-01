@@ -108,6 +108,10 @@ const StyledButton = styled(Button)`
         font-weight: 700;
         font-size: 1.2rem;
         font-family: "Raleway";
+
+        @media (max-width: 500px) {
+            text-align: center;
+        }
     }
 
     .date {
