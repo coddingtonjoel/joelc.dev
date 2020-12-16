@@ -87,7 +87,7 @@ const Wrapper = styled.article`
 
         &::before,
         &::after {
-            opacity: 0.08 !important;
+            opacity: 0.04 !important;
         }
     }
 
