@@ -88,7 +88,7 @@ const StyledButton = styled(Button)`
 
         &::before,
         &::after {
-            opacity: 0.06 !important;
+            opacity: 0.03 !important;
         }
     }
 
