@@ -17,6 +17,7 @@ module.exports = {
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-material-ui`,
         `gatsby-plugin-smoothscroll`,
+        `gatsby-plugin-preload-fonts`,
         {
             resolve: `gatsby-source-contentful`,
             options: {
