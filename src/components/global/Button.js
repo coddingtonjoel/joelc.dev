@@ -12,7 +12,7 @@ const MaterialBtn = styled(Button).attrs(props => ({
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29);
     border-radius: 3px;
     padding: 1% 4%;
-    font-family: "Lato";
+    font-family: "Lato", sans-serif;
     font-weight: 300;
     text-transform: uppercase;
     font-size: 100%;

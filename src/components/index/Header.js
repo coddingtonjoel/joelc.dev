@@ -105,7 +105,7 @@ const Wrapper = styled.header`
         h1 {
             font-size: 3.2rem;
             margin-bottom: 40px;
-            font-family: "Raleway";
+            font-family: "Raleway", sans-serif;
             font-weight: 700;
 
             @media (max-width: 1100px) {
@@ -132,7 +132,7 @@ const Wrapper = styled.header`
         h3 {
             font-size: 1.9rem;
             margin-bottom: 40px;
-            font-family: "Raleway";
+            font-family: "Raleway", sans-serif;
             font-weight: 400;
 
             @media (max-width: 1100px) {

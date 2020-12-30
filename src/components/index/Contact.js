@@ -124,7 +124,7 @@ const Wrapper = styled.section`
             margin: 20px auto;
             width: 40vw;
             padding: 15px;
-            font-family: "Raleway";
+            font-family: "Raleway", sans-serif;
             font-size: 0.9rem;
             background-color: #fff;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.45);

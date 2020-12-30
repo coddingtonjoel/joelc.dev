@@ -56,7 +56,7 @@ const Wrapper = styled.footer`
     }
 
     .copyright {
-        font-family: "Raleway";
+        font-family: "Raleway", sans-serif;
         font-weight: 700;
         text-align: center;
         font-size: 0.9rem;

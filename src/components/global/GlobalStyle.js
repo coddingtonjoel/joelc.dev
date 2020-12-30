@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         ${"" /* keep 0s transition to stop padding from being animated */}
         padding-top: 68px;
         transition: 0s;
-        font-family: "Lato";
+        font-family: "Lato", sans-serif;
         font-weight: 300;
         overflow-x: hidden;
     }

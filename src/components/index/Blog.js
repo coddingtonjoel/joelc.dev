@@ -80,7 +80,7 @@ const Wrapper = styled.section`
     h4 {
         color: ${props => props.theme.primary};
         font-size: 2.2rem;
-        font-family: "Raleway";
+        font-family: "Raleway", sans-serif;
         font-weight: 300;
         text-align: center;
         text-transform: uppercase;

@@ -34,7 +34,7 @@ const StyledLink = styled(Link)`
 const StyledButton = styled(Button)`
     pointer-events: all;
     margin: 30px;
-    font-family: "Raleway";
+    font-family: "Raleway", sans-serif;
     text-transform: none;
     color: ${props => props.theme.primary};
     background-color: ${props => props.theme.modal};
@@ -107,7 +107,7 @@ const StyledButton = styled(Button)`
         text-transform: uppercase;
         font-weight: 700;
         font-size: 1.2rem;
-        font-family: "Raleway";
+        font-family: "Raleway", sans-serif;
 
         @media (max-width: 500px) {
             text-align: center;

@@ -246,7 +246,7 @@ const StyledDrawer = styled(Drawer)`
     .link {
         color: ${props => props.theme.primary};
         text-decoration: none;
-        font-family: "Lato" !important;
+        font-family: "Lato", sans-serif !important;
         font-weight: 400 !important;
         height: 100%;
         width: 100%;
@@ -306,7 +306,7 @@ const Wrapper = styled.nav`
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: "Raleway";
+        font-family: "Raleway", sans-serif;
         font-weight: 400;
         font-size: 16px;
         margin: 0 3.3rem;
