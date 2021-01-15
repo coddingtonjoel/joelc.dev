@@ -2760,6 +2760,7 @@ const HeaderSVG = () => {
 
 const Wrapper = styled.div`
     svg {
+        transform: translate3d(0, 0, 0);
         opacity: 0.2;
         width: 100vw;
         height: calc(100vh - ${props => props.theme.navbarHeight});

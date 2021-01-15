@@ -71,6 +71,7 @@ const Header = props => {
 };
 
 const Wrapper = styled.header`
+    transform: translate3d(0, 0, 0);
     background-color: ${props => props.theme.background} !important;
 
     &:before {
@@ -85,7 +86,7 @@ const Wrapper = styled.header`
         color: ${props => props.theme.primary};
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translate3d(0, 0, 0);
         width: 92%;
         text-align: center;
         top: 35%;
@@ -154,6 +155,7 @@ const Wrapper = styled.header`
 
         .btn {
             transition: 0s;
+            transform: translate3d(0, 0, 0);
 
             @media (max-width: 700px) {
                 font-size: 0.85rem;
