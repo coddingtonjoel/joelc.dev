@@ -131,6 +131,8 @@ const Wrapper = styled.section`
             border-radius: 2px;
             border: none;
             outline: none;
+            background-color: ${props => props.theme.buttonBackground};
+            color: ${props => props.theme.primary};
 
             @media (max-width: 1000px) {
                 width: 50vw;
@@ -156,15 +158,14 @@ const Wrapper = styled.section`
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: ${props => props.theme.contactButtonBackground};
+            background-color: ${props => props.theme.buttonBackground};
             height: 50px;
             width: 200px;
-            color: #494949;
+            color: ${props => props.theme.primary};
             transition: 0.5s;
 
             &:hover {
-                background-color: ${props =>
-                    props.theme.contactButtonBackground};
+                background-color: ${props => props.theme.buttonBackground};
             }
         }
     }
