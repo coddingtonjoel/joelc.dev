@@ -89,7 +89,7 @@ const Wrapper = styled.header`
         transform: translateX(-50%) translate3d(0, 0, 0);
         width: 92%;
         text-align: center;
-        top: 35%;
+        top: 40%;
         visibility: hidden;
 
         @media (max-width: 1000px) {
@@ -100,7 +100,7 @@ const Wrapper = styled.header`
         }
 
         @media (max-width: 600px) {
-            top: 29.5%;
+            top: 36.5%;
         }
 
         h1 {
