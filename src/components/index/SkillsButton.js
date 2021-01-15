@@ -53,7 +53,7 @@ const Wrapper = styled(Button).attrs(props => ({
     }
 
     &:hover {
-        background-color: ${props => props.theme.background};
+        background-color: ${props => props.theme.modal};
     }
 
     .items {
