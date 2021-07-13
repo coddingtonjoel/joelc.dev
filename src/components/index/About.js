@@ -7,8 +7,6 @@ import SkillsButton from "./SkillsButton";
 import AboutStrand from "./Strand/AboutStrand";
 import { useMediaQuery } from "react-responsive";
 import { gsap } from "gsap";
-import resume from "../../../static/joelc-resume.pdf";
-import Button from "../global/Button";
 
 const About = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -59,9 +57,7 @@ const About = () => {
                         <h4>Who am I?</h4>
                         <p>{description.description}</p>
                         <br />
-                        <Button href={resume} className="resume" download>
-                            Click here to download my resume
-                        </Button>
+                        <span>Resume is available upon request. See contact form.</span>
                     </div>
                 </div>
                 <hr />
