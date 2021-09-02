@@ -1,0 +1,14 @@
+---
+title: Internship Reflections
+date: "2021-09-01"
+---
+
+This past summer, I had the privallege of working as an intern for BlackBerry. Now, as I'm going back to school again this fall, I've been reflecting a lot on internships in general as applications begin to open for summer 2022 interns. As a student, I have put a priceless value on internship experience, and I'm very glad that I've been focused on it. After two summers of interning, I can easily say that they have been my most profound experiences when it comes to development and working on a team. They have taught me new skills, helped me build new connections, and continue to light the fire within me that wants to learn and grow more in the professional world. However, after more thought, I've come to realize that I actually had two very different intern experiences in 2020 and 2021.
+
+In 2020 as an intern at Cartana Inc., I realize that I was completely thrown into the deep end. Luckily, I tend to thrive in that type of scenario, so it ended up working out just great and I learned so much about AWS and cloud deployments. I knew very little about the ins and outs of deploying a website besides shoving it into Netlify and hoping it works, but after that summer I realized how much there was to the deployment of different services and how they all connect.
+
+This summer of 2021 at BlackBerry, however, I ended up staying more in my comfort zone, which also ended up being a great experience. Although many opportunities had me dive into backend technology, I still tended to hover more around frontend development. This actually ended up pushing me further than I thought I could go, in a really great way. I felt at the beginning of the summer that I was still limited in my React skills, but after coming out of the internship at the end of this summer, I feel like I could create anything my mind desires.
+
+The reality is that there will always be so much more to learn, and I have to remind myself that it's okay not to have every tool under my belt. Initially, I felt embarrassed during some internship interviews where I had to say I wasn't familiar with a certain technology, but it was comforting to remember that there isn't going a candidate out there that knows everything--we're all human and it takes a lot of time and dedication to learn new things.
+
+Now that applications are starting to open for next summer, I'm glad that I've had another opportunity to really sit down and reflect on my past experiences and decide what's valuable to me. As the senior year of my undergraduate degree will be approaching next summer, I am very excited to think of the ways I can continue to learn and grow.
