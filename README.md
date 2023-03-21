@@ -2,7 +2,7 @@
 
 ---
 
-My personal portfolio website as a student for web development.
+My personal portfolio website as a software engineer.
 
 Built with Gatsby, Material-UI, GSAP, Contentful, and styled-components.
 

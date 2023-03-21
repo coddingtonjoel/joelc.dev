@@ -37,7 +37,7 @@ const Header = props => {
             <div className="text">
                 <h1 ref={addToRefs}>HI, I'M JOEL CODDINGTON.</h1>
                 <h3 ref={addToRefs}>
-                    I'M A STUDENT WEB DEVELOPER WHO LOVES UI DEVELOPMENT.
+                    I'M A SOFTWARE ENGINEER WHO LOVES UI DEVELOPMENT.
                 </h3>
                 <div className="btn" ref={addToRefs}>
                     <Button
