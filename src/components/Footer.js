@@ -9,7 +9,7 @@ const Footer = () => {
         <Wrapper className="footer">
             <div className="icons">
                 <a
-                    href="https://www.linkedin.com/in/joel-coddington/"
+                    href="https://www.linkedin.com/in/joel-coddington-lopez/"
                     rel="noopener noreferrer"
                     target="_blank">
                     <img src={linkedin} alt="LinkedIn" draggable="false" />
@@ -28,7 +28,7 @@ const Footer = () => {
                 </a>
             </div>
             <div className="copyright">
-                JOEL CODDINGTON © {new Date().getFullYear()}
+                JOEL CODDINGTON-LOPEZ © {new Date().getFullYear()}
             </div>
         </Wrapper>
     );

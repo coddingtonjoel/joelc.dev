@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
     siteMetadata: {
-        title: `Joel Coddington`,
-        description: `Joel Coddington is a passionate software engineer who excels in UX/UI Design and Front-End Web Developent`,
-        author: `Joel Coddington`,
+        title: `Joel Coddington-Lopez`,
+        description: `Joel Coddington-Lopez is a passionate software engineer who excels in UX/UI Design and Front-End Web Developent`,
+        author: `Joel Coddington-Lopez`,
         siteUrl: `https://joelc.dev`,
     },
     plugins: [
