@@ -2,8 +2,8 @@
     "name": "joelc.dev",
     "private": true,
     "description": "Portfolio Site",
-    "version": "0.1.0",
-    "author": "Joel Coddington",
+    "version": "1.1",
+    "author": "Joel Coddington-Lopez",
     "dependencies": {
         "@material-ui/core": "^4.11.0",
         "@material-ui/icons": "^4.9.1",
