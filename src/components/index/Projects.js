@@ -116,7 +116,7 @@ const Wrapper = styled.section`
 
 const query = graphql`
     {
-        file(relativePath: { eq: "projects-background.jpg" }) {
+        file(relativePath: { eq: "projects-bkg.jpg" }) {
             childImageSharp {
                 fluid(quality: 80) {
                     ...GatsbyImageSharpFluid
