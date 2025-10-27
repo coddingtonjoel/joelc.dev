@@ -12,6 +12,7 @@ const ProjectModal = props => {
 
     return (
         <Modal
+            disableScrollLock
             open={props.isOpen}
             onClose={() => {
                 props.setIsOpen(false);

@@ -32,7 +32,7 @@ const SkillsButton = props => {
     );
 };
 
-const Wrapper = styled(Button).attrs(props => ({
+const Wrapper = styled(Button).attrs(() => ({
     variant: "contained",
 }))`
     color: ${props => props.theme.primary};

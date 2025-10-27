@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "@material-ui/core/Modal";
 import styled, { withTheme } from "styled-components";
 import Fade from "@material-ui/core/Fade";
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from 'react-tooltip'
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Button from "../global/Button";
@@ -15,8 +15,15 @@ const StyledModal = props => {
 
     const isMobile = useMediaQuery({ query: "(max-device-width: 600px)" });
 
+    const tooltipStyle = {
+        backgroundColor: props.theme.notMain,
+        color: props.theme.main,
+        marginTop: 25
+    }
+
     return (
         <Modal
+            disableScrollLock
             open={props.isOpen}
             onClose={() => {
                 props.setIsOpen(false);
@@ -34,16 +41,10 @@ const StyledModal = props => {
                                     <React.Fragment key={skill.name}>
                                         {/* display tooltip on desktop */}
                                         <MediaQuery minWidth={601}>
-                                            <div data-tip={skill.name}>
-                                                <ReactTooltip
-                                                    place={"top"}
-                                                    type={
-                                                        props.theme.style ===
-                                                        "light"
-                                                            ? "dark"
-                                                            : "light"
-                                                    }
-                                                    effect="solid"
+                                            <div data-tooltip-id={skill.name} data-tooltip-content={skill.name}>
+                                                <Tooltip
+                                                    id={skill.name}
+                                                    style={tooltipStyle}
                                                 />
                                                 <Img
                                                     className="icon"
@@ -52,7 +53,7 @@ const StyledModal = props => {
                                                 />
                                             </div>
                                         </MediaQuery>
-                                        {/* DON'T display tooltip on mobile -- lacks intutiveness */}
+                                        {/* DON'T display tooltip on mobile -- not intuitive */}
                                         <MediaQuery maxWidth={600}>
                                             <Img
                                                 className="icon"
@@ -68,15 +69,10 @@ const StyledModal = props => {
                         <div className="languages">
                             {languages.map(lang => {
                                 return (
-                                    <div data-tip={lang.name} key={lang.name}>
-                                        <ReactTooltip
-                                            place="top"
-                                            type={
-                                                props.theme.style === "light"
-                                                    ? "dark"
-                                                    : "light"
-                                            }
-                                            effect="solid"
+                                    <div data-tooltip-id={lang.name} data-tooltip-content={lang.name} key={lang.name}>
+                                        <Tooltip
+                                            id={lang.name}
+                                            style={tooltipStyle}
                                         />
                                         <Img
                                             className="icon"
