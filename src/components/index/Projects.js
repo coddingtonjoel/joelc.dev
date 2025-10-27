@@ -10,12 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
     const {
-        file: {
-            childImageSharp: { fluid },
+        allContentfulProjectBackground: {
+            nodes: projectBackgroundNode
         },
         allContentfulProject: { nodes: projects },
     } = useStaticQuery(query);
 
+    const backgroundImage = projectBackgroundNode?.[0]?.image?.fluid;
     const projectRef = useRef([]);
     projectRef.current = [];
 
@@ -47,7 +48,7 @@ const Projects = () => {
         <Wrapper id="projects">
             <BackgroundImage
                 Tag="div"
-                fluid={fluid}
+                fluid={backgroundImage}
                 className="bg-img"
                 alt="Laptop, coffee, notebook, and iPhone on a table">
                 <h4>Projects</h4>
@@ -116,10 +117,12 @@ const Wrapper = styled.section`
 
 const query = graphql`
     {
-        file(relativePath: { eq: "projects-bkg.jpg" }) {
-            childImageSharp {
-                fluid(quality: 80) {
-                    ...GatsbyImageSharpFluid
+        allContentfulProjectBackground {
+            nodes {
+                image {
+                    fluid {
+                        ...GatsbyContentfulFluid
+                    }
                 }
             }
         }
