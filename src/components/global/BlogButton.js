@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 const BlogButton = React.forwardRef((props, ref) => {
     return (
         <StyledLink to={props.slug}>
-            <StyledButton variant="contained" ref={ref}>
+            <StyledButton aria-label={props.title} variant="contained" ref={ref}>
                 <BackgroundImage
                     className="bg-img"
                     Tag="div"

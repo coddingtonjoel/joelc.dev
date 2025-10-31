@@ -34,6 +34,7 @@ export const lightTheme = {
     svgIcons: "#646464",
     svgTaskbar: "#ddd",
     svgSkillBkg: "#ddd",
+    projectButtonHover: "#ddd"
 };
 
 export const darkTheme = {
@@ -62,4 +63,5 @@ export const darkTheme = {
     svgIcons: "#fff",
     svgTaskbar: "#222",
     svgSkillBkg: "#313131",
+    projectButtonHover: "#202020"
 };

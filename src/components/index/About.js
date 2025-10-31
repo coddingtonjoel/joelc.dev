@@ -49,10 +49,9 @@ const About = () => {
                         <Img
                             className="img"
                             fluid={portrait.fluid}
-                            alt="Joel Coddington"
+                            alt="Joel Coddington-Lopez"
                         />
                     </div>
-
                     <div className="description-text">
                         <h4>Who am I?</h4>
                         <p>{description.description}</p>
@@ -81,12 +80,21 @@ const Wrapper = styled.section`
     overflow: hidden !important;
     position: relative;
     padding-bottom: 10px;
+    scroll-margin-top: 100px;
+    
+    @media (max-width: 600px) {
+        margin-top: -30px;
+    }
 
     &:before {
         content: "";
         display: block;
         padding-top: 140px; /* header height + empty space */
         margin-top: -100px; /* header height to degrees padding’s space */
+
+        @media (max-width: 600px) {
+            margin-top: -140px;
+        }
     }
 
     .description-flex {
@@ -114,7 +122,7 @@ const Wrapper = styled.section`
         top: 0%;
         left: 0%;
         display: block;
-        height: 100%;
+        ${'' /* height: 100%; */}
         width: 100%;
         margin: auto;
         align-self: center;
@@ -237,6 +245,10 @@ const Wrapper = styled.section`
             @media (max-width: 900px) {
                 font-size: 0.9rem;
             }
+        }
+
+        span {
+            font-size: 0.85rem;
         }
     }
 

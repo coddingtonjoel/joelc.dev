@@ -28,7 +28,7 @@ const Post = ({ data }) => {
                     <div className="header-content">
                         <h1 className="title">{post.frontmatter.title}</h1>
                         <p className="date">
-                            Published {post.frontmatter.date} by Joel Coddington
+                            Published {post.frontmatter.date} by Joel Coddington-Lopez
                         </p>
                     </div>
                 </BackgroundImage>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { navigate } from "gatsby";
 import home from "../images/icons/home.svg";
 import about from "../images/icons/about.svg";
 import projects from "../images/icons/projects.svg";
@@ -66,18 +67,20 @@ const Navbar = props => {
         <React.Fragment>
             <Wrapper>
                 {isMobile ? navDrawer : null}
-                <Link to="/">
-                    <img
-                        className="logo"
-                        src={
-                            props.theme.style === "light"
-                                ? logoBlack
-                                : logoWhite
-                        }
-                        alt=""
-                        draggable="false"
-                    />
-                </Link>
+                {/* <div tabIndex={0} className="logo-container"> */}
+                    <Link to="/" className="logo-container" tabIndex={0}>
+                        <img
+                            className="logo"
+                            src={
+                                props.theme.style === "light"
+                                    ? logoBlack
+                                    : logoWhite
+                            }
+                            alt="Website logo"
+                            draggable="false"  
+                        />
+                    </Link>
+                {/* </div> */}
                 <Scrollspy
                     className="nav"
                     items={["home", "about", "projects", "blog", "contact"]}
@@ -91,7 +94,7 @@ const Navbar = props => {
                         <img
                             className="icon"
                             src={home}
-                            alt=""
+                            alt="Home icon"
                             draggable="false"
                         />
                         <p className="text">Home</p>
@@ -100,7 +103,7 @@ const Navbar = props => {
                         <img
                             className="icon"
                             src={about}
-                            alt=""
+                            alt="Code icon"
                             draggable="false"
                         />
                         <p className="text">About</p>
@@ -109,7 +112,7 @@ const Navbar = props => {
                         <img
                             className="icon"
                             src={projects}
-                            alt=""
+                            alt="Wrench icon"
                             draggable="false"
                         />
                         <p className="text">Projects</p>
@@ -118,7 +121,7 @@ const Navbar = props => {
                         <img
                             className="icon"
                             src={blog}
-                            alt=""
+                            alt="Pencil icon"
                             draggable="false"
                         />
                         <p className="text">Blog</p>
@@ -127,7 +130,7 @@ const Navbar = props => {
                         <img
                             className="icon"
                             src={contact}
-                            alt=""
+                            alt="Envelope icon"
                             draggable="false"
                         />
                         <p className="text">Contact</p>
@@ -135,13 +138,14 @@ const Navbar = props => {
                 </Scrollspy>
                 <ToggleButtonGroup
                     className="togglegroup"
+                    aria-label="Change website theme"
                     value={mode}
                     exclusive
                     onChange={handleMode}>
-                    <ToggleButton className="togglegroup-btn" value="Light">
+                    <ToggleButton aria-label="Light mode" className="togglegroup-btn" value="Light">
                         <Sun />
                     </ToggleButton>
-                    <ToggleButton className="togglegroup-btn" value="Dark">
+                    <ToggleButton aria-label="Dark mode" className="togglegroup-btn" value="Dark">
                         <Moon />
                     </ToggleButton>
                 </ToggleButtonGroup>
@@ -167,7 +171,7 @@ const Navbar = props => {
                                 ? logoBlack
                                 : logoWhite
                         }
-                        alt=""
+                        alt="Website logo"
                         draggable="false"
                     />
                 </Link>
@@ -284,7 +288,7 @@ const Wrapper = styled.nav`
         box-shadow: ${props => props.theme.boxShadow};
     }
 
-    .logo {
+    .logo, .logo-container {
         height: 65px;
         width: 65px;
         position: fixed;

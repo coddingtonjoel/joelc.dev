@@ -6,13 +6,15 @@ import Img from "gatsby-image";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Button from "../global/Button";
+import { useMediaQuery } from "react-responsive";
 
 const ProjectModal = props => {
     const project = props.project;
+    const isMobile = useMediaQuery({ query: "(max-device-width: 600px)" });
 
     return (
         <Modal
-            disableScrollLock
+            disableScrollLock={!isMobile}
             open={props.isOpen}
             onClose={() => {
                 props.setIsOpen(false);
@@ -61,6 +63,7 @@ const ProjectModal = props => {
                                 Visit Site
                             </Button>
                             <Button
+                                aria-label="close dialog"
                                 className="close"
                                 onClick={() => {
                                     props.setIsOpen(false);

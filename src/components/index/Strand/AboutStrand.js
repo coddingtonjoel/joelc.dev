@@ -25,9 +25,9 @@ const Wrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     position: absolute;
-    top: -432px;
+    top: -425px;
     left: 500px;
-    transform: rotate(-90deg) scale(0.9);
+    transform: rotate(-90deg) scale(0.7);
 
     @media (min-width: 701px) {
         opacity: 0;
@@ -39,8 +39,12 @@ const Wrapper = styled.div`
         opacity: 0.8;
     }
 
+    @media (max-width: 600px) {
+        top: -465px;
+    }
+
     @media (max-width: 400px) {
-        top: -442px;
+        top: -472px;
         transform: rotate(-90deg) scale(0.5);
         left: 300px;
     }

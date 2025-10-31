@@ -15,7 +15,7 @@ const SkillsButton = props => {
 
     return (
         <Wrapper onClick={props.onClick}>
-            <div className="items">
+            <div className="items" aria-label="skills and technologies dialog">
                 {featuredSkills.map(skill => {
                     return (
                         <Img

@@ -6,10 +6,11 @@ import ProjectModal from "./ProjectModal";
 
 const ProjectsButton = React.forwardRef((props, ref) => {
     const [isOpen, setIsOpen] = useState(false);
-
+    
     return (
         <React.Fragment>
             <StyledButton
+                aria-label={props.project.title}
                 ref={ref}
                 onClick={() => {
                     setIsOpen(true);
@@ -30,9 +31,13 @@ const StyledButton = styled(Button)`
     height: 220px;
     width: 220px;
     border-radius: 100%;
-    background-color: #e4e4e4;
+    background-color: ${props => props.theme.background};
     margin: 15px 30px;
-    border: 0.7px solid #dbdbdb;
+    border: 0.7px solid #dbdbdb49;
+
+    :hover {
+        background-color: ${props => props.theme.projectButtonHover};
+    }
 
     @media (max-width: 1000px) {
         height: 180px;

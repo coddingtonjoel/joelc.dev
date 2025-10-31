@@ -23,7 +23,7 @@ const StyledModal = props => {
 
     return (
         <Modal
-            disableScrollLock
+            disableScrollLock={!isMobile}
             open={props.isOpen}
             onClose={() => {
                 props.setIsOpen(false);
@@ -41,12 +41,13 @@ const StyledModal = props => {
                                     <React.Fragment key={skill.name}>
                                         {/* display tooltip on desktop */}
                                         <MediaQuery minWidth={601}>
-                                            <div data-tooltip-id={skill.name} data-tooltip-content={skill.name}>
+                                            <div aria-label={skill.name} data-tooltip-id={skill.name} data-tooltip-content={skill.name} tabIndex={0}>
                                                 <Tooltip
                                                     id={skill.name}
                                                     style={tooltipStyle}
                                                 />
                                                 <Img
+                                                    alt={skill.name}
                                                     className="icon"
                                                     fixed={skill.icon.fixed}
                                                     draggable={false}
@@ -55,11 +56,14 @@ const StyledModal = props => {
                                         </MediaQuery>
                                         {/* DON'T display tooltip on mobile -- not intuitive */}
                                         <MediaQuery maxWidth={600}>
-                                            <Img
-                                                className="icon"
-                                                fixed={skill.icon.fixed}
-                                                draggable={false}
-                                            />
+                                            <div aria-label={skill.name} tabIndex={0}>
+                                                <Img
+                                                    alt={skill.name}
+                                                    className="icon"
+                                                    fixed={skill.icon.fixed}
+                                                    draggable={false}
+                                                />
+                                            </div>
                                         </MediaQuery>
                                     </React.Fragment>
                                 );
@@ -69,7 +73,7 @@ const StyledModal = props => {
                         <div className="languages">
                             {languages.map(lang => {
                                 return (
-                                    <div data-tooltip-id={lang.name} data-tooltip-content={lang.name} key={lang.name}>
+                                    <div data-tooltip-id={lang.name} data-tooltip-content={lang.name} key={lang.name} tabIndex={0} aria-label={lang.name}>
                                         <Tooltip
                                             id={lang.name}
                                             style={tooltipStyle}
@@ -78,6 +82,7 @@ const StyledModal = props => {
                                             className="icon"
                                             fixed={lang.icon.fixed}
                                             draggable={false}
+                                            alt={lang.name}
                                         />
                                     </div>
                                 );
@@ -88,6 +93,7 @@ const StyledModal = props => {
                         </p>
                     </div>
                     <Button
+                        aria-label="close dialog"
                         className="close"
                         variant="text"
                         onClick={() => {
